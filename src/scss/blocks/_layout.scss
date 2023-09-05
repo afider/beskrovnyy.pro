@@ -1,0 +1,8 @@
+.layout {
+  font-family: var(--font-family-base);
+
+  &__page {
+    display: grid;
+    grid-template-rows: max-content 2fr max-content;
+  }
+}

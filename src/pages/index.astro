@@ -2,16 +2,28 @@
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
 console.log('This runs in your terminal, not the browser!');
+
+import '../scss/main.scss';
 ---
 <!-- Below is your "component template." It's just HTML, but with
 some magic sprinkled in to help you build great templates. -->
-<html>
-  <body>
-    <h1>Hello, World!</h1>
+<html class="layout">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Евгений Бескровный</title>
+  </head>
+  <body class="layout__page">
+    <p class="h1">👋 Добро пожаловать!</p>
+		<p>Меня зовут Евгений, мне 36&nbsp;лет, я&nbsp;занимаюсь веб-разработкой с&nbsp;уклоном во&nbsp;фронтенд: верстку, шаблонизацию, проектирование интерфейсов и&nbsp;UX-редактуру. Я&nbsp;<a href="https://vc.ru/flood/40369-avtonomnost-motiviruyushchaya-cel-masterstvo-zachem-kompaniyam-t-shaped-specialisty-i-kak-ih-razvivat">T-shaped</a> специалист, основное направление&nbsp;&mdash; верстка.</p>
+
+		<p>В&nbsp;профессии 13&nbsp;лет с&nbsp;2009&nbsp;года. Делал скругленные уголки с&nbsp;помощью png-спрайтов и&nbsp;таблиц еще под <a href="https://ru.wikipedia.org/wiki/Internet_Explorer_6">IE6</a> 🤓</p>
+
+		<p>Помогаю строить эффективные интерфейсы: консультирую по&nbsp;вопросам проектирования интерфейсов, UX-редактуре и&nbsp;клиентской оптимизации.</p>
+
+		<p>Люблю <a href="/skills/">свою работу</a>, науку и&nbsp;научный подход, развиваю критическое мышление, много <a href="/hobbies/#books">читаю</a> научно-популярной, профессиональной и&nbsp;художественной литературы, <a href="/hobbies/#photography">увлекаюсь</a> мобильной фотографией, <a href="/hobbies/#money">изучаю</a> экономику и&nbsp;инвестирование, <a href="/hobbies/#sport">занимаюсь</a>&zwnj; силовыми тренировками, <a href="/hobbies/#ski">катаюсь</a> на&nbsp;горных лыжах. ⛷</p>
+
+		<p>Связаться со&nbsp;мной можно любым из&nbsp;перечисленных способов, но&nbsp;с&nbsp;бо&#769;льшей долей вероятности быстрее я&nbsp;отвечу по&nbsp;<a href="tel:+79185451866">телефону</a>, в&nbsp;<a href="https://wa.me/79185451866?text=Здравствуйте,%20Евгений">WhatsApp</a>, <a href="viber://chat?number=79185451866">Viber</a>, или <a href="https://instagram.com/evgeniy.beskrovnyy">Instagram</a>.</p>
   </body>
 </html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>

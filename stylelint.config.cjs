@@ -8,8 +8,8 @@ module.exports = {
   rules: {
     "selector-class-pattern":["^\.([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$", {resolveNestedSelectors: true}],
     'scss/double-slash-comment-whitespace-inside': "always",
-    "comment-whitespace-inside": "never",
-    "comment-empty-line-before": "never",
+    "comment-whitespace-inside": "always",
+    "comment-empty-line-before": "always",
     'font-family-no-missing-generic-family-keyword': true,
     'no-descending-specificity': null,
     "no-duplicate-selectors": true,
