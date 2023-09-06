@@ -3,7 +3,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro build && astro preview"
   },
   "dependencies": {
     "astro": "^3.0.8"
