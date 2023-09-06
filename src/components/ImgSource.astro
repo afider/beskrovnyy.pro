@@ -26,4 +26,4 @@ const picX2Avif = await getImage({ src: imageX2, format: 'avif' });
 <source srcset={`${picAvif.src}, ${picX2Avif.src} 2x`} type="image/avif">
 <img srcset={`${picX2.src} 2x`} src={pic.src} {...pic.attributes} alt={imgAlt} class={classNames} />
 
-{imgAlt ? <div class="warning">У изображения не может быть пустого атрибута Alt.</div> : ''}
+{imgAlt.trim() ? '' : <div class="warning">У изображения не может быть пустого атрибута Alt.</div>}
