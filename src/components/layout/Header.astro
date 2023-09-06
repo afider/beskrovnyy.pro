@@ -1,14 +1,15 @@
 ---
 import ImgSource from '../ImgSource.astro';
 
-import evgeniyBeskrovnyy from '../../assets/images/evgeniy-beskrovnyy.jpg';
-import evgeniyBeskrovnyyX2 from '../../assets/images/evgeniy-beskrovnyy@2x.jpg';
+import evgeniyBeskrovnyyX2 from '../../assets/images/evgeniy-beskrovnyy.jpg';
+
+import evgeniyBeskrovnyyX2Dark from '../../assets/images/evgeniy-beskrovnyy_dark.jpg';
 ---
 
 <header class="layout__header">
   <a href="/" class="logo">
     <picture class="logo__pic">
-      <ImgSource image={evgeniyBeskrovnyy} imageX2={evgeniyBeskrovnyyX2} imgAlt="Портрет Автора" classNames="logo__img" />
+      <ImgSource imageX2={evgeniyBeskrovnyyX2} imageX2Dark={evgeniyBeskrovnyyX2Dark} imgAlt="Портрет Автора" classNames="logo__img" />
     </picture>
   </a>
 </header>
