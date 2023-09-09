@@ -1,0 +1,28 @@
+---
+import { Sprite } from 'astro-icon';
+---
+<Sprite.Provider />
+
+<fieldset class="switcher">
+  <legend class="switcher__title">Цветовая схема</legend>
+  <div class="switcher__body">
+    <label for="light-theme" class="switcher__label">
+      <Sprite name="sun" width="30" height="30" aria-hidden="true" class="switcher__icon" />
+      Всегда светлая
+      <input id="light-theme" class="switcher__radio" type="radio" name="theme" value="light" data-theme-input>
+    </label>
+
+    <label for="system-theme" class="switcher__label">
+      <Sprite name="system" width="30" height="30" aria-hidden="true" class="switcher__icon" />
+      Как в системе
+      <input id="system-theme" class="switcher__radio" type="radio" name="theme" value="system" data-theme-input checked>
+    </label>
+
+    <label for="dark-theme" class="switcher__label">
+      <Sprite name="moon" width="30" height="30" aria-hidden="true" class="switcher__icon" />
+      Цветовая схема
+      <input id="dark-theme" class="switcher__radio" type="radio" name="theme" value="dark" data-theme-input>
+    </label>
+    <div class="switcher__state"></div>
+  </div>
+</fieldset>

@@ -1,8 +1,15 @@
 :root {
-  // Colors
+  // Light Theme Colors
   --color-primary: #000;
   --color-secondary: #fff;
 
   // Font
   --font-family-base: 'PTSans', sans-serif;
 }
+
+._THEME-DARK:root {
+  // Dark Theme Colors
+  --color-primary: #fff;
+  --color-secondary: #000;
+}
+

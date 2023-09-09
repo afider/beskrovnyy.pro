@@ -1,4 +1,7 @@
 .layout {
+  --layout-color-bg: var(--color-secondary);
+
+  background-color: var(--layout-color-bg);
   font-family: var(--font-family-base);
 
   &__page {

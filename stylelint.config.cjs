@@ -6,7 +6,7 @@ module.exports = {
   ],
 
   rules: {
-    "selector-class-pattern":["^\.([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$", {resolveNestedSelectors: true}],
+    "selector-class-pattern":["^\.([A-Za-z0-9-]+)?(__([A-Za-z0-9]+-?)+)?(--([A-Za-z0-9]+-?)+){0,2}$", {resolveNestedSelectors: true}],
     'scss/double-slash-comment-whitespace-inside': "always",
     "comment-whitespace-inside": "always",
     "comment-empty-line-before": "always",
