@@ -1,10 +1,10 @@
 export default function switchTheme() {
   const inputs = document.querySelectorAll('[data-theme-input]');
+  const pictures = document.querySelectorAll('[data-theme-img]');
   const doc = document.getElementsByTagName("html")[0];
   const themeState = '_THEME-DARK';
-
-  // Variables for theme images
-  const pictures = document.querySelectorAll('[data-theme-img]');
+  const mediaDark = '(prefers-color-scheme: dark)';
+  const mediaLight = '(prefers-color-scheme: light)';
 
   if(!inputs) {
     return;
@@ -22,7 +22,7 @@ export default function switchTheme() {
 
   // sets the system theme if no theme has been saved in Local Storage
   window
-  .matchMedia('(prefers-color-scheme: dark)')
+  .matchMedia(mediaDark)
   .addEventListener('change', () => {
     getTheme();
     getOsTheme();
@@ -32,14 +32,14 @@ export default function switchTheme() {
       setThemeState(theme);
     }
 
-    // Stay dark if theme has been set by the user
+    // stay dark if theme has been set by the user
     if (theme === 'dark' && themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
       reverseImgMedia(pictures);
     } else if (theme === 'dark' && themeOs === 'light' && getDarkSourceMedia(pictures) === 'dark') {
       reverseImgMedia(pictures);
     }
 
-    // Stay light if theme has been set by the user
+    // stay light if theme has been set by the user
     if (theme === 'light' && themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
       reverseImgMedia(pictures);
     } else if (theme === 'light' && themeOs === 'dark' && getDarkSourceMedia(pictures) === 'dark') {
@@ -49,6 +49,7 @@ export default function switchTheme() {
 
   function selectTheme() {
     // sets the color theme depending on the system theme and the saved theme value in Local Storage
+
     inputs.forEach((el) => {
       el.addEventListener('change', (el) => {
         const theme = el.target.value;
@@ -63,6 +64,7 @@ export default function switchTheme() {
 
   function setSwitcherState(theme) {
     // sets the checked attribute to the radio buttons of the radio button, if the radio button is selected
+
     if (!theme) {
       return;
     }
@@ -78,6 +80,7 @@ export default function switchTheme() {
 
   function setThemeState(theme) {
     // sets a global status selector for the HTML element that defines the current color scheme
+
     switch(theme) {
       case 'dark':
         doc.classList.add(themeState);
@@ -98,17 +101,20 @@ export default function switchTheme() {
 
   function saveTheme(theme) {
     // saves the theme value: light, system or dark in the theme field in localStorage
+
     localStorage.setItem('theme', theme);
   }
 
   function getTheme() {
     // saves the theme value: light, system, or dark to the theme variable from localStorage
+
     theme = localStorage.getItem('theme');
   }
 
   function getOsTheme() {
     // saves the current system color scheme to the themeOS variable
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+
+    if (window.matchMedia && window.matchMedia(mediaDark).matches) {
       themeOs = 'dark';
     } else {
       themeOs = 'light';
@@ -116,6 +122,8 @@ export default function switchTheme() {
   }
 
   function setImgTheme(theme) {
+    // sets media attributes to the image depending on the selected theme
+
     switch(theme) {
       case 'dark':
         if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
@@ -143,9 +151,11 @@ export default function switchTheme() {
   }
 
   function getDarkSourceMedia(pictures) {
+    // gets the media attribute value from one of the sources for a dark theme
+
     const sourceDarkAtt = pictures[0].querySelector('[data-dark]').getAttribute('media');
 
-    if (sourceDarkAtt === '(prefers-color-scheme: dark)') {
+    if (sourceDarkAtt === mediaDark) {
       console.log('dark');
       return 'dark';
     } else {
@@ -155,16 +165,17 @@ export default function switchTheme() {
   }
 
   function reverseImgMedia(pictures) {
-    
+    // sets the media attribute to the opposite value
+
     pictures.forEach((el) => {
       const sources = el.querySelectorAll('source');
 
       sources.forEach((el) => {
 
-        if (el.getAttribute('media') === '(prefers-color-scheme: dark)') {
-          el.setAttribute('media', '(prefers-color-scheme: light)');
+        if (el.getAttribute('media') === mediaDark) {
+          el.setAttribute('media', mediaLight);
         } else {
-          el.setAttribute('media', '(prefers-color-scheme: dark)');
+          el.setAttribute('media', mediaDark);
         }
       })
     })
