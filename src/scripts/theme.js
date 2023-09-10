@@ -3,6 +3,9 @@ export default function switchTheme() {
   const doc = document.getElementsByTagName("html")[0];
   const themeState = '_THEME-DARK';
 
+  // Variables for theme images
+  const pictures = document.querySelectorAll('[data-theme-img]');
+
   if(!inputs) {
     return;
   }
@@ -13,23 +16,39 @@ export default function switchTheme() {
   getTheme();
   getOsTheme();
   setThemeState(theme);
+  setImgTheme(theme);
   setSwitcherState(theme);
   selectTheme();
 
-  // устанавливает системную тему, если в Local Storage не было сохранено никакой темы принудительно
+  // sets the system theme if no theme has been saved in Local Storage
   window
   .matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', () => {
     getTheme();
+    getOsTheme();
 
     if (theme === 'system') {
       getOsTheme();
       setThemeState(theme);
     }
+
+    // Stay dark if theme has been set by the user
+    if (theme === 'dark' && themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
+      reverseImgMedia(pictures);
+    } else if (theme === 'dark' && themeOs === 'light' && getDarkSourceMedia(pictures) === 'dark') {
+      reverseImgMedia(pictures);
+    }
+
+    // Stay light if theme has been set by the user
+    if (theme === 'light' && themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
+      reverseImgMedia(pictures);
+    } else if (theme === 'light' && themeOs === 'dark' && getDarkSourceMedia(pictures) === 'dark') {
+      reverseImgMedia(pictures);
+    }
   })
 
   function selectTheme() {
-    // устанавливает цветовую тему в зависиомсти от системной темы и сохраненного значения темы в Local Storage
+    // sets the color theme depending on the system theme and the saved theme value in Local Storage
     inputs.forEach((el) => {
       el.addEventListener('change', (el) => {
         const theme = el.target.value;
@@ -37,12 +56,13 @@ export default function switchTheme() {
         getOsTheme();
         setThemeState(theme);
         saveTheme(theme);
+        setImgTheme(theme);
       });
     });
   }
 
   function setSwitcherState(theme) {
-    // устанавливает радиокнопкам переключателя атрибут checked, если радиокнопка выбрана
+    // sets the checked attribute to the radio buttons of the radio button, if the radio button is selected
     if (!theme) {
       return;
     }
@@ -57,7 +77,7 @@ export default function switchTheme() {
   }
 
   function setThemeState(theme) {
-    // устанавливаем элементу HTML глобальный селектор состояния, определяющий текущую цветовую схему
+    // sets a global status selector for the HTML element that defines the current color scheme
     switch(theme) {
       case 'dark':
         doc.classList.add(themeState);
@@ -77,21 +97,76 @@ export default function switchTheme() {
   }
 
   function saveTheme(theme) {
-    // сохраняем в Local Storage значение темы: light, system или dark в поле theme
+    // saves the theme value: light, system or dark in the theme field in localStorage
     localStorage.setItem('theme', theme);
   }
 
   function getTheme() {
-    // записываем в переменную theme, сохраненное в Local Storage значение темы: light, system или dark
+    // saves the theme value: light, system, or dark to the theme variable from localStorage
     theme = localStorage.getItem('theme');
   }
 
   function getOsTheme() {
-    // записываем в переменную themeOS, текущую цветовую тему, установленную в системе
+    // saves the current system color scheme to the themeOS variable
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       themeOs = 'dark';
     } else {
       themeOs = 'light';
     }
+  }
+
+  function setImgTheme(theme) {
+    switch(theme) {
+      case 'dark':
+        if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
+          reverseImgMedia(pictures);
+        } else if (themeOs === 'light' && getDarkSourceMedia(pictures) === 'dark') {
+          reverseImgMedia(pictures);
+        }
+      break
+      case 'system':
+        if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
+          reverseImgMedia(pictures);
+        } else if (themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
+          reverseImgMedia(pictures);
+        } 
+        break
+      case 'light':
+        if (themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
+          reverseImgMedia(pictures);
+        } else if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'dark') {
+          reverseImgMedia(pictures);
+        } 
+      default:
+        console.log('default');
+    }
+  }
+
+  function getDarkSourceMedia(pictures) {
+    const sourceDarkAtt = pictures[0].querySelector('[data-dark]').getAttribute('media');
+
+    if (sourceDarkAtt === '(prefers-color-scheme: dark)') {
+      console.log('dark');
+      return 'dark';
+    } else {
+      console.log('light');
+      return 'light';
+    }
+  }
+
+  function reverseImgMedia(pictures) {
+    
+    pictures.forEach((el) => {
+      const sources = el.querySelectorAll('source');
+
+      sources.forEach((el) => {
+
+        if (el.getAttribute('media') === '(prefers-color-scheme: dark)') {
+          el.setAttribute('media', '(prefers-color-scheme: light)');
+        } else {
+          el.setAttribute('media', '(prefers-color-scheme: dark)');
+        }
+      })
+    })
   }
 }
