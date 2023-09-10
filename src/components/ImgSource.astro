@@ -41,8 +41,14 @@ const picX2Avif = img ? await getImage({ src: img, format: 'avif'}) : fakeImgObj
 {imgDark ? <Fragment set:html={`<source srcset="${picX2.src} 2x" media="(prefers-color-scheme: light)" data-light />`}  /> : '' }
 {imgDark ? <Fragment set:html={`<source srcset="${picX2.src} 2x" media="(prefers-color-scheme: light)" data-light />`} /> : '' }
 {imgDark ? <Fragment set:html={`<source srcset="${pic.src}" media="(prefers-color-scheme: light)"data-light />`} /> : '' }
-<source srcset={`${picAvif.src}, ${picX2Avif.src} 2x`} media="(prefers-color-scheme: light)" type="image/avif" data-light />
-<source srcset={`${picWebp.src}, ${picX2Webp.src} 2x`} media="(prefers-color-scheme: light)" type="image/webp" data-light />
+
+{imgDark ? 
+<Fragment set:html={`<source srcset="${picAvif.src}, ${picX2Avif.src} 2x" media="(prefers-color-scheme: light)" type="image/avif" data-light />`} /> : 
+<Fragment set:html={`<source srcset="${picAvif.src}, ${picX2Avif.src} 2x" type="image/avif" />`} /> }
+
+{imgDark ? 
+<Fragment set:html={`<source srcset="${picWebp.src}, ${picX2Webp.src} 2x" media="(prefers-color-scheme: light)" type="image/webp" data-light />`} /> : 
+<Fragment set:html={`<source srcset="${picWebp.src}, ${picX2Webp.src} 2x" type="image/webp" />`} /> }
 
 <img srcset={`${picX2.src} 2x`} src={pic.src} {...pic.attributes} alt={imgAlt} class={classNames} />
 

@@ -4,7 +4,7 @@ import { Sprite } from 'astro-icon';
 <Sprite.Provider />
 
 <fieldset class="switcher">
-  <legend class="switcher__title">Цветовая схема</legend>
+  <legend class="switcher__title">Цветовая схема сайта</legend>
   <div class="switcher__body">
     <label for="light-theme" class="switcher__label">
       <Sprite name="sun" width="30" height="30" aria-hidden="true" class="switcher__icon" />
@@ -20,7 +20,7 @@ import { Sprite } from 'astro-icon';
 
     <label for="dark-theme" class="switcher__label">
       <Sprite name="moon" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      Цветовая схема
+      Всегда темная
       <input id="dark-theme" class="switcher__radio" type="radio" name="theme" value="dark" data-theme-input>
     </label>
     <div class="switcher__state"></div>
