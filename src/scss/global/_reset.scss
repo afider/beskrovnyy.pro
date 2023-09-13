@@ -22,5 +22,10 @@ picture {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--root-color-primary);
+}
+
+::selection {
+  background-color: var(--root-color-primary);
+  color: var(--root-color-secondary);
 }

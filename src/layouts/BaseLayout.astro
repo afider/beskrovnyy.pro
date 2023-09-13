@@ -7,14 +7,14 @@ import { Sprite } from 'astro-icon';
 import '../scss/main.scss';
 const { title } = Astro.props;
 ---
-<html lang="ru">
+<html lang="ru" class="layout">
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="layout">
+  <body class="layout__body">
     <Sprite.Provider />
     <Header />
     <slot />

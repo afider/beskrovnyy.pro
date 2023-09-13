@@ -1,8 +1,10 @@
 .layout {
-  --layout-color-bg: var(--color-secondary);
+  --layout-color: var(--root-color-text);
+  --layout-color-bg: var(--root-color-secondary);
 
   background-color: var(--layout-color-bg);
-  font-family: var(--font-family-base);
+  color: var(--layout-color);
+  font-family: var(--root-font-family-base);
 
   &__page {
     display: grid;
