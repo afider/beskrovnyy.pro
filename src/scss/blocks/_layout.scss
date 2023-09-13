@@ -2,12 +2,16 @@
   --layout-color: var(--root-color-text);
   --layout-color-bg: var(--root-color-secondary);
 
+  &._THEME-DARK {
+    --layout-color-bg: var(--root-color-secondary-assistive);
+  }
+
   background-color: var(--layout-color-bg);
   color: var(--layout-color);
   font-family: var(--root-font-family-base);
 
-  &__page {
+  &__body {
     display: grid;
-    grid-template-rows: max-content 2fr max-content;
+    grid-template-rows: max-content 1fr max-content;
   }
 }

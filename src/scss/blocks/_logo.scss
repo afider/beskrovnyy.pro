@@ -1,0 +1,27 @@
+.logo {
+  --logo-color-border: var(--root-color-link);
+  --logo-color-border-hover: var(--root-color-link-hover);
+  --logo-dim: 20rem;
+
+  display: block;
+  width: var(--logo-dim);
+  height: var(--logo-dim);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--logo-color-border);
+  transition: border-color, border-width;
+  transition-duration: var(--root-animation-duration-slow);
+
+  &:focus,
+  &:active {
+    border-color: var(--logo-color-border-hover);
+  }
+
+  @include hover {
+
+    &:hover {
+      border-color: var(--logo-color-border-hover);
+      border-width: 8px;
+    }
+  }
+}

@@ -27,9 +27,12 @@
     text-decoration-color: transparent;
   }
 
-  &:visited,
-  &:visited:hover {
-    color: var(--link-color-visited);
-    text-decoration-color: var(--link-color-visited-border);
+  @include hover {
+
+    &:visited,
+    &:visited:hover {
+      color: var(--link-color-visited);
+      text-decoration-color: var(--link-color-visited-border);
+    }
   }
 }
