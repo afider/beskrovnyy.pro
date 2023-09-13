@@ -6,19 +6,19 @@
 
   // system-colors
   --root-color-system-active: #f00;
-  --root-color-system-visited: #b85ecf;
+  --root-color-system-visited: rgb(144 29 173);
 
   // text-colors
   --root-color-text: var(--root-color-primary);
 
   // link-colors
-  --root-color-link: rgb(11 90 176);
-  --root-color-link-border: rgba(11 90 176 / 40%);
+  --root-color-link: rgb(5 81 164);
+  --root-color-link-border: rgba(5 81 164 / 40%);
   --root-color-link-hover: var(--root-color-system-active);
   --root-color-link-active: var(--root-color-system-active);
   --root-color-link-active-border: rgba(255 0 0 / 87%);
   --root-color-link-visited: var(--root-color-system-visited);
-  --root-color-link-visited-border: rgba(184 94 207 40%);
+  --root-color-link-visited-border: rgba(144 29 173 40%);
 
   // Font
   --root-font-family-base: 'PTSans', sans-serif;
@@ -36,11 +36,16 @@
   --root-color-primary-assistive: #c7ced5;
   --root-color-secondary: #000;
 
+  // system-colors
+  --root-color-system-visited: rgb(212 129 233);
+
   // text-colors
   --root-color-text: var(--root-color-primary-assistive);
 
   // link-colors
   --root-color-link: #4da2ff;
   --root-color-link-border: rgba(77 163 255 / 88%);
+  --root-color-link-visited: var(--root-color-system-visited);
+  --root-color-link-visited-border: rgba(230 178 243 / 40%);
 }
 
