@@ -13,13 +13,14 @@
   transition: border-color, border-width;
   transition-duration: var(--root-animation-duration-slow);
 
-  &:focus,
-  &:active {
-    border-color: var(--logo-color-border-link-hover);
-  }
-
   &--link {
     border-color: var(--logo-color-border-link);
+
+    &:focus,
+    &:active {
+      border-color: var(--logo-color-border-link-hover);
+    }
+
     @include hover {
 
       &:hover {

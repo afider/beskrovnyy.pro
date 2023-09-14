@@ -1,0 +1,8 @@
+.nav {
+  --nav-color-active-link: var(--root-color-system-active);
+
+  &__item._active &__link {
+    color: var(--nav-color-active-link);
+    text-decoration: none;
+  }
+}

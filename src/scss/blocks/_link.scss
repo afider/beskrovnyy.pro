@@ -29,8 +29,8 @@
 
   @include hover {
 
-    &:visited,
-    &:visited:hover {
+    &:not(#{&}--nav):visited,
+    &:not(#{&}--nav):visited:hover {
       color: var(--link-color-visited);
       text-decoration-color: var(--link-color-visited-border);
     }

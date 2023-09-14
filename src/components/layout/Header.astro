@@ -1,6 +1,7 @@
 ---
 import ImgSource from '../ImgSource.astro';
 import ThemeSwitcher from '../ThemeSwitcher.astro';
+import MainNav from '../MainNav.astro';
 
 import authorX2 from '../../assets/images/evgeniy-beskrovnyy.jpg';
 
@@ -17,6 +18,8 @@ const isHomePage = currentPageUrl === '/';
     </picture>
   {isHomePage ? <Fragment set:html={`</div>`} /> : <Fragment set:html={`</a>`} /> }
   <ThemeSwitcher />
+
+  <MainNav />
 </header>
 
 
