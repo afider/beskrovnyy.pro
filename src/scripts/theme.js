@@ -132,21 +132,19 @@ export default function switchTheme() {
           reverseImgMedia(pictures);
         }
       break
-      case 'system':
-        if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
-          reverseImgMedia(pictures);
-        } else if (themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
-          reverseImgMedia(pictures);
-        } 
-        break
       case 'light':
         if (themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
           reverseImgMedia(pictures);
         } else if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'dark') {
           reverseImgMedia(pictures);
         } 
+      break
       default:
-        console.log('default');
+        if (themeOs === 'dark' && getDarkSourceMedia(pictures) === 'light') {
+          reverseImgMedia(pictures);
+        } else if (themeOs === 'light' && getDarkSourceMedia(pictures) === 'light') {
+          reverseImgMedia(pictures);
+        } 
     }
   }
 
@@ -156,10 +154,8 @@ export default function switchTheme() {
     const sourceDarkAtt = pictures[0].querySelector('[data-dark]').getAttribute('media');
 
     if (sourceDarkAtt === mediaDark) {
-      console.log('dark');
       return 'dark';
     } else {
-      console.log('light');
       return 'light';
     }
   }
