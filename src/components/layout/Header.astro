@@ -5,14 +5,17 @@ import ThemeSwitcher from '../ThemeSwitcher.astro';
 import authorX2 from '../../assets/images/evgeniy-beskrovnyy.jpg';
 
 import authorX2Dark from '../../assets/images/evgeniy-beskrovnyy_dark.jpg';
----
 
+const currentPageUrl = Astro.url.pathname;
+const isHomePage = currentPageUrl === '/';
+
+---
 <header class="layout__header">
-  <a href="/" class="logo">
+  {isHomePage ? <Fragment set:html={`<div class="logo">`} /> : <Fragment set:html={`<a href="/" class="logo logo--link">`} /> }
     <picture class="logo__pic" data-theme-img>
       <ImgSource img={authorX2} imgDark={authorX2Dark} imgAlt="Портрет Автора" classNames="logo__img" />
     </picture>
-  </a>
+  {isHomePage ? <Fragment set:html={`</div>`} /> : <Fragment set:html={`</a>`} /> }
   <ThemeSwitcher />
 </header>
 
