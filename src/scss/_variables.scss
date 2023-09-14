@@ -1,3 +1,13 @@
+$grid-breakpoints: (
+  xs: 0,
+  xsm: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
 :root {
   // Light Theme Colors
   --root-color-primary: #000;
