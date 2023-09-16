@@ -5,14 +5,15 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout>
   <main class="layout__main">
-    <aside class="tags">
+    <header>
       <ul class="tag-list">
         {frontmatter.tags.map((tag) => (
           <li class="tag-list__item"><a href={`/tags/${tag}`} class="tag-list__link">{tag}</a></li>
         ))}
       </ul>
-    </aside>
-    <p>Опубликовано: {frontmatter.dateUX}</p>
+      <h1>{frontmatter.title}</h1>
+      <p>Опубликовано: {frontmatter.dateUX}</p>
+    </header>
     <slot />
   </main>
 </BaseLayout>
