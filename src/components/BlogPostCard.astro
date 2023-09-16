@@ -1,0 +1,15 @@
+---
+const { url, title, date, dateUX, description} = Astro.props;
+---
+
+<li class="cards-grid__item">
+  <article class="card">
+    <h2 class="card__title">
+      <a class="card__link" href={url}>{title}</a>
+    </h2>
+    <div class="card__description"><Fragment set:html={description} /></div>
+    <time datetime={date}></time>
+    {dateUX}
+  </article>
+</li>
+

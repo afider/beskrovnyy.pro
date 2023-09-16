@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const { frontmatter } = Astro.props;
+
+---
+<BaseLayout>
+  <main class="layout__main">
+    <p>Опубликовано: {frontmatter.dateUX}</p>
+    <slot />
+  </main>
+</BaseLayout>

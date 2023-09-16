@@ -1,0 +1,32 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+
+import BlogPostCard from '../components/BlogPostCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allPosts = await Astro.glob('../pages/blog/*.mdx');
+allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
+const pageTitle = "Блог";
+---
+
+<BaseLayout title={pageTitle}>
+  <main class="layout__main">
+    <h1 class="h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
+
+    <ul class="cards-grid">
+      {
+        allPosts.map((post) => 
+            <BlogPostCard 
+              url={post.url} 
+              title={post.frontmatter.title} 
+              date={post.frontmatter.date} 
+              dateUX={post.frontmatter.dateUX} 
+              description={post.frontmatter.description} 
+            />
+          )
+      }
+    </ul>
+  </main>
+</BaseLayout>
