@@ -7,6 +7,7 @@ const {img, imgDark, imgAlt, classNames, imgFormat} = Astro.props;
 // imgAlt — alt-текст для img-элемента
 // classNames — селекторы для атрибута class img-элемента
 // imgFormat — формат исходного изображения, например, 'png', если не указан, то автоматически используется jpg
+// Также, возможно указывать качество изображений от 0 до 100% https://docs.astro.build/ru/guides/images/#quality
 
 const format = imgFormat ? imgFormat : 'jpg';
 const fakeImgObj = {
@@ -40,7 +41,7 @@ const picX2Avif = img ? await getImage({ src: img, format: 'avif'}) : fakeImgObj
 
 {imgDark ? <Fragment set:html={`<source srcset="${picX2.src} 2x" media="(prefers-color-scheme: light)" data-light />`}  /> : '' }
 {imgDark ? <Fragment set:html={`<source srcset="${picX2.src} 2x" media="(prefers-color-scheme: light)" data-light />`} /> : '' }
-{imgDark ? <Fragment set:html={`<source srcset="${pic.src}" media="(prefers-color-scheme: light)"data-light />`} /> : '' }
+{imgDark ? <Fragment set:html={`<source srcset="${pic.src}" media="(prefers-color-scheme: light)" data-light />`} /> : '' }
 
 {imgDark ? 
 <Fragment set:html={`<source srcset="${picAvif.src}, ${picX2Avif.src} 2x" media="(prefers-color-scheme: light)" type="image/avif" data-light />`} /> : 

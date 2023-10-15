@@ -1,0 +1,20 @@
+---
+const {tag} = Astro.props;
+---
+
+{(tag === 'старое' ) ? 
+
+<div class="tags-intro">
+  <p class="text">Статьи из старого первого блога, который сохранился только на <a href="http://web.archive.org/web/20130111055319/http://www.beskrovnyy.com/" class="link">archive.org</a>, собраны в неизменном виде со всеми оборотами, свойственными мне тогда. Своего рода исторический памятник моих начинаний в профессии.</p>
+</div>
+
+: '' }
+
+{(tag === 'jQuery' ) ? 
+
+<div class="tags-intro">
+  <p class="text">Статьи из <a href="/tags/старое" class="link">старого</a> блога про разные штуки на jQuery</p>
+</div>
+
+: '' }
+
