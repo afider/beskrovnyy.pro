@@ -4,6 +4,7 @@
 
 import BlogPostCard from '../components/BlogPostCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TagsList from '../components/TagsList.astro';
 
 const allPosts = await Astro.glob('../pages/blog/*.mdx');
 allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
@@ -13,6 +14,11 @@ const pageTitle = "Блог";
 
 <BaseLayout title={pageTitle}>
   <main class="layout__main">
+    <aside>
+      <h2>Все теги</h2>
+      <TagsList />
+    </aside>
+
     <h1 class="h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
 
     <ul class="cards-grid">
