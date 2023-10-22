@@ -1,0 +1,23 @@
+---
+import { Prism } from '@astrojs/prism';
+import { Sprite } from 'astro-icon';
+
+const { codeRaw, language, caption } = Astro.props;
+
+const langObj = {
+  html: 'HTML',
+  css: 'CSS',
+  js: 'JavaScript'
+}
+---
+
+<figure class="code">
+  <button class="code__copy" aria-label="Копировать код">
+    <Sprite name="copy"  class="class-name-1" />
+  </button>
+  <div class="code__lang">
+    {langObj[language]}
+  </div>
+  <Prism lang={language} code={codeRaw} class="code__pre" />
+  <figcaption set:html={caption} />
+</figure>

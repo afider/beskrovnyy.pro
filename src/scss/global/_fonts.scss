@@ -34,3 +34,13 @@
   font-style: italic;
   font-display: swap;
 }
+
+// JetBrains Mono
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('JetBrainsMono-Regular');
+  src: url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2');
+}

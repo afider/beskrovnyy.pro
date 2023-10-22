@@ -4,6 +4,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import mailImg from '../assets/images/svg/email.svg';
+import Code from '../components/Code.astro';
 
 import { Icon } from 'astro-icon';
 import { Sprite } from 'astro-icon';
@@ -31,6 +32,19 @@ const pageTitle = "Евгений Бескровный";
     <Sprite name="phone" />
 
     <img src={mailImg.src} alt="Тест иконки почты">
+
+    <Code language="html" codeRaw={
+      `
+      <script>
+        const foo = 'bar';
+
+        if(foo === 'bar') {
+          alert('Yep!');
+        }
+      
+      </script>
+      `
+      } caption="<p>I am happy to be learning Astro!</p>" />
   </main>
   
 </BaseLayout>
