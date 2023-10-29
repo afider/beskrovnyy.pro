@@ -16,7 +16,7 @@
   text-underline-position: auto;
   text-underline-offset: 0.14em;
 
-  &:hover {
+  @include hover {
     color: var(--link-color-hover);
     text-decoration-color: transparent;
   }
@@ -27,12 +27,23 @@
     text-decoration-color: transparent;
   }
 
-  @include hover {
+  &:visited {
+    color: var(--link-color-visited);
+    text-decoration-color: var(--link-color-visited-border);
 
-    &:not(#{&}--nav):visited,
-    &:not(#{&}--nav):visited:hover {
-      color: var(--link-color-visited);
-      text-decoration-color: var(--link-color-visited-border);
+    @include hover {
+      color: var(--link-color-hover);
+      text-decoration-color: transparent;
+    }
+  }
+
+  &--nav:visited {
+    color: var(--link-color);
+    text-decoration-color: var(--link-color-border-hover);
+
+    @include hover {
+      color: var(--link-color-hover);
+      text-decoration-color: transparent;
     }
   }
 }

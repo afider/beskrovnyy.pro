@@ -8,11 +8,15 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
+$basic-font-family: 'Roboto', 'Arial', sans-serif;
+$code-font-family: 'JetBrains Mono', monospace, monospace;
+
 :root {
   // Light Theme Colors
   --root-color-primary: #000;
   --root-color-primary-assistive: #060120;
   --root-color-secondary: #fff;
+  --root-color-mark: #f3e418;
 
   // system-colors
   --root-color-system-active: #f00;
@@ -46,6 +50,7 @@ $grid-breakpoints: (
   --root-color-primary-assistive: #c7ced5;
   --root-color-secondary: #000;
   --root-color-secondary-assistive: #100b26;
+  --root-color-mark: #f2ee6a;
 
   // system-colors
   --root-color-system-visited: rgb(212 129 233);

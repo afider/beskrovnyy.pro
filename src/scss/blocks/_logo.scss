@@ -22,11 +22,8 @@
     }
 
     @include hover {
-
-      &:hover {
-        border-color: var(--logo-color-border-link-hover);
-        border-width: 8px;
-      }
+      border-color: var(--logo-color-border-link-hover);
+      border-width: 8px;
     }
   }
 }

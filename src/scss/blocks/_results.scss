@@ -1,0 +1,41 @@
+.results {
+  --results-color: var(--root-color-primary);
+  --results-color-border: var(--root-color-link);
+  --results-color-border-hover: var(--root-color-link-hover);
+  --results-color-mark: var(--root-color-mark);
+  --results-color-mark-border: var(--root-color-primary-assistive);
+
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+
+  &__item {
+    display: block;
+    text-decoration: none;
+    color: var(--results-color);
+    border: 1px solid var(--results-color-border);
+    padding: 8px;
+    border-radius: 8px;
+
+    @include hover {
+      border-color: var(--results-color-border-hover);
+    }
+  }
+
+  &__title {
+    @include font(16px, 24px, 700);
+  }
+
+  &__text {
+
+    mark {
+      display: inline-block;
+      padding: 2px 4px;
+      border-radius: 4px;
+      border: 1px solid var(--results-color-mark-border);
+      background-color: var(--results-color-mark);
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+}
