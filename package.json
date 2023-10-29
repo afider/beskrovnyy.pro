@@ -3,7 +3,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro build && astro preview"
+    "preview": "astro build && pagefind --source dist --bundle-dir pagefind && astro preview",
+    "postbuild": "pagefind --source dist --bundle-dir pagefind"
   },
   "dependencies": {
     "astro": "^3.0.8"
