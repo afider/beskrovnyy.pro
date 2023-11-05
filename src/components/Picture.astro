@@ -1,10 +1,10 @@
 ---
 import ImgSource from '../components/ImgSource.astro';
 
-const {img, imgFull, imgAlt, caption, classNames} = Astro.props;
+const {img, imgAlt, caption, classNames} = Astro.props;
 ---
 <figure class={(classNames.trim()) ? 'picture ' + classNames.trim() : 'picture'}>
-  <a class="picture__link" href={imgFull.src} title="Открыть изображение в полном размере">
+  <a class="picture__link" href={img.src} title="Открыть изображение в полном размере">
     <picture class="picture__pic" data-theme-img>
       <ImgSource img={img} imgAlt={imgAlt} classNames="picture__img" />
     </picture>
