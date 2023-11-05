@@ -1,6 +1,5 @@
 ---
 const currentPageUrl = Astro.url.pathname;
-const isCurrent = currentPageUrl === '/';
 ---
 <nav class="nav">
   <ul class="nav__list">
@@ -10,9 +9,11 @@ const isCurrent = currentPageUrl === '/';
     <li class={(currentPageUrl === '/hobbies/') ? 'nav__item _active': 'nav__item'}>
       <a href="/hobbies/" class="nav__link link link--nav">Увлечения</a>
     </li>
+
+    {currentPageUrl === '/' ? <Fragment set:html={'<li class="nav__item"><a href="https://career.habr.com/beskrovnyy" class="nav__link link link--nav">Резюме</a></li>'} /> : '' }
+
     <li class={(currentPageUrl === '/blog/') ? 'nav__item _active': 'nav__item'}>
       <a href="/blog/" class="nav__link link link--nav">Блог</a>
     </li>
   </ul>
 </nav>
-
