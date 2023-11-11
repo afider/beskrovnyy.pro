@@ -2,9 +2,9 @@
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
 
-import BlogPostCard from '../components/BlogPostCard.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import TagsList from '../components/TagsList.astro';
+import BlogPostCard from '@components/BlogPostCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import TagsList from '@components/TagsList.astro';
 
 const allPosts = await Astro.glob('../pages/blog/*.mdx');
 allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));

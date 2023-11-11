@@ -1,5 +1,5 @@
-import switchTheme from '../scripts/modules/theme';
-import copy from '../scripts/modules/copy';
+import switchTheme from '@js/modules/theme';
+import copy from '@js/modules/copy';
 
 switchTheme();
 copy();
