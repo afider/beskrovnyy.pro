@@ -1,16 +1,81 @@
 ---
 import BlogPostCard from '@components/BlogPostCard.astro';
 const allPosts = await Astro.glob('../pages/blog/*.mdx');
-const currentPath = new URL(Astro.request.url).pathname;
+const currentPath = Astro.url.pathname;
 const currentPost = allPosts.find(post => post.url === currentPath);
+let pageToc = [];
+let isToc = false;
+
+if (currentPost) {
+  isToc = true;
+}
+
+switch(currentPath) {
+  case '/hobbies/':
+  isToc = true;
+  pageToc = [
+    { name: 'Книги', hash: 'books', icon: '📖' },
+    { name: 'Мобильная фотография', hash: 'photography', icon: '📸' },
+    {
+      name: 'Экономика, инвестирование и крипторынок',
+      hash: 'money',
+      icon: '💰'
+    },
+    {
+      name: 'Кино и компьютерные игры',
+      hash: 'movies-and-games',
+      icon: '🕹️'
+    },
+    {
+      name: 'Силовые тренировки и горные лыжи',
+      hash: 'sport',
+      icon: '❤️',
+      children: [
+        {
+          name: 'Тренировки',
+          hash: 'fitness',
+          icon: '💪'
+        },
+        {
+          name: 'Горные лыжи',
+          hash: 'ski',
+          icon: '❄️'
+        }
+      ]
+    }
+  ]
+  break
+
+  case '/skills/':
+    isToc = true;
+    pageToc = [
+  { name: 'Верстка и проектирование интерфейсов', hash: 'layout', icon: '🧢' },
+  { name: 'Шаблонизация и бэкэнд', hash: 'backend', icon: '⛑️' },
+  {
+    name: 'Управление проектами и системная аналитика',
+    hash: 'pm',
+    icon: '🎩'
+  }
+]
+  break
+  default:
+    pageToc = []
+  break
+}
+
 ---
 
 <aside class="contents">
-  <h2 class="contents__title">Содержание страницы</h2>
 
-  <ol class="contents__list">
-    {
-      currentPost && currentPost.frontmatter.toc.map((item) => (
+  {isToc && (
+    <h2 class="contents__title">Содержание страницы</h2>
+
+    <a href="#" class="contents__link contents__link--title" data-contents-item>Начало</a>
+  )}
+
+  {currentPost && (
+    <ol class="contents__list">
+    {currentPost.frontmatter.toc.map((item) => (
         <li class="contents__item">
           <a href={`#${item.hash}`} class="contents__link" data-contents-item>
             <div class="contents__text">
@@ -18,7 +83,7 @@ const currentPost = allPosts.find(post => post.url === currentPath);
                 {item.name}
             </div>
           </a>
-          {item.children.length > 0 && (
+          {item.children && item.children.length > 0 && (
             <ol class="contents__list">
               {item.children.map((child) => (
                 <li class="contents__item">
@@ -36,68 +101,37 @@ const currentPost = allPosts.find(post => post.url === currentPath);
       ))
     }
   </ol>
-  <h2 class="contents__title">Содержание страницы</h2>
-  <a href="#hobbies" class="contents__link contents__link--title" data-contents-item>Мои увлечения и интересы</a>
-  <ol class="contents__list">
-    <li class="contents__item">
-      <a href="#books" class="contents__link" data-contents-item>
-        <div class="contents__text">
-          <span class="contents__icon">📖</span>
-            Книги
-        </div>
-      </a>
-    </li>
-    <li class="contents__item">
-      <a href="#photography" class="contents__link" data-contents-item>
-        <div class="contents__text">
-          <span class="contents__icon">📸</span>
-            Мобильная фотография
-        </div>
-      </a>
-    </li>
-    <li class="contents__item">
-      <a href="#money" class="contents__link" data-contents-item>
-        <div class="contents__text">
-          <span class="contents__icon">💰</span>
-            Экономика, инвестирование и крипторынок
-        </div>
-      </a>
-    </li>
-    <li class="contents__item">
-      <a href="#movies-and-games" class="contents__link" data-contents-item>
-        <div class="contents__text">
-          <span class="contents__icon">🕹️</span>
-            Кино и компьютерные игры
-        </div>
-      </a>
-    </li>
-    <li class="contents__item">
-      <a href="#sport" class="contents__link" data-contents-item>
-        <div class="contents__text">
-          <span class="contents__icon">❤️</span>
-            Силовые тренировки и горные лыжи
-        </div>
-      </a>
+  )}
 
-      <ol class="contents__list">
-        <li class="contents__item">
-          <a href="#fitness" class="contents__link" data-contents-item>
-            <div class="contents__text">
-              <span class="contents__icon">💪</span>
-                Тренировки
-            </div>
-          </a>
-        </li>
-        <li class="contents__item">
-          <a href="#ski" class="contents__link" data-contents-item>
-            <div class="contents__text">
-              <span class="contents__icon">❄️</span>
-                Горные лыжи
-            </div>
-          </a>
-        </li>
-      </ol>
+  {pageToc && (
 
-    </li>
-  </ol>
+    <ol class="contents__list">
+      {pageToc && pageToc.map((item) => (
+          <li class="contents__item">
+            <a href={`#${item.hash}`} class="contents__link" data-contents-item>
+              <div class="contents__text">
+                <span class="contents__icon">{item.icon}</span>
+                  {item.name}
+              </div>
+            </a>
+            {item.children && item.children.length > 0 && (
+              <ol class="contents__list">
+                {item.children.map((child) => (
+                  <li class="contents__item">
+                    <a href={`#${child.hash}`} class="contents__link" data-contents-item>
+                      <div class="contents__text">
+                        <span class="contents__icon">{child.icon}</span>
+                          {child.name}
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  )}
+
 </aside>
