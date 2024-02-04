@@ -1,4 +1,41 @@
+---
+import BlogPostCard from '@components/BlogPostCard.astro';
+const allPosts = await Astro.glob('../pages/blog/*.mdx');
+const currentPath = new URL(Astro.request.url).pathname;
+const currentPost = allPosts.find(post => post.url === currentPath);
+---
+
 <aside class="contents">
+  <h2 class="contents__title">Содержание страницы</h2>
+
+  <ol class="contents__list">
+    {
+      currentPost && currentPost.frontmatter.toc.map((item) => (
+        <li class="contents__item">
+          <a href={`#${item.hash}`} class="contents__link" data-contents-item>
+            <div class="contents__text">
+              <span class="contents__icon">{item.icon}</span>
+                {item.name}
+            </div>
+          </a>
+          {item.children.length > 0 && (
+            <ol class="contents__list">
+              {item.children.map((child) => (
+                <li class="contents__item">
+                  <a href={`#${child.hash}`} class="contents__link" data-contents-item>
+                    <div class="contents__text">
+                      <span class="contents__icon">{child.icon}</span>
+                        {child.name}
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          )}
+        </li>
+      ))
+    }
+  </ol>
   <h2 class="contents__title">Содержание страницы</h2>
   <a href="#hobbies" class="contents__link contents__link--title" data-contents-item>Мои увлечения и интересы</a>
   <ol class="contents__list">
