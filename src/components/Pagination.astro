@@ -1,0 +1,63 @@
+---
+const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } = Astro.props;
+const paginationList = Array.from({length: `${length}`}, (_, i) => i + 1);
+---
+
+<nav class="pagination" aria-label="Страницы блога">
+  <ul class="pagination__list">
+    <li class="pagination__item">
+      { firstUrl == currentUrl ? (
+        <span class="pagination__link disabled">
+            Начало
+        </span>
+        ) : (
+            <a href={firstUrl} class="pagination__link">
+                Начало
+            </a>
+        )
+      }
+    </li>
+    <li class="pagination__item">
+      { prevUrl ? (
+        <a href={prevUrl} class="pagination__link">
+            Предыдущая
+        </a>
+      ) : (
+          <span class="pagination__link disabled">
+              Предыдущая
+          </span>
+      )}
+    </li>
+    {
+      paginationList.map((num) => (
+        <li class="pagination__item">
+          <a href={`${firstUrl}${num == 1 ? "" : '/'+(num)}`} class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}>
+              {num}
+          </a>
+        </li>
+      ))
+    }
+    <li class="pagination__item">
+      { !nextUrl ? (
+        <span class="pagination__link disabled">
+            Следующая
+        </span>
+      ) : (
+          <a href={nextUrl} class="pagination__link">
+              Следующая
+          </a>
+      )}
+    </li>
+    <li class="pagination__item">
+      { lastUrl == currentUrl ? (
+        <span class="pagination__link disabled">
+            Конец
+        </span>
+      ) : (
+          <a href={lastUrl} class="pagination__link">
+              Конец
+          </a>
+      )}
+    </li>
+  </ul>
+</nav>
