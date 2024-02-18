@@ -30,8 +30,8 @@ const paginationList = Array.from({length: `${length}`}, (_, i) => i + 1);
     </li>
     {
       paginationList.map((num) => (
-        <li class="pagination__item">
-          <a href={`${firstUrl}${num == 1 ? "" : '/'+(num)}`} class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}>
+        <li class={`pagination__item ${currentPage == num ? "_active" : ""}`}>
+          <a href={`${firstUrl}${num == 1 ? "" : '/'+(num)}`} class="pagination__link">
               {num}
           </a>
         </li>
