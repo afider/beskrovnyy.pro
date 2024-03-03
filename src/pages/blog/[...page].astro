@@ -1,0 +1,67 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+
+import BlogPostCard from '@components/BlogPostCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import TagsList from '@components/TagsList.astro';
+import Pagination from '@components/Pagination.astro';
+
+const allPosts = await Astro.glob('../blog/*.mdx');
+const postsPerPage = 3;
+
+export async function getStaticPaths({paginate}) {
+  const postsPerPage = 3;
+  const allPosts = await Astro.glob('../blog/*.mdx');
+  const formattedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
+  return paginate(formattedPosts, {
+    pageSize: postsPerPage
+  });
+}
+
+const {page} = Astro.props;
+const pathname = new URL(Astro.request.url).pathname.split('/');
+const firstPath = pathname[1];
+const pageTitle = "Блог";
+---
+
+<BaseLayout title={pageTitle}>
+  <main class="layout__main">
+    <aside>
+      <h2>Все теги</h2>
+      <TagsList />
+    </aside>
+
+    <h1 class="h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
+
+    <ul class="cards-grid">
+      {
+        page.data.map((post) => 
+            <BlogPostCard 
+              url={post.url} 
+              title={post.frontmatter.title} 
+              date={post.frontmatter.date} 
+              dateUX={post.frontmatter.dateUX} 
+              description={post.frontmatter.description}
+            />
+          )
+      }
+    </ul>
+
+    {allPosts.length > postsPerPage ? (
+      <Pagination length={page.lastPage} 
+        currentUrl={page.url.current} 
+        currentPage={page.currentPage} 
+        firstUrl={`/${firstPath}`} 
+        prevUrl={page.url.prev} 
+        nextUrl={page.url.next} 
+        lastUrl={`/${firstPath}/${page.lastPage}`}
+      />
+    ) : null}
+
+    <br>
+    <br>
+    <br>
+  </main>
+</BaseLayout>

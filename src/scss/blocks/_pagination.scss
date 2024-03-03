@@ -1,0 +1,80 @@
+.pagination {
+  --pagination-color: var(--root-color-secondary);
+  --pagination-color-disabled: var(--root-color-text-disabled);
+  --pagination-color-active-link: var(--root-color-system-active);
+  --pagination-color-bg-link: var(--root-color-panel);
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+
+    &--start,
+    &--prev,
+    &--next,
+    &--end {
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+
+    &--prev {
+      @include media-breakpoint-up(md) {
+        padding-right: 16px;
+      }
+    }
+
+    &--next {
+      @include media-breakpoint-up(md) {
+        padding-left: 16px;
+      }
+    }
+
+    &--number {
+      display: flex;
+      justify-content: center;
+      margin: 12px 4px;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 4px;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 40px;
+
+    &--disabled {
+      color: var(--pagination-color-disabled);
+    }
+
+    @include media-breakpoint-up(sm) {
+      display: inline-flex;
+    }
+  }
+
+  &__item--number &__link {
+    background-color: var(--pagination-color-bg-link);
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  &__item._active &__link {
+    color: var(--pagination-color-active-link);
+    text-decoration: none;
+  }
+}
