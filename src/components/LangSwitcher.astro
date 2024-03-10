@@ -1,11 +1,16 @@
 ---
 import { getLang } from '@utils/GetLang.astro';
+import { Sprite } from 'astro-icon';
 
 const currentPageUrl = Astro.url.pathname;
 
 ---
 
-{
-  (getLang(currentPageUrl) === 'en') ? (<h2>Lang</h2><a href="/">Русский</a><br><br>) : (<h2>Язык</h2><a href="/en/">English</a><br><br>)
-}
-
+<a href={(getLang(currentPageUrl) === 'en') ? ('/') : ('/en/')} class="lang link link--nav">
+  <Sprite name="lang" width="20" height="20" class="lang__icon" />
+  {
+    (getLang(currentPageUrl) === 'en') ? 
+    ('Русский') : 
+    ('English')
+  }
+</a>
