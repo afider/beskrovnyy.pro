@@ -1,0 +1,11 @@
+---
+import { getLang } from '@utils/GetLang.astro';
+
+const currentPageUrl = Astro.url.pathname;
+
+---
+
+{
+  (getLang(currentPageUrl) === 'en') ? (<h2>Lang</h2><a href="/">Русский</a><br><br>) : (<h2>Язык</h2><a href="/en/">English</a><br><br>)
+}
+

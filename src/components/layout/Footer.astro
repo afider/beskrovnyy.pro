@@ -1,8 +1,14 @@
 ---
+import { getLang } from '@utils/GetLang.astro';
 
+const currentPageUrl = Astro.url.pathname;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="layout__footer">
-  <p>© 2009-2023 Дизайн, верстка, программирование и текст — Евгений Бескровный
-  </p>
+  {
+    (getLang(currentPageUrl) === 'en') ? 
+    (<p>© 2009-{currentYear} Design, layout, programming and content by Evgeniy Beskrovnyy </p>) : 
+    (<p>© 2009-{currentYear} Дизайн, верстка, программирование и текст — Евгений Бескровный</p>)
+  }
 </footer>

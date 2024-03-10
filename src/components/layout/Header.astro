@@ -3,22 +3,27 @@ import ImgSource from '@components/ImgSource.astro';
 import ThemeSwitcher from '@components/ThemeSwitcher.astro';
 import MainNav from '@components/MainNav.astro';
 import Contents from '@components/Contents.astro';
+import LangSwitcher from '@components/LangSwitcher.astro';
 
 import authorX2 from '@images/evgeniy-beskrovnyy.jpg';
 import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
 
+import { getLang } from '@utils/GetLang.astro';
+
 const currentPageUrl = Astro.url.pathname;
-const isHomePage = currentPageUrl === '/';
+const lang = getLang(currentPageUrl);
+const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 
 ---
 <header class="layout__header">
-  {isHomePage ? <Fragment set:html={`<div class="logo">`} /> : <Fragment set:html={`<a href="/" class="logo logo--link">`} /> }
+  {isHomePage ? <Fragment set:html={`<div class="logo">`} /> : <Fragment set:html={`<a href=${(lang === 'en') ? '/en/' : '/'} class="logo logo--link">`} /> }
     <picture class="logo__pic" data-theme-img>
-      <ImgSource img={authorX2} imgDark={authorX2Dark} imgAlt="Портрет Автора" classNames="logo__img" />
+      <ImgSource img={authorX2} imgDark={authorX2Dark} imgAlt={(lang === 'en') ? 'Portrait of the author' : 'Портрет Автора'} classNames="logo__img" />
     </picture>
   {isHomePage ? <Fragment set:html={`</div>`} /> : <Fragment set:html={`</a>`} /> }
   <ThemeSwitcher />
 
+  <LangSwitcher />
   <MainNav />
   <Contents />
 </header>
