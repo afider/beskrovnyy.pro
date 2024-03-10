@@ -26,7 +26,7 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 
   <LangSwitcher />
   <MainNav />
-  <Socials />
+  {(currentPageUrl === '/' || currentPageUrl === '/en/') && (<Socials />)}
   {(lang === 'ru') && (<Search />)}
 </header>
 
