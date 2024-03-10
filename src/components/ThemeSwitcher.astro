@@ -1,26 +1,46 @@
 ---
 import { Sprite } from 'astro-icon';
+import { getLang } from '@utils/GetLang.astro';
+
+const currentPageUrl = Astro.url.pathname;
 ---
 <Sprite.Provider />
 
 <fieldset class="switcher">
-  <legend class="switcher__title">Цветовая схема сайта</legend>
+  
+  {
+    (getLang(currentPageUrl) === 'en') ? 
+    (<legend class="switcher__title">The Color Scheme</legend>) : 
+    (<legend class="switcher__title">Цветовая схема сайта</legend>)
+  }
   <div class="switcher__body">
     <label for="light-theme" class="switcher__label">
       <Sprite name="sun" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      Всегда светлая
+      {
+        (getLang(currentPageUrl) === 'en') ? 
+        ('It\'s always light') : 
+        ('Всегда светлая')
+      }
       <input id="light-theme" class="switcher__radio" type="radio" name="theme" value="light" data-theme-input>
     </label>
 
     <label for="system-theme" class="switcher__label">
       <Sprite name="system" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      Как в системе
+      {
+        (getLang(currentPageUrl) === 'en') ? 
+        ('System') : 
+        ('Как в системе')
+      }
       <input id="system-theme" class="switcher__radio" type="radio" name="theme" value="system" data-theme-input checked>
     </label>
 
     <label for="dark-theme" class="switcher__label">
       <Sprite name="moon" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      Всегда темная
+      {
+        (getLang(currentPageUrl) === 'en') ? 
+        ('It\'s always dark') : 
+        ('Всегда темная')
+      }
       <input id="dark-theme" class="switcher__radio" type="radio" name="theme" value="dark" data-theme-input>
     </label>
     <div class="switcher__state"></div>
