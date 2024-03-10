@@ -80,23 +80,56 @@ switch(currentPath) {
 
 ---
 
-<aside class="contents">
+{isToc && <Fragment set:html={'<aside class="contents">'} />}
 
-  {
+{
     isToc && getLang(currentPath) === 'en' && (
       <h2 class="contents__title">Table of contents</h2>
       <a href="#" class="contents__link contents__link--title" data-contents-item>Start</a>
     )
-}{
-    isToc && getLang(currentPath) === 'ru' && (
-      <h2 class="contents__title">Содержание страницы</h2>
-      <a href="#" class="contents__link contents__link--title" data-contents-item>Начало</a>
-    )
-  }
+}
 
-  {currentPost && (
-    <ol class="contents__list">
-    {currentPost.frontmatter.toc.map((item) => (
+{
+  isToc && getLang(currentPath) === 'ru' && (
+    <h2 class="contents__title">Содержание страницы</h2>
+    <a href="#" class="contents__link contents__link--title" data-contents-item>Начало</a>
+  )
+}
+
+{currentPost && (
+  <ol class="contents__list">
+  {currentPost.frontmatter.toc.map((item) => (
+      <li class="contents__item">
+        <a href={`#${item.hash}`} class="contents__link" data-contents-item>
+          <div class="contents__text">
+            <span class="contents__icon">{item.icon}</span>
+              {item.name}
+          </div>
+        </a>
+        {item.children && item.children.length > 0 && (
+          <ol class="contents__list">
+            {item.children.map((child) => (
+              <li class="contents__item">
+                <a href={`#${child.hash}`} class="contents__link" data-contents-item>
+                  <div class="contents__text">
+                    <span class="contents__icon">{child.icon}</span>
+                      {child.name}
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
+      </li>
+    ))
+  }
+</ol>
+)}
+
+{pageToc && (
+
+  <ol class="contents__list">
+    {pageToc && pageToc.map((item) => (
         <li class="contents__item">
           <a href={`#${item.hash}`} class="contents__link" data-contents-item>
             <div class="contents__text">
@@ -122,37 +155,7 @@ switch(currentPath) {
       ))
     }
   </ol>
-  )}
+)}
 
-  {pageToc && (
+{isToc && <Fragment set:html={'</aside>'} />}
 
-    <ol class="contents__list">
-      {pageToc && pageToc.map((item) => (
-          <li class="contents__item">
-            <a href={`#${item.hash}`} class="contents__link" data-contents-item>
-              <div class="contents__text">
-                <span class="contents__icon">{item.icon}</span>
-                  {item.name}
-              </div>
-            </a>
-            {item.children && item.children.length > 0 && (
-              <ol class="contents__list">
-                {item.children.map((child) => (
-                  <li class="contents__item">
-                    <a href={`#${child.hash}`} class="contents__link" data-contents-item>
-                      <div class="contents__text">
-                        <span class="contents__icon">{child.icon}</span>
-                          {child.name}
-                      </div>
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            )}
-          </li>
-        ))
-      }
-    </ol>
-  )}
-
-</aside>

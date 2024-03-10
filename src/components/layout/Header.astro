@@ -2,7 +2,6 @@
 import ImgSource from '@components/ImgSource.astro';
 import ThemeSwitcher from '@components/ThemeSwitcher.astro';
 import MainNav from '@components/MainNav.astro';
-import Contents from '@components/Contents.astro';
 import LangSwitcher from '@components/LangSwitcher.astro';
 import Socials from '@components/Socials.astro';
 import Search from '@components/Search.astro';
@@ -27,7 +26,6 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 
   <LangSwitcher />
   <MainNav />
-  <Contents />
   <Socials />
   {(lang === 'ru') && (<Search />)}
 </header>
