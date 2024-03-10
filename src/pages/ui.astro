@@ -1,5 +1,13 @@
 ---
+
+
 import BaseLayout from '@layouts/BaseLayout.astro';
+
+import mailImg from '@images/svg/email.svg';
+import Code from '@components/Code.astro';
+
+import { Icon } from 'astro-icon';
+import { Sprite } from 'astro-icon';
 
 const pageTitle = "Евгений Бескровный";
 ---
@@ -16,4 +24,25 @@ const pageTitle = "Евгений Бескровный";
 
   <p>Связаться со&nbsp;мной можно любым из&nbsp;перечисленных способов, но&nbsp;с&nbsp;бо&#769;льшей долей вероятности быстрее я&nbsp;отвечу по&nbsp;<a href="tel:+79185451866" class="link">телефону</a>, в&nbsp;<a href="https://wa.me/79185451866?text=Здравствуйте,%20Евгений" class="link">WhatsApp</a>, <a href="viber://chat?number=79185451866" class="link">Viber</a>, или <a href="https://instagram.com/evgeniy.beskrovnyy" class="link">Instagram</a>.</p>
 
+  <p>Тест подключения спрайта и svg-иконки</p>
+  <Icon name="lang" width="44" height="44" aria-hidden="true" class="icon" />
+  
+  <Sprite name="instagram" /> 
+  <Sprite name="phone" />
+
+  <img src={mailImg.src} alt="Тест иконки почты">
+
+
+  <Code language="html" codeRaw={
+    `
+    <script>
+      const foo = 'bar';
+
+      if(foo === 'bar') {
+        alert('Yep!');
+      }
+    
+    </script>
+    `
+    } caption="<p>I am happy to be learning Astro!</p>" />
 </BaseLayout>

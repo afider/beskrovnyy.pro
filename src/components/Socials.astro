@@ -1,0 +1,17 @@
+---
+import { getLang } from '@utils/GetLang.astro';
+import { Sprite } from 'astro-icon';
+
+const currentPageUrl = Astro.url.pathname;
+---
+
+<article class="socials">
+  {
+    (getLang(currentPageUrl) === 'en') ? 
+    (<h2>Contacts</h2>) : 
+    (<h2>Контакты</h2>)
+  }
+
+<Sprite name="instagram" /> 
+<Sprite name="phone" />
+</article>

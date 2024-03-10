@@ -4,6 +4,8 @@ import ThemeSwitcher from '@components/ThemeSwitcher.astro';
 import MainNav from '@components/MainNav.astro';
 import Contents from '@components/Contents.astro';
 import LangSwitcher from '@components/LangSwitcher.astro';
+import Socials from '@components/Socials.astro';
+import Search from '@components/Search.astro';
 
 import authorX2 from '@images/evgeniy-beskrovnyy.jpg';
 import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
@@ -26,6 +28,8 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
   <LangSwitcher />
   <MainNav />
   <Contents />
+  <Socials />
+  {(lang === 'ru') && (<Search />)}
 </header>
 
 
