@@ -12,15 +12,15 @@ const currentPageUrl = Astro.url.pathname;
     (<h2>Контакты</h2>)
   }
   <ul class="socials__list">
-    <li class="socials__item socials__item_linkedin">
-      <a href="https://www.linkedin.com/in/evgeniy-beskrovnyy/" class="socials__link">
-        <Sprite name="linkedin" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--linkedin">
+      <a href="https://www.linkedin.com/in/evgeniy-beskrovnyy/" class="socials__link link link--nav">
+        <Sprite name="linkedin" width="22" height="22" class="socials__icon" />
         LinkedIn
       </a>
     </li>
-    <li class="socials__item socials__item_instagram">
-      <a href="https://instagram.com/evgeniy.beskrovnyy" class="socials__link">
-        <Sprite name="instagram" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--instagram">
+      <a href="https://instagram.com/evgeniy.beskrovnyy" class="socials__link link link--nav">
+        <Sprite name="instagram" width="22" height="22" class="socials__icon" />
         {
           (getLang(currentPageUrl) === 'en') ? 
           ('Instagram') : 
@@ -28,9 +28,9 @@ const currentPageUrl = Astro.url.pathname;
         }
       </a>
     </li>
-    <li class="socials__item socials__item_github">
-      <a href="https://github.com/afider" class="socials__link">
-        <Sprite name="github" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--github">
+      <a href="https://github.com/afider" class="socials__link link link--nav">
+        <Sprite name="github" width="22" height="22" class="socials__icon" />
         {
           (getLang(currentPageUrl) === 'en') ? 
           ('GitHub') : 
@@ -38,15 +38,15 @@ const currentPageUrl = Astro.url.pathname;
         }
       </a>
     </li>
-    <li class="socials__item socials__item_email">
-      <a href="mailto:e.beskrovnyy@gmail.com" class="socials__link">
-        <Sprite name="email" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--email">
+      <a href="mailto:e.beskrovnyy@gmail.com" class="socials__link link link--nav">
+        <Sprite name="email" width="22" height="22" class="socials__icon" />
         e.beskrovnyy@gmail.com
       </a>
     </li>
-    <li class="socials__item socials__item_twitter">
-      <a href="https://twitter.com/beskrovnyy" class="socials__link">
-        <Sprite name="twitter" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--twitter">
+      <a href="https://twitter.com/beskrovnyy" class="socials__link link link--nav">
+        <Sprite name="twitter" width="22" height="22" class="socials__icon" />
         {
           (getLang(currentPageUrl) === 'en') ? 
           ('Twitter') : 
@@ -54,9 +54,9 @@ const currentPageUrl = Astro.url.pathname;
         }
       </a>
     </li>
-    <li class="socials__item socials__item_vk">
-      <a href="https://vk.com/e.beskrovnyy" class="socials__link">
-        <Sprite name="vk" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--vk">
+      <a href="https://vk.com/e.beskrovnyy" class="socials__link link link--nav">
+        <Sprite name="vk" width="22" height="22" class="socials__icon" />
         {
           (getLang(currentPageUrl) === 'en') ? 
           ('VK') : 
@@ -64,9 +64,9 @@ const currentPageUrl = Astro.url.pathname;
         }
       </a>
     </li>
-    <li class="socials__item socials__item_telegram">
-      <a href="https://t.me/beskrovnyy_pro" class="socials__link">
-        <Sprite name="telegram" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--telegram">
+      <a href="https://t.me/beskrovnyy_pro" class="socials__link link link--nav">
+        <Sprite name="telegram" width="22" height="22" class="socials__icon" />
         {
           (getLang(currentPageUrl) === 'en') ? 
           ('Telegram') : 
@@ -74,9 +74,9 @@ const currentPageUrl = Astro.url.pathname;
         }
       </a>
     </li>
-    <li class="socials__item socials__item_phone">
-      <a href="tel:+79185451866" class="socials__link">
-        <Sprite name="phone" width="30" height="30" class="socials__icon" />
+    <li class="socials__item socials__item--phone">
+      <a href="tel:+79185451866" class="socials__link link link--nav">
+        <Sprite name="phone" width="22" height="22" class="socials__icon" />
         +7 918 545-18-66
       </a>
     </li>
