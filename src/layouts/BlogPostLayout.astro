@@ -6,7 +6,6 @@ const { frontmatter } = Astro.props;
 
 ---
 <BaseLayout>
-  <main class="layout__main">
     <header>
       <ul class="tag-list">
         {frontmatter.tags.map((tag) => (
@@ -18,5 +17,4 @@ const { frontmatter } = Astro.props;
       <p>Опубликовано: {frontmatter.dateUX}</p>
     </header>
     <slot />
-  </main>
 </BaseLayout>

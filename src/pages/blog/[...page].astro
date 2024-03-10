@@ -27,41 +27,41 @@ const pageTitle = "Блог";
 ---
 
 <BaseLayout title={pageTitle}>
-  <main class="layout__main">
-    <aside>
-      <h2>Все теги</h2>
-      <TagsList />
-    </aside>
+  
+  <aside>
+    <h2>Все теги</h2>
+    <TagsList />
+  </aside>
 
-    <h1 class="h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
+  <h1 class="h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
 
-    <ul class="cards-grid">
-      {
-        page.data.map((post) => 
-            <BlogPostCard 
-              url={post.url} 
-              title={post.frontmatter.title} 
-              date={post.frontmatter.date} 
-              dateUX={post.frontmatter.dateUX} 
-              description={post.frontmatter.description}
-            />
-          )
-      }
-    </ul>
+  <ul class="cards-grid">
+    {
+      page.data.map((post) => 
+          <BlogPostCard 
+            url={post.url} 
+            title={post.frontmatter.title} 
+            date={post.frontmatter.date} 
+            dateUX={post.frontmatter.dateUX} 
+            description={post.frontmatter.description}
+          />
+        )
+    }
+  </ul>
 
-    {allPosts.length > postsPerPage ? (
-      <Pagination length={page.lastPage} 
-        currentUrl={page.url.current} 
-        currentPage={page.currentPage} 
-        firstUrl={`/${firstPath}`} 
-        prevUrl={page.url.prev} 
-        nextUrl={page.url.next} 
-        lastUrl={`/${firstPath}/${page.lastPage}`}
-      />
-    ) : null}
+  {allPosts.length > postsPerPage ? (
+    <Pagination length={page.lastPage} 
+      currentUrl={page.url.current} 
+      currentPage={page.currentPage} 
+      firstUrl={`/${firstPath}`} 
+      prevUrl={page.url.prev} 
+      nextUrl={page.url.next} 
+      lastUrl={`/${firstPath}/${page.lastPage}`}
+    />
+  ) : null}
 
-    <br>
-    <br>
-    <br>
-  </main>
+  <br>
+  <br>
+  <br>
+
 </BaseLayout>

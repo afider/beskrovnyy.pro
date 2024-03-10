@@ -13,74 +13,73 @@ const pageTitle = "Evgeniy Beskrovnyy";
 ---
 
 <BaseLayout title={pageTitle}>
-  <main class="layout__main">
-    <h1 class="h1">👋 Welcome!</h1>
-    <p>My name is Evgeniy, and I’m 36 years old. I’m a front-end web developer who loves HTML/CSS coding, templating, JavaScript programming and UX. I am a T-shaped person. The field in which I have the most skills is HTML/CSS-coding and JavaScript programming.</p>
   
-    <p>Тест подключения спрайта и svg-иконки</p>
-    <Icon name="lang" width="44" height="44" aria-hidden="true" class="icon" />
+  <h1 class="h1">👋 Welcome!</h1>
+  <p>My name is Evgeniy, and I’m 36 years old. I’m a front-end web developer who loves HTML/CSS coding, templating, JavaScript programming and UX. I am a T-shaped person. The field in which I have the most skills is HTML/CSS-coding and JavaScript programming.</p>
+
+  <p>Тест подключения спрайта и svg-иконки</p>
+  <Icon name="lang" width="44" height="44" aria-hidden="true" class="icon" />
+  
+  <Sprite name="instagram" /> 
+  <Sprite name="phone" />
+
+  <img src={mailImg.src} alt="Тест иконки почты">
+
+  <h1>Поиск</h1>
+
+  <div class="search">
+    <input id="search" type="text" placeholder="Что будем-с искать?" class="search__control">
+    <div id="search-results" class="search__results results" />
+  </div>
+
+  <script is:inline>
+    const searchField = document.querySelector('#search');
+    searchField?.addEventListener('input', async (e) => {
+      // only load the pagefind script once
+      if (e.target.dataset.loaded !== 'true') {
+        e.target.dataset.loaded = 'true'
+        // load the pagefind script
+        window.pagefind = await import("/pagefind/pagefind.js");
+      }
+
+      // search the index using the input value
+      const search = await window.pagefind.search(e.target.value)
+      const searchResults = document.querySelector('#search-results');
+
+      // clear the old search-results
+      searchResults.innerHTML = ''
+
+      if(search.results.length !== 0) {
+        // add the new search-results
+      for (const result of search.results) {
+        const data = await result.data();
+
+        searchResults.innerHTML += `
+          <a href="${data.url}" class="results__item">
+            <h3 class="results__title">${data.meta.title}</h3>
+            <p class="results__text">${data.excerpt}</p>
+          </a>`
+        
+      }
+      } else if (search.results.length === 0 && searchField.value != '') {
+        searchResults.innerHTML += `
+          <div class="results__empty">Ничего не найдено!</div>`
+      }
+
+    })
+  </script>
+
+  <Code language="html" codeRaw={
+    `
+    <script>
+      const foo = 'bar';
+
+      if(foo === 'bar') {
+        alert('Yep!');
+      }
     
-    <Sprite name="instagram" /> 
-    <Sprite name="phone" />
-
-    <img src={mailImg.src} alt="Тест иконки почты">
-
-    <h1>Поиск</h1>
-
-    <div class="search">
-      <input id="search" type="text" placeholder="Что будем-с искать?" class="search__control">
-      <div id="search-results" class="search__results results" />
-    </div>
-
-    <script is:inline>
-      const searchField = document.querySelector('#search');
-      searchField?.addEventListener('input', async (e) => {
-        // only load the pagefind script once
-        if (e.target.dataset.loaded !== 'true') {
-          e.target.dataset.loaded = 'true'
-          // load the pagefind script
-          window.pagefind = await import("/pagefind/pagefind.js");
-        }
-
-        // search the index using the input value
-        const search = await window.pagefind.search(e.target.value)
-        const searchResults = document.querySelector('#search-results');
-
-        // clear the old search-results
-        searchResults.innerHTML = ''
-
-        if(search.results.length !== 0) {
-          // add the new search-results
-        for (const result of search.results) {
-          const data = await result.data();
-
-          searchResults.innerHTML += `
-            <a href="${data.url}" class="results__item">
-              <h3 class="results__title">${data.meta.title}</h3>
-              <p class="results__text">${data.excerpt}</p>
-            </a>`
-          
-        }
-        } else if (search.results.length === 0 && searchField.value != '') {
-          searchResults.innerHTML += `
-            <div class="results__empty">Ничего не найдено!</div>`
-        }
-
-      })
     </script>
+    `
+    } caption="<p>I am happy to be learning Astro!</p>" />
 
-    <Code language="html" codeRaw={
-      `
-      <script>
-        const foo = 'bar';
-
-        if(foo === 'bar') {
-          alert('Yep!');
-        }
-      
-      </script>
-      `
-      } caption="<p>I am happy to be learning Astro!</p>" />
-  </main>
-  
 </BaseLayout>
