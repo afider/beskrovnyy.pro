@@ -1,0 +1,66 @@
+.switcher {
+  --switcher-color-state: var(--root-color-system-active);
+  --switcher-color-icon: var(--root-color-primary);
+  --switcher-size-item: 44px;
+
+  border: none;
+
+  &__body {
+    position: relative;
+    display: flex;
+  }
+
+  &__item {
+    width: var(--switcher-size-item);
+    height: var(--switcher-size-item);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    color: var(--switcher-color-icon);
+  }
+
+  &__control,
+  &__label,
+  &__title {
+    @include sr-only;
+  }
+
+  &__state {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--switcher-size-item);
+    height: var(--switcher-size-item);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: transform;
+    transition-duration: $animation-speed;
+    transition-timing-function: $animation-function;
+
+    ._THEME_SYSTEM._THEME-DARK &,
+    ._THEME_SYSTEM._THEME-LIGHT & {
+      transform: translateX(var(--switcher-size-item));
+    }
+
+    ._THEME-DARK & {
+      transform: translateX(calc(2 * var(--switcher-size-item)));
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--switcher-color-state);
+      border-radius: 50%;
+    }
+  }
+}

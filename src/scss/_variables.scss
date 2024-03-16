@@ -10,6 +10,8 @@ $grid-breakpoints: (
 
 $basic-font-family: 'Roboto', 'Arial', sans-serif;
 $code-font-family: 'JetBrains Mono', monospace, monospace;
+$animation-speed: 300ms;
+$animation-function: ease;
 
 :root {
   // Light Theme Colors

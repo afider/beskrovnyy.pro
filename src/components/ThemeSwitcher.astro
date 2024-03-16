@@ -14,35 +14,41 @@ const currentPageUrl = Astro.url.pathname;
     (<legend class="switcher__title">Цветовая схема сайта</legend>)
   }
   <div class="switcher__body">
-    <label for="light-theme" class="switcher__label">
-      <Sprite name="sun" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      {
-        (getLang(currentPageUrl) === 'en') ? 
-        ('It\'s always light') : 
-        ('Всегда светлая')
-      }
-      <input id="light-theme" class="switcher__radio" type="radio" name="theme" value="light" data-theme-input>
-    </label>
-
-    <label for="system-theme" class="switcher__label">
-      <Sprite name="system" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      {
-        (getLang(currentPageUrl) === 'en') ? 
-        ('System') : 
-        ('Как в системе')
-      }
-      <input id="system-theme" class="switcher__radio" type="radio" name="theme" value="system" data-theme-input checked>
-    </label>
-
-    <label for="dark-theme" class="switcher__label">
-      <Sprite name="moon" width="30" height="30" aria-hidden="true" class="switcher__icon" />
-      {
-        (getLang(currentPageUrl) === 'en') ? 
-        ('It\'s always dark') : 
-        ('Всегда темная')
-      }
-      <input id="dark-theme" class="switcher__radio" type="radio" name="theme" value="dark" data-theme-input>
-    </label>
     <div class="switcher__state"></div>
+    <label for="light-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always light') : ('Всегда светлая')}>
+      <Sprite name="sun" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <div class="switcher__label">
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('It\'s always light') : 
+          ('Всегда светлая')
+        }
+      </div>
+      <input id="light-theme" class="switcher__control" type="radio" name="theme" value="light" data-theme-input>
+    </label>
+
+    <label for="system-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('System') : ('Как в системе')}>
+      <Sprite name="system" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <div class="switcher__label">
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('System') : 
+          ('Как в системе')
+        }
+      </div>
+      <input id="system-theme" class="switcher__control" type="radio" name="theme" value="system" data-theme-input checked>
+    </label>
+
+    <label for="dark-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always dark') : ('Всегда темная')}>
+      <Sprite name="moon" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <div class="switcher__label">
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('It\'s always dark') : 
+          ('Всегда темная')
+        }
+      </div>
+      <input id="dark-theme" class="switcher__control" type="radio" name="theme" value="dark" data-theme-input>
+    </label>
   </div>
 </fieldset>

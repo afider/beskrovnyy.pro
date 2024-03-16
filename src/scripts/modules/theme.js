@@ -83,19 +83,33 @@ export default function switchTheme() {
 
     switch(theme) {
       case 'dark':
-        doc.classList.add(themeState);
+        doc.classList.remove('_THEME_SYSTEM');
+        doc.classList.remove('_THEME-LIGHT');
+        doc.classList.add('_THEME-DARK');
       break
       case 'system':
+        doc.classList.add('_THEME_SYSTEM');
         if (themeOs === 'dark') {
-          doc.classList.add(themeState);
+          doc.classList.remove('_THEME-LIGHT');
+          doc.classList.add('_THEME-DARK');
+        } else if (themeOs === 'light') {
+          doc.classList.remove('_THEME-DARK');
+          doc.classList.add('_THEME-LIGHT');
         } else {
-          doc.classList.remove(themeState);
+          doc.classList.remove('_THEME-LIGHT');
+          doc.classList.remove('_THEME-DARK');
         }
         break
       case 'light':
-        doc.classList.remove(themeState);
+        doc.classList.remove('_THEME_SYSTEM');
+        console.log('theme light');
+        doc.classList.remove('_THEME-DARK');
+        doc.classList.add('_THEME-LIGHT');
       default:
-        doc.classList.remove(themeState);
+        doc.classList.remove('_THEME_SYSTEM');
+        console.log('theme light');
+        doc.classList.remove('_THEME-DARK');
+        doc.classList.add('_THEME-LIGHT');
     }
   }
 
