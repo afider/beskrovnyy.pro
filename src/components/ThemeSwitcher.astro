@@ -2,11 +2,14 @@
 import { Sprite } from 'astro-icon';
 import { getLang } from '@utils/GetLang.astro';
 
+let {classNames} = Astro.props;
 const currentPageUrl = Astro.url.pathname;
+
+(classNames === undefined) ? classNames = '' : classNames;
 ---
 <Sprite.Provider />
 
-<fieldset class="switcher">
+<fieldset class={`${classNames} switcher`} >
   
   {
     (getLang(currentPageUrl) === 'en') ? 

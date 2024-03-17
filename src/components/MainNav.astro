@@ -1,9 +1,12 @@
 ---
 import { getLang } from '@utils/GetLang.astro';
 
+let {classNames} = Astro.props;
 const currentPageUrl = Astro.url.pathname;
+
+(classNames === undefined) ? classNames = '' : classNames;
 ---
-<nav class="nav">
+<nav class={`${classNames} nav`}>
   <ul class="nav__list">
     {
       (getLang(currentPageUrl) === 'en') ? (

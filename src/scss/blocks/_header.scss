@@ -1,0 +1,29 @@
+.header {
+  --header-side-gap: var(--root-side-gap);
+
+  padding-top: 52px;
+
+  &__logo {
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 12px;
+  }
+
+  &__lang {
+    height: 44px;
+    position: absolute;
+    top: 0;
+    right: var(--header-side-gap);
+  }
+
+  &__theme {
+    position: absolute;
+    top: 0;
+    left: var(--header-side-gap);
+  }
+}
+

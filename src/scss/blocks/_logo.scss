@@ -1,20 +1,31 @@
 .logo {
+  --logo-color: var(--root-color-text);
   --logo-color-border-link: var(--root-color-link);
   --logo-color-border-link-hover: var(--root-color-link-hover);
   --logo-color-border: var(--root-color-primary);
-  --logo-dim: 20rem;
+  --logo-dim: 180px;
 
-  display: block;
-  width: var(--logo-dim);
-  height: var(--logo-dim);
-  border-radius: 50%;
-  border: 2px solid var(--logo-color-border);
-  overflow: hidden;
-  transition: border-color, border-width;
-  transition-duration: var(--root-animation-duration-slow);
+  @include media-breakpoint-down(xs) {
+    --logo-dim: 140px;
+  }
+
+  color: var(--logo-color);
+
+  &__pic {
+    display: block;
+    width: var(--logo-dim);
+    height: var(--logo-dim);
+    border-radius: 50%;
+    border: 2px solid var(--logo-color-border);
+    overflow: hidden;
+    transition: border-color, border-width;
+    transition-duration: var(--root-animation-duration-slow);
+    margin-bottom: 12px;
+  }
 
   &--link {
     border-color: var(--logo-color-border-link);
+    text-decoration: none;
 
     &:focus,
     &:active {
@@ -26,4 +37,14 @@
       border-width: 8px;
     }
   }
+
+  &__title {
+    @include font(20px, 25px, 600);
+    margin-bottom: 4px;
+  }
+
+  &__description {
+    @include font(14px, 22px);
+  }
 }
+

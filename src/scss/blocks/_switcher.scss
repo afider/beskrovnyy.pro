@@ -45,8 +45,8 @@
     transition-duration: $animation-speed;
     transition-timing-function: $animation-function;
 
-    ._THEME_SYSTEM._THEME-DARK &,
-    ._THEME_SYSTEM._THEME-LIGHT & {
+    ._THEME-SYSTEM._THEME-DARK &,
+    ._THEME-SYSTEM._THEME-LIGHT & {
       transform: translateX(var(--switcher-size-item));
     }
 

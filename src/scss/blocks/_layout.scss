@@ -1,6 +1,12 @@
 .layout {
   --layout-color: var(--root-color-text);
   --layout-color-bg: var(--root-color-secondary);
+  --layout-side-gap: var(--root-side-gap);
+  --layout-header-width: 290px;
+
+  @include media-breakpoint-up(lg) {
+    --layout-header-width: 360px;
+  }
 
   &._THEME-DARK {
     --layout-color-bg: var(--root-color-secondary-assistive);
@@ -9,9 +15,35 @@
   background-color: var(--layout-color-bg);
   color: var(--layout-color);
   font-family: var(--root-font-family-base);
+  padding-top: 12px;
 
   &__body {
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
+    
+  }
+
+  &__main,
+  &__header {
+    padding-left: var(--root-side-gap);
+    padding-right: var(--root-side-gap);
+  }
+
+  &__header {
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: var(--layout-header-width);
+    }
+  }
+
+  &__main {
+
+    @include media-breakpoint-up(md) {
+      padding-left: var(--layout-header-width);
+      max-width: calc(700px + var(--layout-header-width));
+    }
   }
 }

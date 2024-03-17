@@ -2,15 +2,20 @@
 import { getLang } from '@utils/GetLang.astro';
 import { Sprite } from 'astro-icon';
 
+let {classNames} = Astro.props;
 const currentPageUrl = Astro.url.pathname;
+
+(classNames === undefined) ? classNames = '' : classNames;
 ---
 
-<article class="socials">
-  {
-    (getLang(currentPageUrl) === 'en') ? 
-    (<h2>Contacts</h2>) : 
-    (<h2>Контакты</h2>)
-  }
+<article class={`${classNames} socials`}>
+  <h2 class="socials__title">
+    {
+      (getLang(currentPageUrl) === 'en') ? 
+      ('Contacts') : 
+      ('Контакты')
+    }
+  </h2>
   <ul class="socials__list">
     <li class="socials__item socials__item--linkedin">
       <a href="https://www.linkedin.com/in/evgeniy-beskrovnyy/" class="socials__link link link--nav">

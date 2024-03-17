@@ -1,5 +1,8 @@
+@import 'mixins';
+
 $grid-breakpoints: (
-  xs: 0,
+  zero: 0,
+  xs: 320px,
   xsm: 360px,
   sm: 576px,
   md: 768px,
@@ -12,6 +15,7 @@ $basic-font-family: 'Roboto', 'Arial', sans-serif;
 $code-font-family: 'JetBrains Mono', monospace, monospace;
 $animation-speed: 300ms;
 $animation-function: ease;
+$page-max-width: 1200px;
 
 :root {
   // Light Theme Colors
@@ -56,6 +60,17 @@ $animation-function: ease;
   --root-animation-duration-slow: 0.5s;
   --root-animation-duration: 0.3s;
   --root-animation-duration-fast: 0.2s;
+
+  // Dimentions
+  --root-side-gap: 16px;
+
+  @include media-breakpoint-up(md) {
+    --root-side-gap: 24px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    --root-side-gap: 40px;
+  }
 }
 
 ._THEME-DARK:root {
@@ -79,5 +94,8 @@ $animation-function: ease;
   --root-color-link-border: rgba(77 163 255 / 88%);
   --root-color-link-visited: var(--root-color-system-visited);
   --root-color-link-visited-border: rgba(230 178 243 / 40%);
+
+  // Socials colors
+  --root-color-github: #bab8b8;
 }
 

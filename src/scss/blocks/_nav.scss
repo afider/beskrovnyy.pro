@@ -1,8 +1,36 @@
 .nav {
   --nav-color-active-link: var(--root-color-system-active);
+  --nav-side-gap: var(--root-side-gap);
+
+  &__list {
+    display: flex;
+    gap: 4px;
+    margin-left: calc(-1 * var(--nav-side-gap));
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: block;
+  }
 
   &__item._active &__link {
     color: var(--nav-color-active-link);
     text-decoration: none;
+  }
+
+  &__item:first-child &__link {
+    padding-left: var(--nav-side-gap);
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 6px;
+
+    @include media-breakpoint-down(xs) {
+      padding: 4px var(--nav-side-gap);
+    }
   }
 }
