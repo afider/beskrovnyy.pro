@@ -1,5 +1,6 @@
 .switcher {
   --switcher-color-state: var(--root-color-system-active);
+  --switcher-color-focus: var(--root-color-system-active);
   --switcher-color-icon: var(--root-color-primary);
   --switcher-size-item: 44px;
 
@@ -30,6 +31,17 @@
   &__label,
   &__title {
     @include sr-only;
+  }
+
+  &__control + &__focus {
+    position: absolute;
+    width: calc(var(--switcher-size-item) - 4px);
+    height: calc(var(--switcher-size-item) - 4px);
+    inset: 2px;
+  }
+
+  &__control:focus-visible + &__focus {
+    outline: 2px solid var(--switcher-color-focus);
   }
 
   &__state {

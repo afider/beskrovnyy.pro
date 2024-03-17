@@ -71,6 +71,7 @@
   }
 
   &--link {
+    display: block;
     text-decoration: none;
 
     @include hover {
@@ -84,10 +85,6 @@
 
   &--link &__pic {
     border-color: var(--logo-color-border-link);
-
-    &:active {
-      border-color: var(--logo-color-border-link-hover);
-    }
   }
 
   &__title {

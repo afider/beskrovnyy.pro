@@ -28,6 +28,7 @@ const currentPageUrl = Astro.url.pathname;
         }
       </div>
       <input id="light-theme" class="switcher__control" type="radio" name="theme" value="light" data-theme-input>
+      <div class="switcher__focus"></div>
     </label>
 
     <label for="system-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('System') : ('Как в системе')}>
@@ -40,6 +41,7 @@ const currentPageUrl = Astro.url.pathname;
         }
       </div>
       <input id="system-theme" class="switcher__control" type="radio" name="theme" value="system" data-theme-input checked>
+      <div class="switcher__focus"></div>
     </label>
 
     <label for="dark-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always dark') : ('Всегда темная')}>
@@ -52,6 +54,7 @@ const currentPageUrl = Astro.url.pathname;
         }
       </div>
       <input id="dark-theme" class="switcher__control" type="radio" name="theme" value="dark" data-theme-input>
+      <div class="switcher__focus"></div>
     </label>
   </div>
 </fieldset>
