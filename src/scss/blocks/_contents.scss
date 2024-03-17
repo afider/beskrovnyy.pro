@@ -1,11 +1,10 @@
 .contents {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  background: gold;
-  padding: 20px;
+  --contents-color-bg: var(--root-color-secondary);
+
+  background-color: var(--contents-color-bg);
 
   &__link {
+
     &._active {
       font-weight: bold;
     }

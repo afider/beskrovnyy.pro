@@ -1,0 +1,9 @@
+.article {
+  --article-figure-width: var(--root-figure-width);
+
+  &__picture {
+    @include media-breakpoint-up(xxl) {
+      width: var(--article-figure-width);
+    }
+  }
+}

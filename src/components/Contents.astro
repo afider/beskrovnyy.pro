@@ -6,6 +6,9 @@ const currentPath = Astro.url.pathname;
 const currentPost = allPosts.find(post => post.url === currentPath);
 let pageToc = [];
 let isToc = false;
+let {classNames} = Astro.props;
+
+(classNames === undefined) ? classNames = '' : classNames;
 
 if (currentPost) {
   isToc = true;
@@ -80,7 +83,7 @@ switch(currentPath) {
 
 ---
 
-{isToc && <Fragment set:html={'<aside class="contents">'} />}
+{isToc && <Fragment set:html={`<aside class="${classNames} contents">`} />}
 
 {
     isToc && getLang(currentPath) === 'en' && (

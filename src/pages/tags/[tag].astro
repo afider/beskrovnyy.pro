@@ -23,7 +23,6 @@ const { posts } = Astro.props;
 
 ---
 <BaseLayout pageTitle={tag}>
-  <main class="layout__main">
     <aside>
       <h2>Все теги</h2>
       <TagsList />
@@ -41,7 +40,4 @@ const { posts } = Astro.props;
         description={post.frontmatter.description} 
       />)}
     </ul>
-
-  </main>
-
 </BaseLayout>

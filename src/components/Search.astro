@@ -1,8 +1,12 @@
 ---
 import { Sprite } from 'astro-icon';
+
+let {classNames} = Astro.props;
+
+(classNames === undefined) ? classNames = '' : classNames;
 ---
 
-<article class="search">
+<article class={`${classNames} search`}>
   <h2 class="search__title">Поиск</h2>
   <!-- <Sprite name="search" /> -->
   <input id="search" type="text" placeholder="Что будем-с искать?" class="search__control">

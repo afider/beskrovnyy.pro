@@ -11,6 +11,13 @@
 
   color: var(--logo-color);
 
+  &--sticky {
+    @include media-breakpoint-down(md) {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
   &__pic {
     display: block;
     width: var(--logo-dim);
@@ -21,6 +28,15 @@
     transition: border-color, border-width;
     transition-duration: var(--root-animation-duration-slow);
     margin-bottom: 12px;
+  }
+
+  &--sticky &__pic {
+    @include media-breakpoint-down(md) {
+      flex-shrink: 0;
+      width: 45px;
+      height: 45px;
+      margin-bottom: 0;
+    }
   }
 
   &--link {
@@ -39,12 +55,25 @@
   }
 
   &__title {
-    @include font(20px, 25px, 600);
     margin-bottom: 4px;
+    @include font(20px, 25px, 600);
+  }
+
+  &--sticky &__title {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2px;
+      @include font(14px, 14px, 600);
+    }
   }
 
   &__description {
     @include font(14px, 22px);
+  }
+
+  &--sticky &__description {
+    @include media-breakpoint-down(md) {
+      @include sr-only;
+    }
   }
 }
 

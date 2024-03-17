@@ -1,14 +1,17 @@
 ---
 import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
-import Contents from '@components/Contents.astro';
+
 
 import { Sprite } from 'astro-icon';
 
 import '@scss/main.scss';
 const { title } = Astro.props;
+const currentPageUrl = Astro.url.pathname;
+
+const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 ---
-<html lang="ru" class="layout">
+<html lang="ru" class={`layout ${isHomePage ? 'layout--home': ''}`}>
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
@@ -18,8 +21,7 @@ const { title } = Astro.props;
   <body class="layout__body">
     <Sprite.Provider />
     <Header />
-    <main class="layout__main">
-      <Contents />
+    <main class="layout__main article">
       <slot />
     </main>
     <Footer />
