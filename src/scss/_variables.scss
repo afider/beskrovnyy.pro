@@ -88,11 +88,11 @@ $page-max-width: 1200px;
   }
 
   @include media-breakpoint-up(lg) {
-    --root-header-width: 360px;
+    --root-header-width: 390px;
   }
 
-  @include media-breakpoint-up(xxl) {
-    --root-header-width: 420px;
+  @include media-breakpoint-up(xxxl) {
+    --root-header-width: 440px;
   }
 }
 
