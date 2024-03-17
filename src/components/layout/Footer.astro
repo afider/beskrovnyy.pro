@@ -3,9 +3,12 @@ import { getLang } from '@utils/GetLang.astro';
 
 const currentPageUrl = Astro.url.pathname;
 const currentYear = new Date().getFullYear();
+let {classNames} = Astro.props;
+
+(classNames === undefined) ? classNames = '' : classNames;
 ---
 
-<footer class="layout__footer">
+<footer class={`${classNames} footer`}>
   {
     (getLang(currentPageUrl) === 'en') ? 
     (<p>© 2009-{currentYear} Design, layout, programming and content by Evgeniy Beskrovnyy </p>) : 

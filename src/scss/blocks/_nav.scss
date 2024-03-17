@@ -32,5 +32,10 @@
     @include media-breakpoint-down(xs) {
       padding: 4px var(--nav-side-gap);
     }
+
+    @include media-breakpoint-up(lg) {
+      padding: 16px 8px;
+      @include font(16px, 18px);
+    }
   }
 }

@@ -24,6 +24,7 @@ $page-max-width: 1200px;
   --root-color-primary-assistive: #060120;
   --root-color-secondary: #fff;
   --root-color-panel: #f2eeee;
+  --root-color-panel-assistive: #cecbcb;
   --root-color-text-disabled: #bab8b8;
   --root-color-mark: #f3e418;
 
@@ -53,6 +54,11 @@ $page-max-width: 1200px;
   --root-color-phone: #4e9946;
   --root-color-telegram: #40b3e0;
 
+  // Scrollbar colors
+  --root-color-scroll-thumb: var(--root-color-panel-assistive);
+  --root-color-scroll-track: var(--root-color-panel);
+  --root-color-scroll-thumb-active: var(--root-color-link-active);
+
   // Font
   --root-font-family-base: 'PTSans', sans-serif;
 
@@ -65,8 +71,9 @@ $page-max-width: 1200px;
   // Dimentions
   --root-side-gap: 16px;
   --root-header-h: 76px;
+  --root-footer-h: 100px;
   --root-figure-width: 1000px;
-  --root-header-width: 320px;
+  --root-header-width: 340px;
 
   @include media-breakpoint-up(md) {
     --root-side-gap: 24px;
@@ -74,6 +81,18 @@ $page-max-width: 1200px;
 
   @include media-breakpoint-up(xl) {
     --root-side-gap: 40px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    --root-side-gap: 60px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --root-header-width: 360px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    --root-header-width: 420px;
   }
 }
 
@@ -84,6 +103,7 @@ $page-max-width: 1200px;
   --root-color-secondary: #000;
   --root-color-secondary-assistive: #100b26;
   --root-color-panel: #042053;
+  --root-color-panel-assistive: #0448c6;
   --root-color-text-disabled: #0b38cd;
   --root-color-mark: #f2ee6a;
 
@@ -101,5 +121,10 @@ $page-max-width: 1200px;
 
   // Socials colors
   --root-color-github: #bab8b8;
+
+  // Scrollbar colors
+  --root-color-scroll-thumb: var(--root-color-panel-assistive);
+  --root-color-scroll-track: var(--root-color-panel);
+  --root-color-scroll-thumb-active: var(--root-color-link-active);
 }
 

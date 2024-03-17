@@ -4,12 +4,9 @@
   --layout-side-gap: var(--root-side-gap);
   --layout-header-width: var(--root-header-width);
   --layout-header-h: var(--root-header-h);
+  --layout-footer-h: var(--root-footer-h);
   --layout-page-max-width: 700px;
   --layout-figure-width: var(--root-figure-width);
-
-  @include media-breakpoint-up(lg) {
-    --layout-header-width: 390px;
-  }
 
   &._THEME-DARK {
     --layout-color-bg: var(--root-color-secondary-assistive);
@@ -27,6 +24,13 @@
     padding-top: 30px;
   }
 
+  &,
+  &--home {
+    @include media-breakpoint-up(md) {
+      padding-top: 30px;
+    }
+  }
+
   &--home {
     padding-top: 12px;
   }
@@ -37,14 +41,21 @@
     padding-right: var(--root-side-gap);
   }
 
+  &__main {
+
+    @include media-breakpoint-up(md) {
+      margin-left: 20px;
+    }
+  }
+
   &__header {
     position: relative;
 
     @include media-breakpoint-up(md) {
       position: fixed;
       left: 0;
-      top: 0;
-      bottom: 0;
+      top: 20px;
+      bottom: var(--layout-footer-h);
       width: var(--layout-header-width);
     }
   }
@@ -54,6 +65,16 @@
     @include media-breakpoint-up(md) {
       padding-left: var(--layout-header-width);
       max-width: calc(700px + var(--layout-header-width));
+    }
+  }
+
+  &__footer {
+    @include media-breakpoint-up(md) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: var(--root-footer-h);
+      width: var(--layout-header-width);
     }
   }
 }

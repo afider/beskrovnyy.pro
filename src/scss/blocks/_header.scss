@@ -6,7 +6,13 @@
   --header-figure-width: var(--root-figure-width);
 
   padding-top: 52px;
-  padding-right: 50px;
+  overflow-y: auto;
+
+  @include scroll;
+
+  @include media-breakpoint-up(xxxl) {
+    padding-top: 75px;
+  }
 
   &--sticky {
     @include media-breakpoint-down(md) {
@@ -20,6 +26,7 @@
       background-color: var(--header-color-bg);
       display: flex;
       flex-direction: column;
+      overflow-y: visible;
     }
   }
 
@@ -47,7 +54,7 @@
     right: 50px;
 
     @include media-breakpoint-up(lg) {
-      right: calc(var(--header-side-gap) * 2);
+      right: var(--header-side-gap);
     }
   }
 
@@ -87,7 +94,7 @@
 
     @include media-breakpoint-up(xxxl) {
       position: fixed;
-      top: 20px;
+      top: 42px;
       bottom: auto;
       left: calc(var(--header-width) + var(--header-figure-width));
     }

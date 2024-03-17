@@ -1,0 +1,16 @@
+.footer {
+  --footer-color: var(--root-color-text);
+  --footer-color-bg: var(--root-color-secondary-assistive);
+
+  color: var(--footer-color);
+  background-color: var(--footer-color-bg);
+  padding: 40px var(--layout-side-gap) 0 var(--layout-side-gap);
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  @include font(14px, 20px);
+}
