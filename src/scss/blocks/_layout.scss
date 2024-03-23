@@ -1,16 +1,12 @@
 .layout {
   --layout-color: var(--root-color-text);
-  --layout-color-bg: var(--root-color-secondary);
+  --layout-color-bg: var(--root-color-main-bg);
   --layout-side-gap: var(--root-side-gap);
   --layout-header-width: var(--root-header-width);
   --layout-header-h: var(--root-header-h);
   --layout-footer-h: var(--root-footer-h);
   --layout-page-max-width: 700px;
   --layout-figure-width: var(--root-figure-width);
-
-  &._THEME-DARK {
-    --layout-color-bg: var(--root-color-secondary-assistive);
-  }
 
   background-color: var(--layout-color-bg);
   color: var(--layout-color);
@@ -55,8 +51,9 @@
       position: fixed;
       left: 0;
       top: 20px;
-      bottom: var(--layout-footer-h);
+      bottom: 0;
       width: var(--layout-header-width);
+      padding-bottom: var(--layout-footer-h);
     }
   }
 

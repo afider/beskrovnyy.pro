@@ -13,6 +13,12 @@
     }
   }
 
+  &--sticky &__list {
+    margin-left: 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
   &__item {
     display: block;
   }
@@ -24,6 +30,10 @@
 
   &__item:first-child &__link {
     padding-left: var(--nav-side-gap);
+  }
+
+  &--sticky &__item:first-child &__link {
+    padding-left: 0;
   }
 
   &__link {
@@ -38,5 +48,10 @@
       padding: 16px 8px;
       @include font(16px, 18px);
     }
+  }
+
+  &--sticky &__link {
+    padding: 16px 4px;
+    @include font(14px, 18px);
   }
 }

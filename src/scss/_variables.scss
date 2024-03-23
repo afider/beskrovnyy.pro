@@ -23,6 +23,7 @@ $page-max-width: 1200px;
   --root-color-primary: #000;
   --root-color-primary-assistive: #060120;
   --root-color-secondary: #fff;
+  --root-color-secondary-rgba: rgba(255 255 255 / 60%);
   --root-color-panel: #f2eeee;
   --root-color-panel-assistive: #cecbcb;
   --root-color-text-disabled: #bab8b8;
@@ -43,6 +44,10 @@ $page-max-width: 1200px;
   --root-color-link-active-border: rgba(255 0 0 / 87%);
   --root-color-link-visited: var(--root-color-system-visited);
   --root-color-link-visited-border: rgba(144 29 173 40%);
+
+  // bg colors
+  --root-color-main-bg: var(--root-color-secondary);
+  --root-color-main-bg-rgba: var(--root-color-secondary-rgba);
 
   // Socials colors
   --root-color-linkedin: #0966c2;
@@ -102,6 +107,7 @@ $page-max-width: 1200px;
   --root-color-primary-assistive: #c7ced5;
   --root-color-secondary: #000;
   --root-color-secondary-assistive: #100b26;
+  --root-color-secondary-assistive-rgba: rgb(16 11 38 / 60%);
   --root-color-panel: #042053;
   --root-color-panel-assistive: #0448c6;
   --root-color-text-disabled: #0b38cd;
@@ -118,6 +124,10 @@ $page-max-width: 1200px;
   --root-color-link-border: rgba(77 163 255 / 88%);
   --root-color-link-visited: var(--root-color-system-visited);
   --root-color-link-visited-border: rgba(230 178 243 / 40%);
+
+  // bg colors
+  --root-color-main-bg: var(--root-color-secondary-assistive);
+  --root-color-main-bg-rgba: var(--root-color-secondary-assistive-rgba);
 
   // Socials colors
   --root-color-github: #bab8b8;

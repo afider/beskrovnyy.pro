@@ -155,7 +155,7 @@ module.exports = {
     'at-rule-semicolon-newline-after': 'always',
     'max-empty-lines': 2,
     'indentation': 2,
-    'max-nesting-depth': [3, { 'ignoreAtRules': ['media'] }],
+    'max-nesting-depth': [4, { 'ignoreAtRules': ['media'] }],
     'no-eol-whitespace': true,
     'no-missing-end-of-source-newline': true,
     'no-duplicate-at-import-rules': true,

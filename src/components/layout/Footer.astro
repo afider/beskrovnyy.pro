@@ -11,7 +11,7 @@ let {classNames} = Astro.props;
 <footer class={`${classNames} footer`}>
   {
     (getLang(currentPageUrl) === 'en') ? 
-    (<p>© 2009-{currentYear} Design, layout, programming and content by Evgeniy Beskrovnyy </p>) : 
-    (<p>© 2009-{currentYear} Дизайн, верстка, программирование и текст — Евгений Бескровный</p>)
+    (<p>© 2009-{currentYear} Design, layout, programming and&nbsp;content by&nbsp;Evgeniy Beskrovnyy </p>) : 
+    (<p>© 2009-{currentYear} Дизайн, верстка, программирование и&nbsp;текст&nbsp;— Евгений Бескровный</p>)
   }
 </footer>

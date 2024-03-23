@@ -4,15 +4,17 @@ import { Sprite } from 'astro-icon';
 
 let {classNames} = Astro.props;
 const currentPageUrl = Astro.url.pathname;
+const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 
 (classNames === undefined) ? classNames = '' : classNames;
 ---
-
-<a href={(getLang(currentPageUrl) === 'en') ? ('/') : ('/en/')} class={`${classNames} lang link link--nav`}>
-  <Sprite name="lang" width="18" height="18" class="lang__icon" />
-  {
-    (getLang(currentPageUrl) === 'en') ? 
-    ('Русский') : 
-    ('English')
-  }
+<a href={(getLang(currentPageUrl) === 'en') ? ('/') : ('/en/')} class={`${classNames} lang ${!isHomePage ? 'lang--sticky': ''} link link--nav`} data-text={(getLang(currentPageUrl) === 'en') ? ('Рус') : ('Eng')}>
+  <Sprite name="lang" class="lang__icon" />
+  <div class="lang__text">
+    {
+      (getLang(currentPageUrl) === 'en') ? 
+      ('Русский') : 
+      ('English')
+    }
+  </div>
 </a>

@@ -8,12 +8,6 @@
   padding-top: 52px;
   overflow-y: auto;
 
-  @include scroll;
-
-  @include media-breakpoint-up(xxxl) {
-    padding-top: 75px;
-  }
-
   &--sticky {
     @include media-breakpoint-down(md) {
       padding: 0;
@@ -25,14 +19,41 @@
       height: var(--header-height);
       background-color: var(--header-color-bg);
       display: flex;
+      justify-content: center;
       flex-direction: column;
       overflow-y: visible;
     }
+
+    &::after {
+      @include media-breakpoint-down(md) {
+        content: attr(data-author);
+        display: block;
+        position: absolute;
+        top: 16px;
+        left: 72px;
+        @include font(14px, 24px, 600);
+      }
+    }
+  }
+
+  @include scroll;
+
+  @include media-breakpoint-up(xxxl) {
+    padding-top: 75px;
   }
 
   &__logo {
     @include media-breakpoint-down(xs) {
       margin-bottom: 12px;
+    }
+  }
+
+  &--sticky &__logo {
+    @include media-breakpoint-down(md) {
+      margin-left: var(--header-side-gap);
+      display: flex;
+      z-index: 1;
+      margin-bottom: 0;
     }
   }
 
@@ -43,7 +64,9 @@
   &--sticky &__nav {
     @include media-breakpoint-down(md) {
       position: absolute;
-      left: 0;
+      left: 72px;
+      top: 24px;
+      margin-bottom: 0;
     }
   }
 
@@ -56,6 +79,10 @@
     @include media-breakpoint-up(lg) {
       right: var(--header-side-gap);
     }
+  }
+
+  &--sticky &__lang {
+    right: var(--header-side-gap);
   }
 
   &__theme {

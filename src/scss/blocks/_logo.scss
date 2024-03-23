@@ -4,6 +4,7 @@
   --logo-color-border-link-hover: var(--root-color-link-hover);
   --logo-color-border: var(--root-color-primary);
   --logo-dim: 130px;
+  --logo-sticky-dim: 46px;
 
   @include media-breakpoint-down(xs) {
     --logo-dim: 140px;
@@ -40,8 +41,8 @@
 
   &--sticky {
     @include media-breakpoint-down(md) {
-      display: flex;
-      gap: 8px;
+      width: var(--logo-sticky-dim);
+      height: var(--logo-sticky-dim);
     }
   }
 
@@ -64,14 +65,14 @@
   &--sticky &__pic {
     @include media-breakpoint-down(md) {
       flex-shrink: 0;
-      width: 45px;
-      height: 45px;
+      width: var(--logo-sticky-dim);
+      height: var(--logo-sticky-dim);
       margin-bottom: 0;
     }
   }
 
   &--link {
-    display: block;
+    display: inline-block;
     text-decoration: none;
 
     @include hover {
@@ -96,13 +97,6 @@
     }
   }
 
-  &--sticky &__title {
-    @include media-breakpoint-down(md) {
-      margin-bottom: 2px;
-      @include font(14px, 14px, 600);
-    }
-  }
-
   &__description {
     @include font(14px, 22px);
 
@@ -111,6 +105,7 @@
     }
   }
 
+  &--sticky &__title,
   &--sticky &__description {
     @include media-breakpoint-down(md) {
       @include sr-only;
