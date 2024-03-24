@@ -28,6 +28,7 @@ $page-max-width: 1200px;
   --root-color-panel-assistive: #cecbcb;
   --root-color-text-disabled: #bab8b8;
   --root-color-mark: #f3e418;
+  --root-color-overlay: rgba(0 0 0 / 60%);
 
   // system-colors
   --root-color-system-active: #f00;
@@ -80,6 +81,7 @@ $page-max-width: 1200px;
   --root-figure-width: 1000px;
   --root-header-width: 340px;
   --root-navbar-height: 44px;
+  --root-navbar-bottom-gap: 20px;
 
   @include media-breakpoint-up(md) {
     --root-side-gap: 24px;
@@ -113,6 +115,7 @@ $page-max-width: 1200px;
   --root-color-panel-assistive: #0448c6;
   --root-color-text-disabled: #0b38cd;
   --root-color-mark: #f2ee6a;
+  --root-color-overlay: rgba(0 0 0 / 75%);
 
   // system-colors
   --root-color-system-visited: rgb(212 129 233);

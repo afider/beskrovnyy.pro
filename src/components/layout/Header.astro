@@ -45,22 +45,23 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
   <MainNav classNames={`header__nav ${!isHomePage ? 'nav--sticky': ''}`} />
   {(currentPageUrl === '/' || currentPageUrl === '/en/') && (<Socials />)}
 
-  <div class={`header__navbar navbar ${!isHomePage ? 'navbar--sticky': ''}`}>
+  <div class={`header__navbar navbar ${!isHomePage ? 'navbar--sticky': ''}`} data-navbar>
+    <div class="navbar__overlay" data-navbar-close></div>
     <div class="navbar__header">
-      <ul class="navbar__list" data-navbar>
-        <li class="navbar__item">
+      <ul class="navbar__list">
+        <li class="navbar__item navbar__item--theme">
           <button class="navbar__button link link--nav link--anchor" type="button" data-navbar-target="theme-section">
             <Sprite name="moon" width="14" height="14" class="navbar__icon" />
             Тема
           </button>
         </li>
-        <li class="navbar__item">
+        <li class="navbar__item navbar__item--search">
           <button class="navbar__button link link--nav link--anchor" type="button" data-navbar-target="search-section">
             <Sprite name="lang" width="14" height="14"  class="navbar__icon" />
             Поиск
           </button>
         </li>
-        <li class="navbar__item">
+        <li class="navbar__item navbar__item--contents">
           <button class="navbar__button link link--nav link--anchor" type="button" data-navbar-target="contents-section">
             <Sprite name="lang" width="14" height="14"  class="navbar__icon" />
             Содержание
@@ -70,12 +71,21 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
     </div>
     <div class="navbar__body">
       <div class="navbar__section" data-navbar-section="theme-section">
+        <button class="navbar__close" type="button" aria-label="Закрыть выбор темы" data-navbar-close>
+          <Sprite name="lang" width="14" height="14"  class="navbar__close-icon" />
+        </button>
         <ThemeSwitcher classNames="header__theme" />
       </div>
       <div class="navbar__section" data-navbar-section="search-section">
+        <button class="navbar__close" type="button" aria-label="Закрыть поиск" data-navbar-close>
+          <Sprite name="lang" width="14" height="14"  class="navbar__close-icon" />
+        </button>
         {(lang === 'ru') && (<Search classNames="header__search" />)}
       </div>
       <div class="navbar__section" data-navbar-section="contents-section">
+        <button class="navbar__close" type="button" aria-label="Закрыть содержание" data-navbar-close>
+          <Sprite name="lang" width="14" height="14"  class="navbar__close-icon" />
+        </button>
         <Contents classNames="header__contents" />
       </div>
     </div>

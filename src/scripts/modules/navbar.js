@@ -1,10 +1,29 @@
 export default function switchNavbar() {
-  const navbar = document.querySelectorAll('[data-navbar]');
+  const navbar = document.querySelector('[data-navbar]');
   const navbarButtons = document.querySelectorAll('[data-navbar-target]');
   const navbarSections = document.querySelectorAll('[data-navbar-section]');
+  const closeButtons = document.querySelectorAll('[data-navbar-close]');
   const activeState = '_active';
+  let isModal = false;
 
   if (!navbar) return;
+
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+
+      navbarButtons.forEach(function(el) {
+        el.classList.remove(activeState);
+        
+      });
+  
+      navbarSections.forEach(function(el) {
+        el.classList.remove(activeState);
+      });
+
+      checkIsModal();
+  
+    });
+  });
 
   navbarButtons.forEach(function(button){
     button.addEventListener('click', function(curButton) {
@@ -27,8 +46,25 @@ export default function switchNavbar() {
       });
 
       document.querySelector(`[data-navbar-section="${curButton.target.getAttribute('data-navbar-target')}"]`).classList.toggle(activeState);
-    })
 
+      checkIsModal();
+    })
   })
+
+  function checkIsModal() {
+    isModal = false;
+
+      navbarButtons.forEach(function(el) {
+        if (el.classList.contains(activeState)) {
+          isModal = true;
+        }
+      });
+
+      if (isModal) {
+        navbar.classList.add(activeState);
+      } else {
+        navbar.classList.remove(activeState);
+      }
+  }
   
 }

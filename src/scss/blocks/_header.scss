@@ -4,6 +4,7 @@
   --header-height: var(--root-header-h);
   --header-width: var(--root-header-width);
   --header-figure-width: var(--root-figure-width);
+  --header-navbar-bottom-gap: var(--root-navbar-bottom-gap);
 
   padding-top: 52px;
   overflow-y: auto;
@@ -31,6 +32,7 @@
         position: absolute;
         top: 16px;
         left: 72px;
+        z-index: -1;
         @include font(14px, 24px, 600);
       }
     }
@@ -52,7 +54,6 @@
     @include media-breakpoint-down(md) {
       margin-left: var(--header-side-gap);
       display: flex;
-      z-index: 1;
       margin-bottom: 0;
     }
   }
@@ -94,11 +95,8 @@
   &--sticky &__theme {
     @include media-breakpoint-down(md) {
       position: relative;
+      top: 0;
     }
-  }
-
-  &__search {
-    
   }
 
   &--sticky &__search {

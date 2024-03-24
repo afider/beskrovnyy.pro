@@ -21,7 +21,7 @@
     text-decoration-color: transparent;
   }
 
-  &:focus,
+  &:focus-visible,
   &:active {
     color: var(--link-color-active);
     text-decoration-color: transparent;
@@ -49,5 +49,10 @@
 
   &--anchor {
     text-decoration-style: dashed;
+
+    &:active {
+      color: var(--link-color);
+      text-decoration-color: var(--link-color-border);
+    }
   }
 }
