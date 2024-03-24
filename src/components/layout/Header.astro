@@ -6,6 +6,7 @@ import LangSwitcher from '@components/LangSwitcher.astro';
 import Socials from '@components/Socials.astro';
 import Search from '@components/Search.astro';
 import Contents from '@components/Contents.astro';
+import { Sprite } from 'astro-icon';
 
 import authorX2 from '@images/evgeniy-beskrovnyy.jpg';
 import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
@@ -19,7 +20,6 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 ---
 
 <header class={`layout__header header ${!isHomePage ? 'header--sticky': ''}`} data-author={(getLang(currentPageUrl) === 'en') ? ('Evgeniy Beskrovnyy') : ('Евгений Бескровный')}>
-  <ThemeSwitcher classNames="header__theme" />
   <LangSwitcher classNames="header__lang" />
   {isHomePage ? <Fragment set:html={`<div class="header__logo logo">`} /> : <Fragment set:html={`<a href=${(lang === 'en') ? '/en/' : '/'} class="header__logo logo logo--link logo--sticky">`} /> }
     <picture class="logo__pic" data-theme-img>
@@ -44,8 +44,42 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
   {isHomePage ? <Fragment set:html={`</div>`} /> : <Fragment set:html={`</a>`} /> }
   <MainNav classNames={`header__nav ${!isHomePage ? 'nav--sticky': ''}`} />
   {(currentPageUrl === '/' || currentPageUrl === '/en/') && (<Socials />)}
-  {(lang === 'ru') && (<Search classNames="header__search" />)}
 
-  <Contents classNames="header__contents" />
+  <div class={`header__navbar navbar ${!isHomePage ? 'navbar--sticky': ''}`}>
+    <div class="navbar__header">
+      <ul class="navbar__list" data-navbar>
+        <li class="navbar__item">
+          <button class="navbar__button link link--nav link--anchor" type="button" data-navbar-target="theme-section">
+            <Sprite name="moon" width="14" height="14" class="navbar__icon" />
+            Тема
+          </button>
+        </li>
+        <li class="navbar__item">
+          <button class="navbar__button link link--nav link--anchor" type="button" data-navbar-target="search-section">
+            <Sprite name="lang" width="14" height="14"  class="navbar__icon" />
+            Поиск
+          </button>
+        </li>
+        <li class="navbar__item">
+          <button class="navbar__button link link--nav link--anchor" type="button" data-navbar-target="contents-section">
+            <Sprite name="lang" width="14" height="14"  class="navbar__icon" />
+            Содержание
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar__body">
+      <div class="navbar__section" data-navbar-section="theme-section">
+        <ThemeSwitcher classNames="header__theme" />
+      </div>
+      <div class="navbar__section" data-navbar-section="search-section">
+        {(lang === 'ru') && (<Search classNames="header__search" />)}
+      </div>
+      <div class="navbar__section" data-navbar-section="contents-section">
+        <Contents classNames="header__contents" />
+      </div>
+    </div>
+  </div>
+
 </header>
 

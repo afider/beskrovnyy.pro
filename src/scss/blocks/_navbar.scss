@@ -1,0 +1,71 @@
+.navbar {
+  --navbar-color: var(--root-color-text);
+  --navbar-list-color-bg: var(--root-color-main-bg);
+  --navbar-color-border: var(--root-color-panel-assistive);
+  --navbar-height: var(--root-navbar-height);
+
+  &--sticky {
+    display: block;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    background-color: var(--navbar-list-color-bg);
+    display: inline-flex;
+    border-radius: 8px;
+    border: 2px solid var(--navbar-color-border);
+  }
+
+  &__item {
+    
+  }
+
+  &--sticky &__section {
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      bottom: calc(var(--navbar-height) + 20px);
+      opacity: 0;
+      visibility: hidden;
+      background: var(--navbar-list-color-bg);
+      padding: 20px;
+      border: 1px solid #000;
+    }
+
+    &._active {
+      @include media-breakpoint-down(md) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 8px;
+    height: var(--navbar-height);
+    @include font(12px, 15px);
+
+    &._active {
+      background: yellow;
+    }
+  }
+
+  &__item:first-child &__button,
+  &__item:last-child &__button {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &__body {
+    background-color: var(--navbar-list-bg);
+  }
+
+}

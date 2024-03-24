@@ -86,17 +86,14 @@
   }
 
   &__theme {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 22px;
     left: var(--header-side-gap);
   }
 
   &--sticky &__theme {
     @include media-breakpoint-down(md) {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      visibility: hidden;
+      position: relative;
     }
   }
 
@@ -106,10 +103,7 @@
 
   &--sticky &__search {
     @include media-breakpoint-down(md) {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      visibility: hidden;
+      position: relative;
     }
   }
 
@@ -124,6 +118,20 @@
       top: 42px;
       bottom: auto;
       left: calc(var(--header-width) + var(--header-figure-width));
+    }
+  }
+
+  &--sticky &__contents {
+    position: relative;
+    
+  }
+
+  &__navbar {
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      bottom: 12px;
+      right: 0;
+      left: 0;
     }
   }
 }

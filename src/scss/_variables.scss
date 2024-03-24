@@ -79,6 +79,7 @@ $page-max-width: 1200px;
   --root-footer-h: 100px;
   --root-figure-width: 1000px;
   --root-header-width: 340px;
+  --root-navbar-height: 44px;
 
   @include media-breakpoint-up(md) {
     --root-side-gap: 24px;
