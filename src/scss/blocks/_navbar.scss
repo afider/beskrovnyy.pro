@@ -1,5 +1,7 @@
 .navbar {
   --navbar-color: var(--root-color-text);
+  --navbar-color-button: var(--root-color-link);
+  --navbar-color-button-active: var(--root-color-link-active);
   --navbar-list-color-bg: var(--root-color-main-bg);
   --navbar-color-border: var(--root-color-panel-assistive);
   --navbar-color-overlay: var(--root-color-overlay);
@@ -64,12 +66,17 @@
       border-top: 1px solid var(--navbar-color-border);
       border-radius: 20px 20px 0 0;
       z-index: 2;
+      transform: translateY(100%);
+      transition-property: transform, opacity, visibility;
+      transition-duration: $animation-speed;
+      transition-timing-function: $animation-function;
     }
 
     &._active {
       @include media-breakpoint-down(md) {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
       }
     }
   }
@@ -84,8 +91,27 @@
     height: var(--navbar-height);
     @include font(12px, 15px);
 
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 4px 0;
+      border-color: var(--navbar-color-button) transparent transparent transparent;
+      transition-property: transform;
+      transition-duration: $animation-speed;
+      transition-timing-function: $animation-function;
+    }
+
     &._active {
-      background: yellow;
+      color: var(--navbar-color-button-active);
+      text-decoration-color: transparent;
+    }
+
+    &._active::after {
+      color: var(--navbar-color-button-active);
+      border-color: var(--navbar-color-button-active) transparent transparent transparent;
+      transform: rotate(180deg);
     }
   }
 
@@ -106,6 +132,9 @@
     inset: 0;
     background-color: var(--navbar-color-overlay);
     z-index: 2;
+    transition-property: opacity, visibility;
+    transition-duration: $animation-speed;
+    transition-timing-function: $animation-function;
   }
 
   &--sticky._active &__overlay {
