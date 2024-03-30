@@ -10,6 +10,7 @@
   --navbar-header-width: var(--root-header-width);
   --navbar-header-figure-width: var(--root-figure-width);
   --navbar-side-gap: var(--root-side-gap);
+  --navbar-color-close: var(--root-color-panel-assistive);
 
   &--sticky {
     display: block;
@@ -33,6 +34,38 @@
 
   &__close {
     display: none;
+    width: 48px;
+    height: 48px;
+    border: none;
+    position: absolute;
+    background: none;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--navbar-color-button);
+      top: 50%;
+      left: 50%;
+      margin-top: -1px;
+      margin-left: -8px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 
   &--sticky &__close {
@@ -40,6 +73,11 @@
       display: block;
     }
   }
+
+  // ._home &__section--search._active &__close,
+  // &--sticky &__section--search._active &__close {
+  //   display: block;
+  // }
 
   &__item {
 
@@ -66,7 +104,8 @@
       opacity: 0;
       visibility: hidden;
       background: var(--navbar-list-color-bg);
-      border-top: 1px solid var(--navbar-color-border);
+      border: 1px solid var(--navbar-color-border);
+      border-bottom: none;
       border-radius: 20px 20px 0 0;
       z-index: 2;
       transform: translateY(100%) scale(0.2);
@@ -84,44 +123,86 @@
     }
   }
 
-  &__section {
+  &--sticky &__section--search {
     @include media-breakpoint-down(md) {
-      position: static;
-      background: red;
+      height: 90vh;
+      height: 90dvh;
     }
+
+    // &._active {
+    //   @include media-breakpoint-up(md) {
+    //     position: fixed;
+    //     inset : 10%;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     background: yellow;
+    //     z-index: 10;
+    //   }
+    // }
+  }
+
+  ._home &__section--search {
+    // &._active {
+    //   position: fixed;
+    //   inset : 10%;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   background: yellow;
+    //   z-index: 10;
+    // }
+      
   }
 
   &__button {
-    border: none;
-    background-color: transparent;
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 0 8px;
-    height: var(--navbar-height);
-    @include font(12px, 15px);
+
+    @include media-breakpoint-down(md) {
+      border: none;
+      background-color: transparent;
+      gap: 4px;
+      padding: 0 8px;
+      height: var(--navbar-height);
+      cursor: pointer;
+      @include font(12px, 15px);
+    }
 
     &::after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 4px 4px 0;
-      border-color: var(--navbar-color-button) transparent transparent transparent;
-      transition-property: transform;
-      transition-duration: $animation-speed;
-      transition-timing-function: $animation-function;
+      @include media-breakpoint-down(md) {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 4px 0;
+        border-color: var(--navbar-color-button) transparent transparent transparent;
+        transition-property: transform, border-color;
+        transition-duration: $animation-speed;
+        transition-timing-function: $animation-function;
+      }
     }
 
     &._active {
-      color: var(--navbar-color-button-active);
-      text-decoration-color: transparent;
+      @include media-breakpoint-down(md) {
+        color: var(--navbar-color-button-active);
+        text-decoration-color: transparent;
+      }
     }
 
     &._active::after {
-      color: var(--navbar-color-button-active);
-      border-color: var(--navbar-color-button-active) transparent transparent transparent;
-      transform: rotate(180deg);
+      @include media-breakpoint-down(md) {
+        color: var(--navbar-color-button-active);
+        border-color: var(--navbar-color-button-active) transparent transparent transparent;
+        transform: rotate(180deg);
+      }
+    }
+
+    @include hover {
+
+      &::after {
+        border-color: var(--navbar-color-button-active) transparent transparent transparent;
+      }
     }
   }
 
@@ -183,9 +264,27 @@
   &--sticky &__theme {
     position: relative;
     top: 0;
+    left: 0;
 
     @include media-breakpoint-up(md) {
       position: absolute;
+      left: var(--navbar-side-gap);
+    }
+  }
+
+  &--sticky &__search {
+    @include media-breakpoint-down(md) {
+      position: relative;
+    }
+  }
+
+  &__title {
+    display: none;
+  }
+
+  &--sticky &__title {
+    @include media-breakpoint-down(md) {
+      display: block;
     }
   }
 }

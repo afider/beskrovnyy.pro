@@ -9,4 +9,10 @@
       font-weight: bold;
     }
   }
+
+  &__title {
+    margin-right: 40px;
+
+    @include font(14px, 18px);
+  }
 }

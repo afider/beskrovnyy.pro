@@ -6,6 +6,7 @@
 
   padding-top: 52px;
   overflow-y: auto;
+  z-index: 1;
 
   &--sticky {
     @include media-breakpoint-down(md) {
@@ -82,12 +83,6 @@
 
   &--sticky &__lang {
     right: var(--header-side-gap);
-  }
-
-  &--sticky &__search {
-    @include media-breakpoint-down(md) {
-      position: relative;
-    }
   }
 
   &--sticky &__navbar {

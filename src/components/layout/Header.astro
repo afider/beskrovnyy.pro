@@ -71,21 +71,16 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
     </div>
     <div class="navbar__body">
       <div class="navbar__section" data-navbar-section="theme-section">
-        <button class="navbar__close" type="button" aria-label="Закрыть выбор темы" data-navbar-close>
-          <Sprite name="lang" width="14" height="14"  class="navbar__close-icon" />
-        </button>
+        <h2 class="navbar__title navbar-title">Цветовая тема</h2>
+        <button class="navbar__close" type="button" aria-label="Закрыть выбор темы" data-navbar-close></button>
         <ThemeSwitcher classNames="navbar__theme" />
       </div>
-      <div class="navbar__section" data-navbar-section="search-section">
-        <button class="navbar__close" type="button" aria-label="Закрыть поиск" data-navbar-close>
-          <Sprite name="lang" width="14" height="14"  class="navbar__close-icon" />
-        </button>
-        {(lang === 'ru') && (<Search classNames="header__search" />)}
+      <div class="navbar__section navbar__section--search" data-navbar-section="search-section">
+        <button class="navbar__close" type="button" aria-label="Закрыть поиск" data-navbar-close></button>
+        {(lang === 'ru') && (<Search classNames="navbar__search" />)}
       </div>
       <div class="navbar__section" data-navbar-section="contents-section">
-        <button class="navbar__close" type="button" aria-label="Закрыть содержание" data-navbar-close>
-          <Sprite name="lang" width="14" height="14"  class="navbar__close-icon" />
-        </button>
+        <button class="navbar__close" type="button" aria-label="Закрыть содержание" data-navbar-close></button>
         <Contents classNames="navbar__contents" />
       </div>
     </div>

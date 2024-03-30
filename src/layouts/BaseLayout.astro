@@ -11,7 +11,7 @@ const currentPageUrl = Astro.url.pathname;
 
 const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 ---
-<html lang="ru" class={`layout ${isHomePage ? 'layout--home': ''}`}>
+<html lang="ru" class={`layout ${isHomePage ? 'layout--home _home': ''}`}>
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
