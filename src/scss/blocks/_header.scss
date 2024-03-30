@@ -90,7 +90,7 @@
     }
   }
 
-  &__navbar {
+  &--sticky &__navbar {
     @include media-breakpoint-down(md) {
       position: fixed;
       bottom: 12px;

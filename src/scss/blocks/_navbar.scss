@@ -178,11 +178,6 @@
     position: absolute;
     top: 22px;
     left: var(--navbar-side-gap);
-
-    @include media-breakpoint-down(md) {
-      position: relative;
-      top: 0;
-    }
   }
 
   &--sticky &__theme {
