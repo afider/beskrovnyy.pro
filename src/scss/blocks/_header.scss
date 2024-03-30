@@ -2,8 +2,6 @@
   --header-color-bg: var(--root-color-secondary);
   --header-side-gap: var(--root-side-gap);
   --header-height: var(--root-header-h);
-  --header-width: var(--root-header-width);
-  --header-figure-width: var(--root-figure-width);
   --header-navbar-bottom-gap: var(--root-navbar-bottom-gap);
 
   padding-top: 52px;
@@ -87,41 +85,25 @@
   }
 
   &__theme {
-    position: fixed;
+    position: absolute;
     top: 22px;
     left: var(--header-side-gap);
-  }
 
-  &--sticky &__theme {
     @include media-breakpoint-down(md) {
       position: relative;
       top: 0;
     }
   }
 
+  &--sticky &__theme {
+    position: relative;
+    top: 0;
+  }
+
   &--sticky &__search {
     @include media-breakpoint-down(md) {
       position: relative;
     }
-  }
-
-  &__contents {
-    @include media-breakpoint-down(md) {
-      position: fixed;
-      bottom: 0;
-    }
-
-    @include media-breakpoint-up(xxxl) {
-      position: fixed;
-      top: 42px;
-      bottom: auto;
-      left: calc(var(--header-width) + var(--header-figure-width));
-    }
-  }
-
-  &--sticky &__contents {
-    position: relative;
-    
   }
 
   &__navbar {

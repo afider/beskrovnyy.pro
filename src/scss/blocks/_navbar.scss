@@ -7,6 +7,8 @@
   --navbar-color-overlay: var(--root-color-overlay);
   --navbar-height: var(--root-navbar-height);
   --navbar-bottom-gap: var(--root-navbar-bottom-gap);
+  --navbar-header-width: var(--root-header-width);
+  --navbar-header-figure-width: var(--root-figure-width);
 
   &--sticky {
     display: block;
@@ -81,6 +83,13 @@
     }
   }
 
+  &__section {
+    @include media-breakpoint-down(md) {
+      position: static;
+      background: red;
+    }
+  }
+
   &__button {
     border: none;
     background-color: transparent;
@@ -141,6 +150,26 @@
     @include media-breakpoint-down(md) {
       opacity: 1;
       visibility: visible;
+    }
+  }
+
+  &__contents {
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      bottom: 0;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      position: fixed;
+      top: 42px;
+      bottom: auto;
+      left: calc(var(--navbar-header-width) + var(--navbar-header-figure-width));
+    }
+  }
+
+  &--sticky &__contents {
+    @include media-breakpoint-down(md) {
+      position: relative;
     }
   }
 }
