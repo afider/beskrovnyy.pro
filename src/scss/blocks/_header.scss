@@ -84,22 +84,6 @@
     right: var(--header-side-gap);
   }
 
-  &__theme {
-    position: absolute;
-    top: 22px;
-    left: var(--header-side-gap);
-
-    @include media-breakpoint-down(md) {
-      position: relative;
-      top: 0;
-    }
-  }
-
-  &--sticky &__theme {
-    position: relative;
-    top: 0;
-  }
-
   &--sticky &__search {
     @include media-breakpoint-down(md) {
       position: relative;
