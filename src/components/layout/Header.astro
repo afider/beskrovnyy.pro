@@ -43,8 +43,6 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
     </div>
   {isHomePage ? <Fragment set:html={`</div>`} /> : <Fragment set:html={`</a>`} /> }
   <MainNav classNames={`header__nav ${!isHomePage ? 'nav--sticky': ''}`} />
-  {(currentPageUrl === '/' || currentPageUrl === '/en/') && (<Socials />)}
-
   <div class={`header__navbar navbar ${!isHomePage ? 'navbar--sticky': ''}`} data-navbar>
     <div class="navbar__overlay" data-navbar-close></div>
     <div class="navbar__header">
@@ -85,6 +83,7 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
       </div>
     </div>
   </div>
+  {(currentPageUrl === '/' || currentPageUrl === '/en/') && (<Socials />)}
 
 </header>
 

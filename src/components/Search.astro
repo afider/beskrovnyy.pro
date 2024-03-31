@@ -8,9 +8,13 @@ let {classNames} = Astro.props;
 
 <article class={`${classNames} search`}>
   <h2 class="search__title navbar-title">Поиск</h2>
-  <!-- <Sprite name="search" /> -->
   <input id="search" type="text" placeholder="Что будем-с искать?" class="search__control">
-  <div id="search-results" class="search__results results" />
+
+  <div class="search__results results">
+    <h2 id="search-title" class="results__main-title"></h2>
+    <div id="search-results" class="results__body">
+    </div>
+  </div>
 
   <script is:inline>
     const searchField = document.querySelector('#search');
@@ -24,28 +28,38 @@ let {classNames} = Astro.props;
 
       // search the index using the input value
       const search = await window.pagefind.search(e.target.value)
+      const searchTitle = document.querySelector('#search-title');
       const searchResults = document.querySelector('#search-results');
+      const page = document.querySelector('html');
+
+      if (searchField.value != '') {
+        page.classList.add('_locked');
+        page.classList.add('_search');
+      } else {
+        page.classList.remove('_locked');
+        page.classList.remove('_search');
+      }
 
       // clear the old search-results
       searchResults.innerHTML = ''
 
       if(search.results.length !== 0) {
         // add the new search-results
-      for (const result of search.results) {
-        const data = await result.data();
+        searchTitle.innerHTML = 'Вот, что нашлось:';
+        for (const result of search.results) {
+          const data = await result.data();
 
-        searchResults.innerHTML += `
-          <a href="${data.url}" class="results__item">
-            <h3 class="results__title">${data.meta.title}</h3>
-            <p class="results__text">${data.excerpt}</p>
-          </a>`
-        
-      }
+          searchResults.innerHTML += `
+            <a href="${data.url}" class="results__item">
+              <h3 class="results__title">${data.meta.title}</h3>
+              <p class="results__text">${data.excerpt}</p>
+            </a>`
+          
+        }
       } else if (search.results.length === 0 && searchField.value != '') {
-        searchResults.innerHTML += `
-          <div class="results__empty">Ничего не найдено!</div>`
+        searchTitle.innerHTML = 'По такому запросу ничего нет 😥';
+        searchResults.innerHTML += '';
       }
-
     })
   </script>
 </article>
