@@ -1,14 +1,15 @@
 ---
-import { Sprite } from 'astro-icon';
-
 let {classNames} = Astro.props;
 
 (classNames === undefined) ? classNames = '' : classNames;
 ---
-
 <article class={`${classNames} search`}>
-  <h2 class="search__title navbar-title">Поиск</h2>
-  <input id="search" type="text" placeholder="Что будем-с искать?" class="search__control">
+  <label for="search" class="search__title navbar-title">Поиск</label>
+
+  <div class="search__field field">
+    <input id="search" type="text" placeholder="Что будем-с искать?" class="field__control">
+    <button id="search-clear" class="field__clear" type="button" aria-label="Очистить поиск"></button>
+  </div>
 
   <div class="search__results results">
     <h2 id="search-title" class="results__main-title"></h2>
@@ -18,6 +19,19 @@ let {classNames} = Astro.props;
 
   <script is:inline>
     const searchField = document.querySelector('#search');
+    const searchClearButton = document.querySelector('#search-clear');
+
+    searchClearButton.addEventListener('click', function() {
+      console.log('searchClearButton');
+      searchField.value = '';
+
+      var event = new Event('input', {
+    bubbles: true,
+});
+  
+searchField.dispatchEvent(event);
+    });
+
     searchField?.addEventListener('input', async (e) => {
       // only load the pagefind script once
       if (e.target.dataset.loaded !== 'true') {

@@ -2,6 +2,7 @@
   --navbar-color: var(--root-color-text);
   --navbar-color-button: var(--root-color-link);
   --navbar-color-button-active: var(--root-color-link-active);
+  --navbar-color-button-hover: var(--root-color-link-hover);
   --navbar-list-color-bg: var(--root-color-main-bg);
   --navbar-color-border: var(--root-color-panel-assistive);
   --navbar-color-overlay: var(--root-color-overlay);
@@ -243,9 +244,13 @@
       position: relative;
       height: 100%;
     }
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 26px;
+    }
   }
 
-  &__title {
+  & &__title {
     display: none;
 
     @include media-breakpoint-down(md) {
