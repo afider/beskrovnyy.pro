@@ -1,3 +1,18 @@
+@keyframes glowing {
+
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
 .logo {
   --logo-color: var(--root-color-text);
   --logo-color-border-link: var(--root-color-link);
@@ -48,18 +63,42 @@
 
   &__pic {
     display: block;
+    position: relative;
     width: var(--logo-dim);
     height: var(--logo-dim);
     border-radius: 50%;
-    border: 2px solid var(--logo-color-border);
-    overflow: hidden;
-    transition: border-color, border-width;
-    transition-duration: var(--root-animation-duration-slow);
     margin-bottom: 12px;
+
+    &::before {
+      content: '';
+      background: linear-gradient(
+        45deg,
+        #1d62e2,
+        #4658e0,
+        #e74bb8,
+        #2826c5
+      );
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      background-size: 400%;
+      z-index: -1;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+      will-change: background-position;
+      animation: glowing 70s linear infinite;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 50%;
+    }
 
     @include media-breakpoint-up(xxxl) {
       margin-bottom: 18px;
     }
+  }
+
+  &__img {
+    border-radius: 50%;
   }
 
   &--sticky &__pic {
@@ -89,7 +128,12 @@
   }
 
   &__title {
+    display: inline-block;
     margin-bottom: 4px;
+    background: #2689E8;
+    background: linear-gradient(89deg, #2689E8 18.91%, #A168FF 79.91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     @include font(20px, 25px, 600);
 
     @include media-breakpoint-up(lg) {
@@ -98,10 +142,10 @@
   }
 
   &__description {
-    @include font(14px, 22px);
+    @include font(14px, 22px, 700);
 
     @include media-breakpoint-up(lg) {
-      @include font(16px, 24px);
+      @include font(16px, 24px, 700);
     }
   }
 

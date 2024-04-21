@@ -1,6 +1,16 @@
 .article {
   --article-figure-width: var(--root-figure-width);
 
+  padding-top: 40px;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 10px;
+  }
+
   &__picture {
     @include media-breakpoint-up(xxl) {
       width: var(--article-figure-width);
@@ -13,8 +23,10 @@
 
   &__title {
     margin-bottom: 12px;
-    scroll-margin-top: 20px;
-    margin-top: 40px;
+
+    @include media-breakpoint-down(md) {
+      scroll-margin-top: calc(var(--root-header-h) + 20px);
+    }
 
     @include media-breakpoint-up(md) {
       scroll-margin-top: 30px;
@@ -29,10 +41,14 @@
     }
   }
 
-  @include font(17px, 1.45);
+  @include font(14px, 1.45);
+
+  @include media-breakpoint-up(sm) {
+    @include font(17px, 1.45);
+  }
 
   @include media-breakpoint-up(md) {
-    @include font(19px, 1.45);
+    @include font(15px, 1.45);
   }
 
   @include media-breakpoint-up(lg) {
@@ -53,5 +69,9 @@
     @include media-breakpoint-up(xl) {
       margin-bottom: 32px;
     }
+  }
+
+  abbr {
+    margin-right: 6px;
   }
 }

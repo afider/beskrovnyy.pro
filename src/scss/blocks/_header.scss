@@ -27,6 +27,9 @@
     &::after {
       @include media-breakpoint-down(md) {
         content: attr(data-author);
+        background: linear-gradient(89deg, #2689E8 18.91%, #A168FF 79.91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
         display: block;
         position: absolute;
         top: 16px;

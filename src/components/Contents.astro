@@ -88,14 +88,14 @@ switch(currentPath) {
 {
     isToc && getLang(currentPath) === 'en' && (
       <h2 class="contents__title navbar-title">Table of contents</h2>
-      <a href="#" class="contents__link contents__link--title" data-contents-item>Start</a>
+      <a href="#home" class="contents__link contents__link--title" data-contents-item>Start</a>
     )
 }
 
 {
   isToc && getLang(currentPath) === 'ru' && (
     <h2 class="contents__title navbar-title">Содержание страницы</h2>
-    <a href="#" class="contents__link contents__link--title" data-contents-item>Начало</a>
+    <a href="#home" class="contents__link contents__link--title" data-contents-item>Начало</a>
   )
 }
 
