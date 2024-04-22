@@ -23,6 +23,7 @@
 
   &__title {
     margin-bottom: 12px;
+    margin-top: 46px;
 
     @include media-breakpoint-down(md) {
       scroll-margin-top: calc(var(--root-header-h) + 20px);

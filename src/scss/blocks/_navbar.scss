@@ -107,16 +107,13 @@
       transition-property: transform, opacity, visibility;
       transition-duration: $animation-speed;
       transition-timing-function: $animation-function;
+      box-shadow: 0 0 20px 15px rgba(0, 0, 0, 20%);
     }
 
     @include media-breakpoint-up(xsm) {
-      right: var(--navbar-side-gap);
-      left: var(--navbar-side-gap);
-    }
-
-    @include media-breakpoint-up(sm) {
-      right: 10%;
-      left: 10%;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &._active {
@@ -130,14 +127,18 @@
 
   &__section--search {
     @include media-breakpoint-down(md) {
-      height: 90vh;
-      height: 90dvh;
+      
+    }
+
+    @include media-breakpoint-up(xsm) {
+      max-width: 600px;
     }
   }
 
   &__button {
     display: flex;
     align-items: center;
+    text-decoration: none;
 
     @include media-breakpoint-down(md) {
       border: none;
@@ -201,11 +202,11 @@
     visibility: hidden;
     position: fixed;
     inset: 0;
-    background-color: var(--navbar-color-overlay);
+    //background-color: var(--navbar-color-overlay);
     z-index: 2;
-    transition-property: opacity, visibility;
-    transition-duration: $animation-speed;
-    transition-timing-function: $animation-function;
+    //transition-property: opacity, visibility;
+    //transition-duration: $animation-speed;
+    //transition-timing-function: $animation-function;
   }
 
   ._active &__overlay {
