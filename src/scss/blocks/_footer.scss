@@ -7,11 +7,12 @@
   padding: 40px var(--layout-side-gap);
   backdrop-filter: blur(4px);
 
-  @include media-breakpoint-up(md) {
-    padding: 40px var(--layout-side-gap) 0 var(--layout-side-gap);
+  @include media-breakpoint-down(md) {
+    padding-bottom: 100px;
   }
 
   @include media-breakpoint-up(md) {
+    padding: 40px var(--layout-side-gap) 0 var(--layout-side-gap);
     display: flex;
     align-items: center;
     padding-top: 0;

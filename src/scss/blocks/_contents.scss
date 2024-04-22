@@ -1,18 +1,66 @@
 .contents {
+  --contents-color: var(--root-color-primary);
   --contents-color-bg: var(--root-color-secondary-assistive);
+  --contents-color-active-bg: var(--root-color-highlight);
 
   background-color: var(--contents-color-bg);
 
   &__link {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 6px 28px;
 
     &._active {
-      font-weight: bold;
+      text-decoration: none;
+      color: var(--contents-color);
+    }
+  }
+
+  &__text {
+    padding: 6px;
+    border-radius: 4px;
+    transition-property: background-color;
+    transition-duration: $animation-speed;
+    transition-timing-function: $animation-function;
+
+    @include font(14px, 1.2);
+
+    @include media-breakpoint-up(md) {
+      padding: 4px 8px;
+      @include font(13px, 1.2);
+    }
+
+    @include media-breakpoint-up(xxl) {
+      @include font(16px, 1.2);
+    }
+  }
+
+  &__link._active &__text {
+    background-color: var(--contents-color-active-bg);
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 4px;
+
+    @include media-breakpoint-up(md) {
+      top: 0;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      top: 2px;
     }
   }
 
   &__title {
     margin-right: 40px;
+    margin-bottom: 8px;
 
-    @include font(14px, 18px);
+    @include font(14px, 1.2);
+  }
+
+  &__list &__list {
+    margin-left: 30px;
   }
 }

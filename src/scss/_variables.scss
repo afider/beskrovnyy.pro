@@ -28,6 +28,7 @@ $page-max-width: 1200px;
   --root-color-panel-assistive: #cecbcb;
   --root-color-text-disabled: #bab8b8;
   --root-color-mark: #f3e418;
+  --root-color-highlight: #ebebeb;
   --root-color-overlay: rgba(0 0 0 / 60%);
 
   // system-colors
@@ -49,6 +50,10 @@ $page-max-width: 1200px;
   // bg colors
   --root-color-main-bg: var(--root-color-secondary);
   --root-color-main-bg-rgba: var(--root-color-secondary-rgba);
+
+  // Shadow colors
+  --root-color-shadow-rgba: rgba(0 0 0 / 20%);
+  --root-color-shadow-second-rgba: rgba(0 0 0 / 10%);
 
   // Socials colors
   --root-color-linkedin: #0966c2;
@@ -79,7 +84,7 @@ $page-max-width: 1200px;
   --root-header-h: 76px;
   --root-footer-h: 100px;
   --root-figure-width: 950px;
-  --root-header-width: 340px;
+  --root-header-width: 296px;
   --root-navbar-height: 44px;
   --root-navbar-bottom-gap: 20px;
 
@@ -114,7 +119,8 @@ $page-max-width: 1200px;
   --root-color-panel: #042053;
   --root-color-panel-assistive: #0448c6;
   --root-color-text-disabled: #0b38cd;
-  --root-color-mark: #f2ee6a;
+  --root-color-mark: #fcfcf93b;
+  --root-color-highlight: rgb(235 235 235 / 10%);
   --root-color-overlay: rgba(0 0 0 / 75%);
 
   // system-colors
@@ -132,6 +138,10 @@ $page-max-width: 1200px;
   // bg colors
   --root-color-main-bg: var(--root-color-secondary-assistive);
   --root-color-main-bg-rgba: var(--root-color-secondary-assistive-rgba);
+
+  // Shadow colors
+  --root-color-shadow-rgba: rgba(255 255 255 / 20%);
+  --root-color-shadow-second-rgba: rgba(255 255 255 / 10%);
 
   // Socials colors
   --root-color-github: #bab8b8;

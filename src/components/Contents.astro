@@ -88,14 +88,24 @@ switch(currentPath) {
 {
     isToc && getLang(currentPath) === 'en' && (
       <h2 class="contents__title navbar-title">Table of contents</h2>
-      <a href="#home" class="contents__link contents__link--title" data-contents-item>Start</a>
+      <a href="#home" class="contents__link link link--nav link--anchor contents__link link link--nav link--anchor--title" data-contents-item>
+        <div class="contents__icon">👆</div>
+        <div class="contents__text">
+            Start
+        </div>
+      </a>
     )
 }
 
 {
   isToc && getLang(currentPath) === 'ru' && (
     <h2 class="contents__title navbar-title">Содержание страницы</h2>
-    <a href="#home" class="contents__link contents__link--title" data-contents-item>Начало</a>
+    <a href="#home" class="contents__link link link--nav link--anchor contents__link link link--nav link--anchor--title" data-contents-item>
+      <div class="contents__icon">👆</div>
+      <div class="contents__text">
+          Начало
+      </div>
+    </a>
   )
 }
 
@@ -103,9 +113,9 @@ switch(currentPath) {
   <ol class="contents__list">
   {currentPost.frontmatter.toc.map((item) => (
       <li class="contents__item">
-        <a href={`#${item.hash}`} class="contents__link" data-contents-item>
+        <a href={`#${item.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+          <div class="contents__icon">{item.icon}</div>
           <div class="contents__text">
-            <span class="contents__icon">{item.icon}</span>
               {item.name}
           </div>
         </a>
@@ -113,9 +123,9 @@ switch(currentPath) {
           <ol class="contents__list">
             {item.children.map((child) => (
               <li class="contents__item">
-                <a href={`#${child.hash}`} class="contents__link" data-contents-item>
+                <a href={`#${child.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+                  <div class="contents__icon">{child.icon}</div>
                   <div class="contents__text">
-                    <span class="contents__icon">{child.icon}</span>
                       {child.name}
                   </div>
                 </a>
@@ -134,9 +144,9 @@ switch(currentPath) {
   <ol class="contents__list">
     {pageToc && pageToc.map((item) => (
         <li class="contents__item">
-          <a href={`#${item.hash}`} class="contents__link" data-contents-item>
+          <a href={`#${item.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+            <div class="contents__icon">{item.icon}</div>
             <div class="contents__text">
-              <span class="contents__icon">{item.icon}</span>
                 {item.name}
             </div>
           </a>
@@ -144,9 +154,9 @@ switch(currentPath) {
             <ol class="contents__list">
               {item.children.map((child) => (
                 <li class="contents__item">
-                  <a href={`#${child.hash}`} class="contents__link" data-contents-item>
+                  <a href={`#${child.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+                    <div class="contents__icon">{child.icon}</div>
                     <div class="contents__text">
-                      <span class="contents__icon">{child.icon}</span>
                         {child.name}
                     </div>
                   </a>

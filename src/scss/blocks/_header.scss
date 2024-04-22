@@ -1,5 +1,7 @@
 .header {
-  --header-color-bg: var(--root-color-secondary);
+  --header-color-bg: var(--root-color-main-bg);
+  --header-color-border: var(--root-color-panel-assistive);
+  --header-color-shadow: var(--root-color-shadow-second-rgba);
   --header-side-gap: var(--root-side-gap);
   --header-height: var(--root-header-h);
   --header-navbar-bottom-gap: var(--root-navbar-bottom-gap);
@@ -22,14 +24,23 @@
       justify-content: center;
       flex-direction: column;
       overflow-y: visible;
+
+      ._scrolled & {
+        box-shadow: 0 0 10px 10px var(--header-color-shadow);
+
+        ._THEME-DARK & {
+          box-shadow: none;
+          outline: 2px solid var(--header-color-border);
+        }
+      }
     }
 
     &::after {
       @include media-breakpoint-down(md) {
         content: attr(data-author);
         background: linear-gradient(89deg, #2689E8 18.91%, #A168FF 79.91%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         display: block;
         position: absolute;
         top: 16px;
