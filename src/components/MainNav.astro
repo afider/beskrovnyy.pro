@@ -1,5 +1,6 @@
 ---
 import { getLang } from '@utils/GetLang.astro';
+import { Sprite } from 'astro-icon';
 
 let {classNames} = Astro.props;
 const currentPageUrl = Astro.url.pathname;
@@ -26,7 +27,14 @@ const currentPageUrl = Astro.url.pathname;
       )
     }
     {
-      currentPageUrl === '/' ? <Fragment set:html={'<li class="nav__item"><a href="https://career.habr.com/beskrovnyy" class="nav__link link link--nav">Резюме</a></li>'} /> : ''
+      (currentPageUrl === '/') && (
+      <li class="nav__item">
+        <a href="https://career.habr.com/beskrovnyy" class="nav__link link link--nav">
+          <Sprite name="habr" class="nav__habr" />
+          Резюме
+        </a>
+        </li>
+      )
     }
     {
       getLang(currentPageUrl) === 'ru' ? (

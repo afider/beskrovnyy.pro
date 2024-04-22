@@ -34,6 +34,10 @@
 
   &--home {
     padding-top: 12px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 30px;
+    }
   }
 
   &__main,

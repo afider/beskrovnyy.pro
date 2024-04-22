@@ -30,15 +30,15 @@
   }
 
   @include media-breakpoint-up(md) {
-    --logo-dim: 150px;
+    --logo-dim: 16vh;
   }
 
   @include media-breakpoint-up(xl) {
-    --logo-dim: 180px;
+    --logo-dim: 20vh;
   }
 
   @include media-breakpoint-up(xxl) {
-    --logo-dim: 220px;
+    --logo-dim: 26vh;
   }
 
   @include media-breakpoint-up(xxxl) {

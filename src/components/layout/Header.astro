@@ -13,9 +13,31 @@ import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
 
 import { getLang } from '@utils/GetLang.astro';
 
+const allPosts = await Astro.glob('../../pages/blog/*.mdx');
+const currentPath = Astro.url.pathname;
+const currentPost = allPosts.find(post => post.url === currentPath);
 const currentPageUrl = Astro.url.pathname;
 const lang = getLang(currentPageUrl);
 const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
+let isToc = false;
+
+if (currentPost) {
+  isToc = true;
+}
+
+switch(currentPath) {
+  case '/hobbies/':
+    isToc = true;
+  break
+
+  case '/skills/':
+    isToc = true;
+  break
+
+  case '/en/skills/':
+    isToc = true;
+  break
+}
 
 ---
 
@@ -59,12 +81,14 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
             Поиск
           </button>
         </li>
-        <li class="navbar__item navbar__item--contents">
-          <button class="navbar__button link link--nav" type="button" data-navbar-target="contents-section">
-            <Sprite name="contents" width="16" height="16"  class="navbar__icon" />
-            Содержание
-          </button>
-        </li>
+        {isToc && (
+          <li class="navbar__item navbar__item--contents">
+            <button class="navbar__button link link--nav" type="button" data-navbar-target="contents-section">
+              <Sprite name="contents" width="16" height="16"  class="navbar__icon" />
+              Содержание
+            </button>
+          </li>
+        )}
       </ul>
     </div>
     <div class="navbar__body">
