@@ -1,0 +1,24 @@
+.blockquote {
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    font-style: italic;
+    width: 80%;
+
+    @include media-breakpoint-up(xl) {
+      width: 70%;
+    }
+  }
+
+  &__caption {
+    width: 100%;
+    padding-left: 10%;
+  }
+
+  &__cite {
+    font-style: normal;
+    display: block;
+  }
+}
+
