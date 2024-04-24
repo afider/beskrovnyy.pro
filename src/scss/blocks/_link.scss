@@ -94,6 +94,10 @@
         width: 16px;
         height: 16px;
       }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/external_dark.svg');
+      }
     }
   }
 
@@ -110,6 +114,10 @@
         width: 18px;
         height: 18px;
       }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/instagram_dark.svg');
+      }
     }
   }
 
@@ -125,6 +133,10 @@
         top: 0.14em;
         width: 18px;
         height: 18px;
+      }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/youtube_dark.svg');
       }
     }
   }
@@ -145,6 +157,10 @@
         top: 0.10em;
         width: 20px;
         height: 20px;
+      }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/wiki_dark.svg');
       }
     }
   }
