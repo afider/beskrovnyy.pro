@@ -17,8 +17,16 @@
     }
   }
 
-  &__section {
+  &__tags {
+    margin-bottom: 30px;
 
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 40px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-bottom: 60px;
+    }
   }
 
   &__title {

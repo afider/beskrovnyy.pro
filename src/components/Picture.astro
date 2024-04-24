@@ -10,7 +10,7 @@ const {img, imgAlt, caption, classNames} = Astro.props;
     </picture>
   </a>
   {caption ? 
-    <figcaption class="img__caption">
+    <figcaption class="picture__caption">
       <Fragment set:html={caption} />
     </figcaption> : ''}
 </figure>

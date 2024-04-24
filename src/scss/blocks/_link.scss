@@ -55,4 +55,97 @@
       text-decoration-color: var(--link-color-border);
     }
   }
+
+  &[href*='http://'],
+  &[href*='https://'],
+  &[href*='instagram.com'],
+  &[href*='wikipedia.org'],
+  &[href*='youtube.com'] {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: relative;
+      display: inline-block;
+      background-size: cover;
+      margin-left: 3px;
+
+      @include media-breakpoint-up(xxl) {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &[href*='http://'],
+  &[href*='https://'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/external.svg');
+      top: 0.08em;
+      width: 12px;
+      height: 12px;
+
+      @include media-breakpoint-up(lg) {
+        top: 0.04em;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.07em;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &[href*='instagram.com'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/instagram.svg');
+      top: 0.06em;
+      width: 12px;
+      height: 12px;
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.08em;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &[href*='youtube.com'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/youtube.svg');
+      top: 0.11em;
+      width: 16px;
+      height: 16px;
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.14em;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &[href*='wikipedia.org'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/wiki.svg');
+      top: 0.12em;
+      width: 14px;
+      height: 14px;
+
+      @include media-breakpoint-up(xl) {
+        top: 0.07em;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.10em;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 }
