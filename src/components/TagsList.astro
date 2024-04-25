@@ -14,8 +14,10 @@ allPosts.forEach((post) => {
   })
 })
 ---
+<div class="tags">
+  <ul class="tags__list">
+    {AllUniqueTags.map((tag) => <li class="tags__item"><a href={`/tags/${tag}`} class="tags__link link link--nav">{`${tag} (${tagsCount[tag]})`}</a></li>)}
+  </ul>
+</div>
 
-<ul class="tag-list">
-  {AllUniqueTags.map((tag) => <li class="tag-list__item"><a href={`/tags/${tag}`} class="tag-list__link link link--nav">{`${tag} (${tagsCount[tag]})`}</a></li>)}
-</ul>
 

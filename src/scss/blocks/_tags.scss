@@ -1,6 +1,23 @@
 .tags {
   --tags-color-border: var(--root-color-panel-assistive);
 
+  @include font(14px, 1.45);
+
+  @include media-breakpoint-up(lg) {
+    @include font(16px, 1.45);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    @include font(18px, 1.45);
+  }
+
+  &--detail {
+    @include media-breakpoint-up(xxl) {
+      display: flex;
+      gap: 4px;
+    }
+  }
+
   &__title {
     font-weight: bold;
     margin-bottom: 12px;
@@ -22,18 +39,19 @@
 
   &__link {
     border: 1px solid var(--tags-color-border);
-    padding: 4px 8px;
+    padding: 4px 10px;
     text-decoration: none;
     border-radius: 6px;
     display: block;
 
     @include media-breakpoint-up(lg) {
+      padding: 4px 12px;
       border-radius: 8px;
     }
 
     @include media-breakpoint-up(xxl) {
       border-radius: 10px;
-      padding: 8px 12px;
+      padding: 8px 18px;
     }
   }
 }

@@ -23,12 +23,16 @@ const { posts } = Astro.props;
 
 ---
 <BaseLayout pageTitle={tag}>
-    <aside>
-      <h2>Все теги</h2>
-      <TagsList />
+  
+
+    <aside class="article__aside aside">
+      <h2 class="aside__title">🏷️ Все теги</h2>
+      <div class="aside__body">
+        <TagsList />
+      </div>
     </aside>
 
-    <h1>Статьи с тегом «{tag}»</h1>
+    <h1 class="article__title title title--h1 sr-only">🍄 Статьи с&nbsp;тегом «{tag}»</h1>
 
     <TagsIntro tag={tag} />
     <ul>

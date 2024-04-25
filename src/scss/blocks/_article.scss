@@ -11,12 +11,19 @@
     padding-top: 10px;
   }
 
+  &__header {
+    display: grid;
+    gap: 12px;
+  }
+
   &__picture {
     @include media-breakpoint-up(xxl) {
       width: var(--article-figure-width);
     }
   }
 
+  &__disclamer,
+  &__aside,
   &__blockquote,
   &__tags {
     margin-bottom: 30px;

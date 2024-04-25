@@ -27,27 +27,34 @@ const pageTitle = "Блог";
 ---
 
 <BaseLayout title={pageTitle}>
+
+  <h1 class="article__title title title--h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
   
-  <aside>
-    <h2>Все теги</h2>
-    <TagsList />
+  <aside class="article__aside aside">
+    <h2 class="aside__title">🏷️ Все теги</h2>
+    <div class="aside__body">
+      <TagsList />
+    </div>
   </aside>
 
-  <h1 class="h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
-
-  <ul class="cards-grid">
-    {
-      page.data.map((post) => 
-          <BlogPostCard 
-            url={post.url} 
-            title={post.frontmatter.title} 
-            date={post.frontmatter.date} 
-            dateUX={post.frontmatter.dateUX} 
-            description={post.frontmatter.description}
-          />
-        )
-    }
-  </ul>
+  <div class="article__aside aside">
+    <h2 class="aside__title">📚 Все статьи</h2>
+    <div class="aside__body">
+      <ul class="cards-grid">
+        {
+          page.data.map((post) => 
+              <BlogPostCard 
+                url={post.url} 
+                title={post.frontmatter.title} 
+                date={post.frontmatter.date} 
+                dateUX={post.frontmatter.dateUX} 
+                description={post.frontmatter.description}
+              />
+            )
+        }
+      </ul>
+    </div>
+  </div>
 
   {allPosts.length > postsPerPage ? (
     <Pagination length={page.lastPage} 

@@ -56,11 +56,11 @@
     }
   }
 
-  &[href*='http://'],
-  &[href*='https://'],
-  &[href*='instagram.com'],
-  &[href*='wikipedia.org'],
-  &[href*='youtube.com'] {
+  &--info[href*='http://'],
+  &--info[href*='https://'],
+  &--info[href*='instagram.com'],
+  &--info[href*='wikipedia.org'],
+  &--info[href*='youtube.com'] {
     position: relative;
 
     &::after {
@@ -76,8 +76,8 @@
     }
   }
 
-  &[href*='http://'],
-  &[href*='https://'] {
+  &--info[href*='http://'],
+  &--info[href*='https://'] {
 
     &::after {
       background-image: url('/src/assets/images/svg/external.svg');
@@ -101,7 +101,7 @@
     }
   }
 
-  &[href*='instagram.com'] {
+  &--info[href*='instagram.com'] {
 
     &::after {
       background-image: url('/src/assets/images/svg/instagram.svg');
@@ -121,7 +121,7 @@
     }
   }
 
-  &[href*='youtube.com'] {
+  &--info[href*='youtube.com'] {
 
     &::after {
       background-image: url('/src/assets/images/svg/youtube.svg');
@@ -141,7 +141,7 @@
     }
   }
 
-  &[href*='wikipedia.org'] {
+  &--info[href*='wikipedia.org'] {
 
     &::after {
       background-image: url('/src/assets/images/svg/wiki.svg');

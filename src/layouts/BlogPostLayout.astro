@@ -6,15 +6,19 @@ const { frontmatter } = Astro.props;
 
 ---
 <BaseLayout>
-    <header>
-      <ul class="tag-list">
-        {frontmatter.tags.map((tag) => (
-          <li class="tag-list__item"><a href={`/tags/${tag}`} class="tag-list__link">{tag}</a></li>
-        ))}
-        <li class="tag-list__item"><a href="/tags/" class="tag-list__link">Все теги</a></li>
-      </ul>
+    <header class="article__header">
+      <div class="tags tags--detail">
+        <div class="tags__title">🏷️</div>
+        <ul class="tags__list">
+          {frontmatter.tags.map((tag) => (
+            <li class="tags__item"><a href={`/tags/${tag}`} class="tags__link link link--nav">{tag}</a></li>
+          ))}
+          <li class="tags__item"><a href="/tags/" class="tags__link link link--nav">Все теги</a></li>
+        </ul>
+      </div>
+      
       <h1>{frontmatter.title}</h1>
-      <p>Опубликовано: {frontmatter.dateUX}</p>
+      <p>📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
     </header>
     <slot />
 </BaseLayout>
