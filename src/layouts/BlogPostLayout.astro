@@ -1,8 +1,14 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import Picture from '@components/Picture.astro';
 
-
+const images = import.meta.glob('/src/assets/images/content/post-cover/*.jpg');
+function getImageUrl(path) {
+  const imageImport = images[`/src/assets/images/content/post-cover/${path}`];
+  return imageImport ? imageImport() : null;
+}
 const { frontmatter } = Astro.props;
+const coverImage = getImageUrl(frontmatter.coverImage);
 
 ---
 <BaseLayout>
@@ -16,7 +22,17 @@ const { frontmatter } = Astro.props;
           <li class="tags__item"><a href="/tags/" class="tags__link link link--nav">Все теги</a></li>
         </ul>
       </div>
-      
+
+      {
+        coverImage && (
+          <Picture 
+          img={coverImage}
+          imgAlt="" 
+          classNames="article__cover" 
+          />
+        )
+      }
+
       <h1>{frontmatter.title}</h1>
       <p>📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
     </header>
