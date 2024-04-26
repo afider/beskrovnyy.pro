@@ -41,20 +41,22 @@ const pageTitle = "Блог";
   <div class="article__aside aside">
     <h2 class="aside__title">📚 Все статьи</h2>
     <div class="aside__body">
-      <ul class="cards-grid">
-        {
-          page.data.map((post) => 
-              <BlogPostCard 
-                url={post.url} 
-                title={post.frontmatter.title} 
-                date={post.frontmatter.date} 
-                dateUX={post.frontmatter.dateUX} 
-                description={post.frontmatter.description}
-                img={getImageUrl(post.frontmatter.coverImage)}
-              />
-            )
-        }
-      </ul>
+      <div class="cards-grid">
+        <ul class="cards-grid__list">
+          {
+            page.data.map((post) => 
+                <BlogPostCard 
+                  url={post.url} 
+                  title={post.frontmatter.title} 
+                  date={post.frontmatter.date} 
+                  dateUX={post.frontmatter.dateUX} 
+                  description={post.frontmatter.description}
+                  img={getImageUrl(post.frontmatter.coverImage)}
+                />
+              )
+          }
+        </ul>
+      </div>
     </div>
   </div>
 
