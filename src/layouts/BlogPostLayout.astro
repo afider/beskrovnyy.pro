@@ -1,12 +1,8 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Picture from '@components/Picture.astro';
+import { getImageUrl } from '@utils/GetImageUrl.astro';
 
-const images = import.meta.glob('/src/assets/images/content/post-cover/*.jpg');
-function getImageUrl(path) {
-  const imageImport = images[`/src/assets/images/content/post-cover/${path}`];
-  return imageImport ? imageImport() : null;
-}
 const { frontmatter } = Astro.props;
 const coverImage = getImageUrl(frontmatter.coverImage);
 

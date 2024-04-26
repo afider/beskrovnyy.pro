@@ -6,12 +6,13 @@ import BlogPostCard from '@components/BlogPostCard.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import TagsList from '@components/TagsList.astro';
 import Pagination from '@components/Pagination.astro';
+import { getImageUrl } from '@utils/GetImageUrl.astro';
 
 const allPosts = await Astro.glob('../blog/*.mdx');
-const postsPerPage = 3;
+const postsPerPage = 4;
 
 export async function getStaticPaths({paginate}) {
-  const postsPerPage = 3;
+  const postsPerPage = 4;
   const allPosts = await Astro.glob('../blog/*.mdx');
   const formattedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
@@ -49,6 +50,7 @@ const pageTitle = "Блог";
                 date={post.frontmatter.date} 
                 dateUX={post.frontmatter.dateUX} 
                 description={post.frontmatter.description}
+                img={getImageUrl(post.frontmatter.coverImage)}
               />
             )
         }

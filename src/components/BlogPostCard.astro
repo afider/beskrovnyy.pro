@@ -1,9 +1,20 @@
 ---
-const { url, title, date, dateUX, description} = Astro.props;
+import Picture from '@components/Picture.astro';
+
+const { url, title, date, dateUX, description, img} = Astro.props;
 ---
 
 <li class="cards-grid__item">
   <article class="card">
+    {
+      img && (
+        <Picture 
+        img={img}
+        imgAlt="" 
+        classNames="article__cover" 
+        />
+      )
+    }
     <h2 class="card__title">
       <a class="card__link link" href={url}>{title}</a>
     </h2>
