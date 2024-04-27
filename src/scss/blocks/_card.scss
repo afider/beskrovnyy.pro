@@ -1,6 +1,14 @@
 .card {
   position: relative;
 
+  &__title {
+    @include font(20px, 1.45, 700);
+  }
+
+  &__description {
+    @include font(16px, 1.45);
+  }
+
   &__link {
     position: absolute;
     inset: 0;

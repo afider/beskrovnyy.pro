@@ -21,20 +21,21 @@ export default function switchNavbar() {
       });
 
       checkIsModal();
-  
     });
   });
 
   navbarButtons.forEach(function(button){
     button.addEventListener('click', function(curButton) {
 
-      curButton.target.classList.toggle(activeState);
+      curButton.target.closest('button').classList.toggle(activeState);
+
+      console.log('curButton.target ', curButton.target.closest('button').classList);
+      console.log('curButton ', curButton);
 
       navbarButtons.forEach(function(el) {
         if(curButton.target.getAttribute('data-navbar-target') !== el.getAttribute('data-navbar-target')) {
           el.classList.remove(activeState);
         }
-        
       });
 
       navbarSections.forEach(function(el) {
@@ -42,7 +43,6 @@ export default function switchNavbar() {
           console.log('!curButton');
           el.classList.remove(activeState);
         }
-        
       });
 
       document.querySelector(`[data-navbar-section="${curButton.target.getAttribute('data-navbar-target')}"]`).classList.toggle(activeState);
@@ -66,5 +66,4 @@ export default function switchNavbar() {
         navbar.classList.remove(activeState);
       }
   }
-  
 }

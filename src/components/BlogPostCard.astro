@@ -1,27 +1,27 @@
 ---
-import Picture from '@components/Picture.astro';
+import ImgSource from '@components/ImgSource.astro';
 
-const { url, title, date, dateUX, description, img} = Astro.props;
+const { url, title, date, dateUX, description, img, imgAlt} = Astro.props;
 ---
 
+<article class="card">
+  {
+    img && (
 
-  <article class="card">
-    {
-      img && (
-        <Picture 
-        img={img}
-        imgAlt="" 
-        classNames="article__cover" 
-        />
-      )
-    }
-    <h2 class="card__title">
-      {title}
-    </h2>
-    <div class="card__description"><Fragment set:html={description} /></div>
-    <time datetime={date}></time>
-    {dateUX}
-    <a class="card__link link" href={url}><span class="sr-only">Подробнее</span></a>
-  </article>
+    <ImgSource img={img} imgAlt={imgAlt} classNames="card__pic" />
+
+    )
+  }
+  <h2 class="card__title">
+    {title}
+  </h2>
+  <div class="card__description">
+    <p class="card__text">
+      {description}
+    </p>
+  </div>
+  <time datetime={date}>{dateUX}</time>
+  <a class="card__link link" href={url}><span class="sr-only">Подробнее</span></a>
+</article>
 
 
