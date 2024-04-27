@@ -62,6 +62,10 @@
     }
   }
 
+  &--wide &__main {
+    max-width: calc(1700px + var(--layout-header-width));
+  }
+
   &__header {
     position: relative;
 

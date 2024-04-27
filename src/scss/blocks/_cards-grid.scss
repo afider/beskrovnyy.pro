@@ -2,8 +2,11 @@
 
   &__list {
     display: grid;
+    gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    @include media-breakpoint-up(xxl) {
+      gap: 28px;
+    }
   }
-
 }
-

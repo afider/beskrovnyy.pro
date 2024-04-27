@@ -1,0 +1,8 @@
+.card {
+  position: relative;
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+}

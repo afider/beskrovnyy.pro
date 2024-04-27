@@ -1,5 +1,7 @@
 .nav {
   --nav-color-active-link: var(--root-color-system-active);
+  --nav-color-habr: var(--root-color-habr);
+  --nav-color-habr-hover: transparent;
   --nav-side-gap: var(--root-side-gap);
 
   &__list {
@@ -49,6 +51,13 @@
       padding: 16px 8px;
       @include font(16px, 18px);
     }
+
+    @include hover {
+
+      .nav__habr {
+        color: var(--nav-color-habr-hover);
+      }
+    }
   }
 
   &--sticky &__link {
@@ -65,7 +74,8 @@
     margin-top: 8px;
     width: 60px;
     height: 60px;
-    color: #e1dddd;
+    color: var(--nav-color-habr);
     z-index: -1;
+    transition: color var(--root-animation-duration) var(--root-animation-function);
   }
 }

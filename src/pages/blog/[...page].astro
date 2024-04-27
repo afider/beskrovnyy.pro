@@ -2,8 +2,8 @@
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
 
+import BaseLayoutCardsList from '@layouts/BaseLayoutCardsList.astro';
 import BlogPostCard from '@components/BlogPostCard.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
 import TagsList from '@components/TagsList.astro';
 import Pagination from '@components/Pagination.astro';
 import { getImageUrl } from '@utils/GetImageUrl.astro';
@@ -27,7 +27,7 @@ const firstPath = pathname[1];
 const pageTitle = "Блог";
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayoutCardsList title={pageTitle}>
 
   <h1 class="article__title title title--h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
   
@@ -41,10 +41,11 @@ const pageTitle = "Блог";
   <div class="article__aside aside">
     <h2 class="aside__title">📚 Все статьи</h2>
     <div class="aside__body">
-      <div class="cards-grid">
+      <div class="cards-grid cards-grid--wide">
         <ul class="cards-grid__list">
           {
             page.data.map((post) => 
+            <li class="cards-grid__item">
                 <BlogPostCard 
                   url={post.url} 
                   title={post.frontmatter.title} 
@@ -53,6 +54,7 @@ const pageTitle = "Блог";
                   description={post.frontmatter.description}
                   img={getImageUrl(post.frontmatter.coverImage)}
                 />
+            </li>
               )
           }
         </ul>
@@ -75,4 +77,4 @@ const pageTitle = "Блог";
   <br>
   <br>
 
-</BaseLayout>
+</BaseLayoutCardsList>

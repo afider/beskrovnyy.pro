@@ -38,6 +38,9 @@ $page-max-width: 1200px;
   // text-colors
   --root-color-text: var(--root-color-primary);
 
+  // Habr colors
+  --root-color-habr: #e1dddd;
+
   // link-colors
   --root-color-link: rgb(5 81 164);
   --root-color-link-border: rgba(5 81 164 / 40%);
@@ -75,6 +78,7 @@ $page-max-width: 1200px;
 
   // Animations
   --root-animation-delay: 0.15s;
+  --root-animation-function: ease;
   --root-animation-duration-slow: 0.5s;
   --root-animation-duration: 0.3s;
   --root-animation-duration-fast: 0.2s;
@@ -128,6 +132,9 @@ $page-max-width: 1200px;
 
   // text-colors
   --root-color-text: var(--root-color-primary-assistive);
+
+  // Habr colors
+  --root-color-habr: #374150;
 
   // link-colors
   --root-color-link: #4da2ff;
