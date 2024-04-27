@@ -22,6 +22,11 @@
     }
   }
 
+  &__content {
+    max-width: 860px;
+  }
+
+  &__content,
   &__disclamer,
   &__aside,
   &__blockquote,

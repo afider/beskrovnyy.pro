@@ -15,7 +15,6 @@ const coverImage = getImageUrl(frontmatter.coverImage);
           {frontmatter.tags.map((tag) => (
             <li class="tags__item"><a href={`/tags/${tag}`} class="tags__link link link--nav">{tag}</a></li>
           ))}
-          <li class="tags__item"><a href="/tags/" class="tags__link link link--nav">Все теги</a></li>
         </ul>
       </div>
 

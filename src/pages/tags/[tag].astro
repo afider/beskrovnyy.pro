@@ -1,8 +1,9 @@
 ---
-import BaseLayout from '@layouts/BaseLayoutCardsList.astro';
+import BaseLayoutCardsList from '@layouts/BaseLayoutCardsList.astro';
 import BlogPostCard from '@components/BlogPostCard.astro';
 import TagsIntro from '@components/TagsIntro.astro';
 import TagsList from '@components/TagsList.astro';
+import { getImageUrl } from '@utils/GetImageUrl.astro';
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob('../blog/*.mdx');
@@ -22,26 +23,32 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 
 ---
-<BaseLayout pageTitle={tag}>
-  
+<BaseLayoutCardsList pageTitle={tag}>
 
     <aside class="article__aside aside">
-      <h2 class="aside__title">🏷️ Все теги</h2>
+      <h1 class="aside__title">🏷️ Все статьи по тегу</h1>
       <div class="aside__body">
         <TagsList />
       </div>
     </aside>
 
-    <h1 class="article__title title title--h1 sr-only">🍄 Статьи с&nbsp;тегом «{tag}»</h1>
-
     <TagsIntro tag={tag} />
-    <ul>
-      {posts.map((post) => <BlogPostCard 
-        url={post.url} 
-        title={post.frontmatter.title} 
-        date={post.frontmatter.date} 
-        dateUX={post.frontmatter.dateUX} 
-        description={post.frontmatter.description} 
-      />)}
-    </ul>
-</BaseLayout>
+    
+    <div class="cards-grid">
+      <ul class="cards-grid__list">
+        {posts.map((post) => 
+          <li class="cards-grid__item">
+              <BlogPostCard 
+                url={post.url} 
+                title={post.frontmatter.title} 
+                date={post.frontmatter.date} 
+                dateUX={post.frontmatter.dateUX} 
+                description={post.frontmatter.description}
+                img={getImageUrl(post.frontmatter.coverImage)}
+              />
+          </li>
+        )}
+      </ul>
+    </div>
+    
+</BaseLayoutCardsList>

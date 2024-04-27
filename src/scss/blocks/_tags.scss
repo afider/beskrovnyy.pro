@@ -1,5 +1,7 @@
 .tags {
   --tags-color-border: var(--root-color-panel-assistive);
+  --tags-color-current-bg: var(--root-color-mark);
+  --tags-color-current-color: var(--root-color-primary);
 
   @include font(14px, 1.45);
 
@@ -35,6 +37,11 @@
     @include media-breakpoint-up(xxl) {
       gap: 8px;
     }
+  }
+
+  &__item._active &__link {
+    background-color: var(--tags-color-current-bg);
+    color: var(--tags-color-current-color);
   }
 
   &__link {

@@ -1,7 +1,14 @@
 ---
 const allPosts = await Astro.glob('../pages/blog/*.mdx');
 const AllUniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const currentPageUrl = Astro.url.pathname;
+const currentTagName = currentPageUrl.replace(/^\/tags\//, "");
+const decodedCurrentTagName = decodeURIComponent(currentTagName);
+
 let tagsCount = {} // for count of posts in each tag
+
+console.log('currentPageUrl ==> ', currentPageUrl);
+
 
 // get count of posts in each tag
 allPosts.forEach((post) => {
@@ -16,7 +23,10 @@ allPosts.forEach((post) => {
 ---
 <div class="tags">
   <ul class="tags__list">
-    {AllUniqueTags.map((tag) => <li class="tags__item"><a href={`/tags/${tag}`} class="tags__link link link--nav">{`${tag} (${tagsCount[tag]})`}</a></li>)}
+    {AllUniqueTags.map((tag) => 
+      <li class={`tags__item ${(decodedCurrentTagName === tag) && ('_active')}`}>
+        <a href={`/tags/${tag}`} class="tags__link link link--nav">{`${tag} (${tagsCount[tag]})`}</a>
+      </li>)}
   </ul>
 </div>
 

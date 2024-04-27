@@ -29,8 +29,13 @@ const pageTitle = "Блог";
 
 <BaseLayoutCardsList title={pageTitle}>
 
-  <h1 class="article__title title title--h1">🍄 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
-  
+  <h1 class="article__title title title--h1">📝 Статьи о веб-разрабтке, интерфейсах и жизни</h1>
+
+  <div class="article__content">
+    <p>Блог я начал вести еще в начале 2011 года, успешно вел его целые два года 😄, но в конце 2012 забросил. Этот блог — вторая реинкарнация, которую я задизайнил, сверстал и запрограммировал на Astro.js 🚀 в 2024 году. Старый блог сохранился только на <a class="link link--info" href="http://web.archive.org/web/20130111055319/http://www.beskrovnyy.com/" class="link">archive.org</a>.</p>
+    <p>Все статьи, которые я писал тогда, восстановлены в этой версии в неизменном виде со всеми оборотами, свойственными мне тогда. Своего рода исторический памятник моих начинаний в профессии. Старые статьи будут помечены специальным тегом «🚨 старое». В каждой такой статье будет ссылка на оригинальную из веб-архива.</p>
+  </div>
+
   <aside class="article__aside aside">
     <h2 class="aside__title">🏷️ Все теги</h2>
     <div class="aside__body">
@@ -41,21 +46,21 @@ const pageTitle = "Блог";
   <div class="article__aside aside">
     <h2 class="aside__title">📚 Все статьи</h2>
     <div class="aside__body">
-      <div class="cards-grid cards-grid--wide">
+      <div class="cards-grid">
         <ul class="cards-grid__list">
           {
             page.data.map((post) => 
-            <li class="cards-grid__item">
-                <BlogPostCard 
-                  url={post.url} 
-                  title={post.frontmatter.title} 
-                  date={post.frontmatter.date} 
-                  dateUX={post.frontmatter.dateUX} 
-                  description={post.frontmatter.description}
-                  img={getImageUrl(post.frontmatter.coverImage)}
-                />
-            </li>
-              )
+              <li class="cards-grid__item">
+                  <BlogPostCard 
+                    url={post.url} 
+                    title={post.frontmatter.title} 
+                    date={post.frontmatter.date} 
+                    dateUX={post.frontmatter.dateUX} 
+                    description={post.frontmatter.description}
+                    img={getImageUrl(post.frontmatter.coverImage)}
+                  />
+              </li>
+            )
           }
         </ul>
       </div>
