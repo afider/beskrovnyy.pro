@@ -1,4 +1,5 @@
 .card {
+  display: block;
   position: relative;
 
   &__title {
@@ -7,6 +8,15 @@
 
   &__description {
     @include font(16px, 1.45);
+  }
+
+  &__date {
+    @include font(14px, 1.2);
+  }
+
+  &__pic {
+    border-radius: 20px;
+    margin-bottom: 8px;
   }
 
   &__link {

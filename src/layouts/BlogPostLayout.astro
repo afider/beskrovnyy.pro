@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Picture from '@components/Picture.astro';
+import ImgSource from '@components/ImgSource.astro';
 import { getImageUrl } from '@utils/GetImageUrl.astro';
 
 const { frontmatter } = Astro.props;
 const coverImage = getImageUrl(frontmatter.coverImage);
+const coverImageAlt = frontmatter.coverImageAlt;
 
 ---
 <BaseLayout>
@@ -20,15 +21,11 @@ const coverImage = getImageUrl(frontmatter.coverImage);
 
       {
         coverImage && (
-          <Picture 
-          img={coverImage}
-          imgAlt="" 
-          classNames="article__cover" 
-          />
+          <ImgSource img={coverImage} imgAlt={coverImageAlt} classNames="article__cover" />
         )
       }
 
-      <h1>{frontmatter.title}</h1>
+      <h1 class="article__title title title--h1">{frontmatter.title}</h1>
       <p>📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
     </header>
     <slot />

@@ -20,7 +20,7 @@ const { url, title, date, dateUX, description, img, imgAlt} = Astro.props;
       {description}
     </p>
   </div>
-  <time datetime={date}>{dateUX}</time>
+  <time class="card__date" datetime={date}>📅 {dateUX}</time>
   <a class="card__link link" href={url}><span class="sr-only">Подробнее</span></a>
 </article>
 
