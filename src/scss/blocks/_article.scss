@@ -81,7 +81,7 @@
     @include font(22px, 1.45);
   }
 
-  p {
+  &__text {
     margin-bottom: 20px;
 
     @include media-breakpoint-up(lg) {
@@ -93,7 +93,7 @@
     }
   }
 
-  abbr {
+  &__abbr {
     margin-right: 6px;
   }
 }
