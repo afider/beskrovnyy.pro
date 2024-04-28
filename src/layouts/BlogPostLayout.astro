@@ -10,6 +10,13 @@ const coverImageAlt = frontmatter.coverImageAlt;
 ---
 <BaseLayout>
     <header class="article__header">
+      <picture class="article__cover-pic">
+        {
+          coverImage && (
+            <ImgSource img={coverImage} imgAlt={coverImageAlt} classNames="article__cover" />
+          )
+        }
+      </picture>
       <div class="tags tags--detail">
         <div class="tags__title">🏷️</div>
         <ul class="tags__list">
@@ -18,15 +25,9 @@ const coverImageAlt = frontmatter.coverImageAlt;
           ))}
         </ul>
       </div>
-
-      {
-        coverImage && (
-          <ImgSource img={coverImage} imgAlt={coverImageAlt} classNames="article__cover" />
-        )
-      }
+      <p class="article__date">📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
 
       <h1 class="article__title title title--h1">{frontmatter.title}</h1>
-      <p>📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
     </header>
     <slot />
 </BaseLayout>

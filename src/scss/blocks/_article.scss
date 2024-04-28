@@ -22,6 +22,19 @@
     }
   }
 
+  &__cover-pic {
+    @include media-breakpoint-down(md) {
+      margin-right: calc(-1 * var(--root-side-gap));
+      margin-left: calc(-1 * var(--root-side-gap));
+    }
+  }
+
+  &__cover {
+    @include media-breakpoint-up(md) {
+      border-radius: 20px;
+    }
+  }
+
   &__content {
     max-width: 860px;
   }
@@ -60,6 +73,19 @@
       scroll-margin-top: 40px;
       margin-top: 80px;
       margin-bottom: 24px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 24px;
+    @include font(14px, 1.45);
+
+    @include media-breakpoint-up(md) {
+      @include font(16px, 1.45);
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include font(18px, 1.45);
     }
   }
 

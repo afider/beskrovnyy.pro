@@ -47,6 +47,7 @@ const { posts } = Astro.props;
                 dateUX={post.frontmatter.dateUX} 
                 description={post.frontmatter.description}
                 img={getImageUrl(post.frontmatter.coverImage)}
+                classNames="cards-grid__card"
               />
           </li>
         )}
