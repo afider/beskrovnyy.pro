@@ -20,6 +20,7 @@
   --logo-color-border: var(--root-color-primary);
   --logo-dim: 130px;
   --logo-sticky-dim: 46px;
+  --logo-sticky-up-dim: 100px;
 
   @include media-breakpoint-down(xs) {
     --logo-dim: 140px;
@@ -43,6 +44,19 @@
 
   @include media-breakpoint-up(xxxl) {
     --logo-dim: 260px;
+  }
+
+
+  @include media-breakpoint-up(md) {
+    --logo-sticky-up-dim: 12vh;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    --logo-sticky-up-dim: 14vh;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    --logo-sticky-up-dim: 170px;
   }
 
   @include media-breakpoint-between(sm, md) {
@@ -92,8 +106,8 @@
       border-radius: 50%;
     }
 
-    @include media-breakpoint-up(xxxl) {
-      margin-bottom: 18px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 20px;
     }
   }
 
@@ -107,6 +121,16 @@
       width: var(--logo-sticky-dim);
       height: var(--logo-sticky-dim);
       margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: var(--logo-sticky-up-dim);
+      height: var(--logo-sticky-up-dim);
+      margin-bottom: 12px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-bottom: 18px;
     }
   }
 

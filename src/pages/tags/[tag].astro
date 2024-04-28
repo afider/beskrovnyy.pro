@@ -32,8 +32,10 @@ const { posts } = Astro.props;
       </div>
     </aside>
 
-    <TagsIntro tag={tag} />
-    
+    <div class="article__content">
+      <TagsIntro tag={tag} />
+    </div>
+
     <div class="cards-grid">
       <ul class="cards-grid__list">
         {posts.map((post) => 
