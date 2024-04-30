@@ -1,0 +1,13 @@
+.list {
+  display: grid;
+  gap: 8px;
+
+  &__item {
+
+    &::before {
+      content: '—';
+      position: relative;
+      margin-right: 8px;
+    }
+  }
+}

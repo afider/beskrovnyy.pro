@@ -3,7 +3,7 @@ import ImgSource from '@components/ImgSource.astro';
 let {classNames} = Astro.props;
 (classNames === undefined) ? classNames = '' : classNames;
 
-const { url, title, date, dateUX, description, img, imgAlt} = Astro.props;
+const { url, title, date, dateUX, description, img, imgAlt, isOld} = Astro.props;
 ---
 
 <article class={`${classNames} card`}>
@@ -27,8 +27,11 @@ const { url, title, date, dateUX, description, img, imgAlt} = Astro.props;
         </p>
       </div>
     </div>
-    <time class="card__date" datetime={date}>📅 {dateUX}</time>
-    <a class="card__link link" href={url}><span class="sr-only">Подробнее</span></a>
+    <div class="card__footer">
+      <time class="card__date" datetime={date}>📅 {dateUX}</time>
+      {isOld && (<div class="card__date">🚨 старое</div>)}
+      <a class="card__link link" href={url}><span class="sr-only">Подробнее</span></a>
+    </div>
   </div>
 </article>
 

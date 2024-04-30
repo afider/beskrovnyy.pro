@@ -34,3 +34,18 @@ picture {
   background-color: var(--root-color-primary);
   color: var(--root-color-secondary);
 }
+
+@keyframes target-anchor {
+
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

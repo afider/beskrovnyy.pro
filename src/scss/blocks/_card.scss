@@ -26,6 +26,12 @@
     @include font(16px, 1.45);
   }
 
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   &__date {
     padding-top: 18px;
     color: var(--card-color-date);

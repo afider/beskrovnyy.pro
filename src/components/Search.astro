@@ -4,10 +4,10 @@ let {classNames} = Astro.props;
 (classNames === undefined) ? classNames = '' : classNames;
 ---
 <article class={`${classNames} search`}>
-  <label for="search" class="search__title navbar-title">Поиск</label>
+  <label for="search" class="search__title navbar-titl sr-only">Поиск</label>
 
   <div class="search__field field">
-    <input id="search" type="text" placeholder="Что будем-с искать?" class="field__control">
+    <input id="search" type="text" placeholder="Поиск..." class="field__control">
     <button id="search-clear" class="field__clear" type="button" aria-label="Очистить поиск"></button>
   </div>
 

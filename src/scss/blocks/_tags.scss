@@ -1,25 +1,11 @@
 .tags {
-  --tags-color-border: var(--root-color-panel-assistive);
-  --tags-color-bg: var(--root-color-panel-soft);
-  --tags-color-current-bg: var(--root-color-mark);
-  --tags-color-current-color: var(--root-color-primary);
-
-  @include font(14px, 1.45);
-
-  @include media-breakpoint-up(lg) {
-    @include font(16px, 1.45);
-  }
-
-  @include media-breakpoint-up(xxl) {
-    @include font(18px, 1.45);
-  }
 
   &--detail {
     display: flex;
-    gap: 4px;
+    gap: 8px;
     @include media-breakpoint-up(xxl) {
       display: flex;
-      gap: 4px;
+      gap: 16px;
     }
   }
 
@@ -31,38 +17,17 @@
   &__list {
     display: flex;
     gap: 4px;
+    row-gap: 12px;
     flex-wrap: wrap;
 
     @include media-breakpoint-up(lg) {
       gap: 6px;
+      row-gap: 12px;
     }
 
     @include media-breakpoint-up(xxl) {
       gap: 8px;
-    }
-  }
-
-  &__item._active &__link {
-    background-color: var(--tags-color-current-bg);
-    color: var(--tags-color-current-color);
-  }
-
-  &__link {
-    border: 1px solid var(--tags-color-border);
-    padding: 4px 10px;
-    text-decoration: none;
-    border-radius: 6px;
-    display: block;
-    background-color: var(--tags-color-bg);
-
-    @include media-breakpoint-up(lg) {
-      padding: 4px 12px;
-      border-radius: 8px;
-    }
-
-    @include media-breakpoint-up(xxl) {
-      border-radius: 10px;
-      padding: 8px 18px;
+      row-gap: 10px;
     }
   }
 }
