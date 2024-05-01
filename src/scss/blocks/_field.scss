@@ -1,5 +1,7 @@
 .field {
   --field-color-border: var(--root-color-panel-assistive);
+  --field-color: var(--root-color);
+  --field-color-bg: var(--root-color-main-bg);
   --field-color-button: var(--root-color-link);
   --field-color-control-focus: var(--root-color-link);
   --field-color-button-hover: var(--root-color-link-hover);
@@ -14,6 +16,8 @@
     transition-property: box-shadow;
     transition-duration: $animation-speed;
     transition-timing-function: $animation-function;
+    background-color: var(--field-color-bg);
+    color: var(--field-color);
     @include font(16px, 16px);
 
     &:focus-visible {

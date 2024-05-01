@@ -28,7 +28,7 @@ const coverImageAlt = frontmatter.coverImageAlt;
       </div>
 
       <h1 class="article__title title title--h1" data-anchor>
-        {frontmatter.title}&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+        <span class="title__text"set:html={frontmatter.title}></span>&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
       </h1>
       <p class="article__date">📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
 

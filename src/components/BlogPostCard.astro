@@ -18,13 +18,9 @@ const { url, title, date, dateUX, description, img, imgAlt, isOld} = Astro.props
   </picture>
   <div class="card__body">
     <div class="card__content">
-      <h2 class="card__title">
-        {title}
-      </h2>
+      <h2 class="card__title" set:html={title}></h2>
       <div class="card__description">
-        <p class="card__text">
-          {description}
-        </p>
+        <p class="card__text" set:html={description}></p>
       </div>
     </div>
     <div class="card__footer">
