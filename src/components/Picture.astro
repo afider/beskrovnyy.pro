@@ -2,6 +2,7 @@
 import ImgSource from '@components/ImgSource.astro';
 
 const {id, img, imgAlt, caption, classNames} = Astro.props;
+
 ---
 <figure id={id} class={(classNames.trim()) ? 'picture ' + classNames.trim() : 'picture'}>
   <a class="picture__link" href={img.src} title="Открыть изображение в полном размере">

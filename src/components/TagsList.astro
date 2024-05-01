@@ -26,8 +26,8 @@ allPosts.forEach((post) => {
 <div class="tags">
   <ul class="tags__list">
     {AllUniqueTags.map((tag) => 
-      <li class={`tags__item tag tag--count ${(decodedCurrentTagName === tag) && ('_active')}`}>
-        <a href={`/tags/${tag}`} class="tag__link link link--nav">{tag} <span class="tag__qty">{tagsCount[tag]}</span></a>
+      <li class={`tags__item tag-item tag-item--count ${(decodedCurrentTagName === tag) && ('_active')}`}>
+        <a href={`/tags/${tag}`} class="tag-item__link link link--nav">{tag} <span class="tag-item__qty">{tagsCount[tag]}</span></a>
       </li>)}
   </ul>
 </div>

@@ -22,11 +22,10 @@ const coverImageAlt = frontmatter.coverImageAlt;
         <div class="tags__title">🏷️</div>
         <ul class="tags__list">
           {frontmatter.tags.map((tag) => (
-            <li class={`tags__item tag ${(tag === 'старое') ? ('tag--old') : ''}`}><a href={`/tags/${tag}`} class="tag__link link link--nav">{tag}</a></li>
+            <li class={`tags__item tag-item ${(tag === 'старое') ? ('tag-item--old') : ''}`}><a href={`/tags/${tag}`} class="tag-item__link link link--nav">{tag}</a></li>
           ))}
         </ul>
       </div>
-      
 
       <h1 class="article__title title title--h1" data-anchor>
         {frontmatter.title}&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
@@ -34,7 +33,7 @@ const coverImageAlt = frontmatter.coverImageAlt;
       <p class="article__date">📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
 
       {frontmatter.isOld && (<div class="article__disclamer disclamer">
-        <p class="text">Это <a class="link link--info" href="https://web.archive.org/web/20130510064505/http://www.beskrovnyy.com/development_process/upravlenie-processom-razrabotki">статья из старого первого блога</a>, который сохранился только на <a class="link link--info" href="http://web.archive.org/web/20130111055319/http://www.beskrovnyy.com/" class="link">archive.org</a>. Все старые статьи помечены тегом <span class="tag"><a href="/tags/старое" class="tag__link link link--nav">🚨&nbsp;старое</a></span></p>
+        <p class="text">Это <a class="link link--info" href={frontmatter.archiveUrl}>статья из старого первого блога</a>, который сохранился только на <a class="link link--info" href="http://web.archive.org/web/20130111055319/http://www.beskrovnyy.com/" class="link">archive.org</a>. Все старые статьи помечены тегом <span class="tag-item"><a href="/tags/старое" class="tag-item__link link link--nav">🚨&nbsp;старое</a></span></p>
       </div>)}
     </header>
     <slot />
