@@ -141,11 +141,18 @@
  .token.deleted {
    background: #484a4a;
  }
+
+ code.language-css {
+  color: #a5c261;
+ }
  
- code.language-css .token.property,
- code.language-css .token.property + .token.punctuation {
+ code.language-css .token.property {
    color: #a9b7c6;
  }
+
+ code.language-css .token.punctuation {
+  color: #179fff;
+}
  
  code.language-css .token.id {
    color: #ffc66d;

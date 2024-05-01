@@ -1,5 +1,7 @@
 .code {
+  --code-color-border: var(--root-color-panel-assistive-soft);
   --code-color-button: var(--root-color-link);
+  --code-color-lang: var(--root-color-text-disabled-assistive);
   --code-color-button-hover: var(--root-color-link-hover);
   --code-color-button-active: var(--root-color-link-active-border);
 
@@ -19,20 +21,24 @@
     font-size: 16px;
   }
 
-  @include media-breakpoint-up(xl) {
-    font-size: 18px;
-  }
-
-  @include media-breakpoint-up(xxl) {
-    font-size: 20px;
-  }
-
   & &__pre {
     padding: 0;
     margin: 0;
+    border: 2px solid var(--code-color-border);
+
+
     @include media-breakpoint-up(md) {
-      border-radius: 20px;
+      border-radius: 20px 20px 0 0;
+      padding: 10px 10px 10px 0;
     }
+
+    @include media-breakpoint-up(xxl) {
+      padding: 30px 20px 30px 0;
+    }
+  }
+
+  &__lang {
+    color: var(--code-color-lang);
   }
 
   &__lang,
@@ -82,7 +88,7 @@
   &__button-text {
     position: relative;
     opacity: 1;
-    transition-property: opacity, transform;
+    transition-property: color, opacity, transform;
     transition-duration: var(--root-animation-duration);
     transition-timing-function: var(--root-animation-function);
     transform: translateX(0);
