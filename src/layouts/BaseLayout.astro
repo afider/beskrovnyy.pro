@@ -12,7 +12,7 @@ const currentPageUrl = Astro.url.pathname;
 
 const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 ---
-<html lang="ru" class={`_search layout ${isHomePage ? 'layout--home _home': ''}`}>
+<html lang="ru" class={`layout ${isHomePage ? 'layout--home _home': ''}`}>
   <Head title={title} />
   <body class="layout__body">
     <Sprite.Provider />
