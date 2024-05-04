@@ -102,7 +102,7 @@ switch(currentPageUrl) {
         <button class="navbar__close" type="button" aria-label="Закрыть выбор темы" data-navbar-close></button>
         <ThemeSwitcher classNames="navbar__theme" />
       </div>
-      <div class="navbar__section navbar__section--search" data-navbar-section="search-section">
+      <div id="search-section" class="navbar__section navbar__section--search" data-navbar-section="search-section">
         <button class="navbar__close" type="button" aria-label="Закрыть поиск" data-navbar-close></button>
         {(lang === 'ru') && (<Search classNames="navbar__search" />)}
       </div>
