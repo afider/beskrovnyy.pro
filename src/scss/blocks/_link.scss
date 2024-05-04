@@ -6,6 +6,7 @@
   --link-color-active-border: var(--root-color-link-active-border);
   --link-color-visited: var(--root-color-link-visited);
   --link-color-visited-border: var(--root-color-link-visited-border);
+  --link-color-telegram: var(--root-color-telegram);
 
   color: var(--link-color);
   text-decoration-color: var(--link-color-border);
@@ -35,6 +36,13 @@
       color: var(--link-color-hover);
       text-decoration-color: transparent;
     }
+  }
+
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    vertical-align: middle;
   }
 
   &--nav:visited {
@@ -162,6 +170,15 @@
       ._THEME-DARK & {
         background-image: url('/src/assets/images/svg/wiki_dark.svg');
       }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    &--tg {
+      color: var(--link-color-telegram);
     }
   }
 }

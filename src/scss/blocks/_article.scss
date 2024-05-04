@@ -3,15 +3,15 @@
   --article-figure-width: var(--root-figure-width);
 
   padding-top: 30px;
-  @include font(14px, 1.45);
+  @include font(16px, 1.45);
 
   @include media-breakpoint-up(sm) {
-    @include font(17px, 1.45);
+    @include font(18px, 1.45);
   }
 
   @include media-breakpoint-up(md) {
     padding-top: 0;
-    @include font(15px, 1.45);
+    @include font(18px, 1.45);
   }
 
   @include media-breakpoint-up(lg) {

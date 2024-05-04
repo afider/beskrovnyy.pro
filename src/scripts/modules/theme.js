@@ -102,12 +102,10 @@ export default function switchTheme() {
         break
       case 'light':
         doc.classList.remove('_THEME-SYSTEM');
-        console.log('theme light');
         doc.classList.remove('_THEME-DARK');
         doc.classList.add('_THEME-LIGHT');
       default:
         doc.classList.remove('_THEME-SYSTEM');
-        console.log('theme light');
         doc.classList.remove('_THEME-DARK');
         doc.classList.add('_THEME-LIGHT');
     }

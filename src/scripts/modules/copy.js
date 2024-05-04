@@ -17,7 +17,6 @@ export default function copy() {
       }
 
       navigator.clipboard.writeText(content).then(function() {
-        console.log('Copying to clipboard was successful!');
 
         el.target.closest('[data-code-button]').classList.add(activeState);
 

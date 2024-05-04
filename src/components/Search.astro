@@ -21,7 +21,6 @@ let {classNames} = Astro.props;
     const searchClearButton = document.querySelector('#search-clear');
 
     searchClearButton.addEventListener('click', function() {
-      console.log('searchClearButton');
       searchField.value = '';
 
       var event = new Event('input', {
