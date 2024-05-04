@@ -1,0 +1,16 @@
+---
+import BaseLayoutCardsList from '@layouts/BaseLayoutCardsList.astro';
+import TagsList from '@components/TagsList.astro';
+
+const pageTitle = "Список тегов";
+---
+<BaseLayoutCardsList pageTitle={pageTitle}>
+
+    <aside class="article__aside aside">
+      <h1 class="aside__title">🏷️ Все теги</h1>
+      <div class="aside__body">
+        <TagsList />
+      </div>
+    </aside>
+
+</BaseLayoutCardsList>

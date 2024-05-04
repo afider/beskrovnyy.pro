@@ -1,0 +1,89 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+
+import BaseLayoutCardsList from '@layouts/BaseLayoutCardsList.astro';
+import BlogPostCard from '@components/BlogPostCard.astro';
+import TagsList from '@components/TagsList.astro';
+import Pagination from '@components/Pagination.astro';
+import { getImageUrl } from '@utils/GetImageUrl.astro';
+
+const allPosts = await Astro.glob('../blog/*.mdx');
+const postsPerPage = 4;
+
+export async function getStaticPaths({paginate}) {
+  const postsPerPage = 4;
+  const allPosts = await Astro.glob('../blog/*.mdx');
+  const formattedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
+  return paginate(formattedPosts, {
+    pageSize: postsPerPage
+  });
+}
+
+const {page} = Astro.props;
+const pathname = new URL(Astro.request.url).pathname.split('/');
+const firstPath = pathname[1];
+const pageTitle = "Блог";
+---
+
+<BaseLayoutCardsList title={pageTitle}>
+
+  <h1 class="article__title title title--h1">📝 Статьи о&nbsp;веб-разрабтке, интерфейсах и&nbsp;жизни</h1>
+
+  <div class="article__content">
+    <p class="article__text">Блог я&nbsp;начал вести еще в&nbsp;начале 2011&nbsp;года, успешно вел его целые два года 😄, но&nbsp;в&nbsp;конце 2012&nbsp;забросил. Этот блог&nbsp;&mdash; вторая реинкарнация, которую я&nbsp;задизайнил, сверстал и&nbsp;запрограммировал на&nbsp;<a class="link link--info" href="https://astro.build/">Astro.js</a> 🚀 в&nbsp;2024&nbsp;году. Старый блог сохранился только на&nbsp;<a class="link link--info" href="http://web.archive.org/web/20130111055319/http://www.beskrovnyy.com/" class="link">archive.org</a>.</p>
+    <p class="article__text">Все статьи, которые я&nbsp;писал тогда, восстановлены в&nbsp;этой версии в&nbsp;неизменном виде со&nbsp;всеми оборотами, свойственными мне тогда. Своего рода исторический памятник моих начинаний в&nbsp;профессии. Старые статьи будут помечены специальным тегом <span class="tag-item tag-item--count false"><a href="/tags/старое" class="tag-item__link link link--nav">старое<span class="tag-item__qty">3</span></a></span>. В&nbsp;каждой такой статье будет ссылка на&nbsp;оригинальную из&nbsp;веб-архива.</p>
+
+    <p class="article__text">Обложки для&nbsp;статей я&nbsp;сгенерировал с&nbsp;помощью нейросети <a class="link link--info" href="https://www.midjourney.com/home">Midjourney</a>.</p>
+  </div>
+
+  <aside class="article__aside aside">
+    <h2 class="aside__title">🏷️ Все теги</h2>
+    <div class="aside__body">
+      <TagsList />
+    </div>
+  </aside>
+
+  <div class="article__aside aside">
+    <h2 class="aside__title">📚 Все статьи</h2>
+    <div class="aside__body">
+      <div class="cards-grid">
+        <ul class="cards-grid__list">
+          {
+            page.data.map((post) => 
+              <li class="cards-grid__item">
+                  <BlogPostCard 
+                    url={post.url} 
+                    title={post.frontmatter.title} 
+                    date={post.frontmatter.date} 
+                    dateUX={post.frontmatter.dateUX} 
+                    description={post.frontmatter.description}
+                    img={getImageUrl(post.frontmatter.coverImage)}
+                    isOld={post.frontmatter.isOld}
+                    classNames="cards-grid__card"
+                  />
+              </li>
+            )
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {allPosts.length > postsPerPage ? (
+    <Pagination length={page.lastPage} 
+      currentUrl={page.url.current} 
+      currentPage={page.currentPage} 
+      firstUrl={`/${firstPath}`} 
+      prevUrl={page.url.prev} 
+      nextUrl={page.url.next} 
+      lastUrl={`/${firstPath}/${page.lastPage}`}
+    />
+  ) : null}
+
+  <br>
+  <br>
+  <br>
+
+</BaseLayoutCardsList>

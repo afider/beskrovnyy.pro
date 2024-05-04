@@ -1,0 +1,28 @@
+---
+import { getLang } from '@utils/GetLang.astro';
+import { Sprite } from 'astro-icon';
+
+const currentPageUrl = Astro.url.pathname;
+const currentYear = new Date().getFullYear();
+let {classNames} = Astro.props;
+
+(classNames === undefined) ? classNames = '' : classNames;
+---
+
+<footer class={`${classNames} footer`}>
+  {
+    (getLang(currentPageUrl) === 'en') ? 
+    (
+    <p>
+      © 2009-{currentYear} Handmade by&nbsp;Evgeniy Beskrovnyy. 
+      <a href="https://github.com/afider/beskrovnyy.pro" class="link link--nav"><Sprite name="github" width="14" height="14" class="footer__icon" /> Project repo</a>.
+    </p>
+    ) : 
+    (
+    <p>
+      © 2009-{currentYear} Дизайн, верстка, программирование и&nbsp;текст&nbsp;— Евгений Бескровный. 
+      <a href="https://github.com/afider/beskrovnyy.pro" class="link link--nav"><Sprite name="github" width="14" height="14" class="footer__icon" /> Репозиторий проекта</a>.
+    </p>
+  )
+  }
+</footer>

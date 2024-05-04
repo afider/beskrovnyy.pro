@@ -1,0 +1,89 @@
+---
+import { getLang } from '@utils/GetLang.astro';
+import { Sprite } from 'astro-icon';
+
+let {classNames} = Astro.props;
+const currentPageUrl = Astro.url.pathname;
+
+(classNames === undefined) ? classNames = '' : classNames;
+---
+
+<article class={`${classNames} socials`}>
+  <h2 class="socials__title">
+    {
+      (getLang(currentPageUrl) === 'en') ? 
+      ('Contacts') : 
+      ('Контакты')
+    }
+  </h2>
+  <ul class="socials__list">
+    <li class="socials__item socials__item--linkedin">
+      <a href="https://www.linkedin.com/in/evgeniy-beskrovnyy/" class="socials__link link link--nav">
+        <Sprite name="linkedin" width="22" height="22" class="socials__icon" />
+        LinkedIn
+      </a>
+    </li>
+    <li class="socials__item socials__item--instagram">
+      <a href="https://instagram.com/evgeniy.beskrovnyy" class="socials__link link link--nav">
+        <Sprite name="instagram" width="22" height="22" class="socials__icon" />
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('Instagram') : 
+          ('Инстаграм')
+        }
+      </a>
+    </li>
+    <li class="socials__item socials__item--github">
+      <a href="https://github.com/afider" class="socials__link link link--nav">
+        <Sprite name="github" width="22" height="22" class="socials__icon" />
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('GitHub') : 
+          ('Гитхаб')
+        }
+      </a>
+    </li>
+    <li class="socials__item socials__item--email">
+      <a href="mailto:e.beskrovnyy@gmail.com" class="socials__link link link--nav">
+        <Sprite name="email" width="22" height="22" class="socials__icon" />
+        e.beskrovnyy@gmail.com
+      </a>
+    </li>
+    <li class="socials__item socials__item--twitter">
+      <a href="https://twitter.com/beskrovnyy" class="socials__link link link--nav">
+        <Sprite name="twitter" width="22" height="22" class="socials__icon" />
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('Twitter') : 
+          ('Твиттер')
+        }
+      </a>
+    </li>
+    <li class="socials__item socials__item--vk">
+      <a href="https://vk.com/e.beskrovnyy" class="socials__link link link--nav">
+        <Sprite name="vk" width="22" height="22" class="socials__icon" />
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('VK') : 
+          ('Вконтакте')
+        }
+      </a>
+    </li>
+    <li class="socials__item socials__item--telegram">
+      <a href="https://t.me/upgun" class="socials__link link link--nav">
+        <Sprite name="telegram" width="22" height="22" class="socials__icon" />
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('Telegram') : 
+          ('Телеграм')
+        }
+      </a>
+    </li>
+    <li class="socials__item socials__item--phone">
+      <a href="tel:+79185451866" class="socials__link link link--nav">
+        <Sprite name="phone" width="22" height="22" class="socials__icon" />
+        +7 918 545-18-66
+      </a>
+    </li>
+  </ul>
+</article>

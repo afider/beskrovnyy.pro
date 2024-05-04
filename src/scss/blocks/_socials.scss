@@ -1,0 +1,70 @@
+.socials {
+  --socials-color-linkedin: var(--root-color-linkedin);
+  --socials-color-instagram: var(--root-color-instagram);
+  --socials-color-github: var(--root-color-github);
+  --socials-color-email: var(--root-color-email);
+  --socials-color-twitter: var(--root-color-twitter);
+  --socials-color-vk: var(--root-color-vk);
+  --socials-color-phone: var(--root-color-phone);
+  --socials-color-telegram: var(--root-color-telegram);
+
+  &__title {
+    @include sr-only;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-between(sm, md) {
+      display: grid;
+      column-gap: 32px;
+      grid-template-columns: min-content 1fr;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &__item--linkedin &__icon {
+    color: var(--socials-color-linkedin);
+  }
+
+  &__item--instagram &__icon {
+    color: var(--socials-color-instagram);
+  }
+
+  &__item--github &__icon {
+    color: var(--socials-color-github);
+  }
+
+  &__item--email &__icon {
+    color: var(--socials-color-email);
+  }
+
+  &__item--twitter &__icon {
+    color: var(--socials-color-twitter);
+  }
+
+  &__item--vk &__icon {
+    color: var(--socials-color-vk);
+  }
+
+  &__item--phone &__icon {
+    color: var(--socials-color-phone);
+  }
+
+  &__item--telegram &__icon {
+    color: var(--socials-color-telegram);
+  }
+}

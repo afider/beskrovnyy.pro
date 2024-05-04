@@ -1,0 +1,180 @@
+---
+import { getLang } from '@utils/GetLang.astro';
+
+const allPosts = await Astro.glob('../pages/blog/*.mdx');
+
+let currentPath = Astro.url.pathname;
+
+if (currentPath.endsWith('/')) {
+  currentPath = currentPath.slice(0, -1);
+}
+
+const currentPost = allPosts.find(post => post.url === currentPath);
+let pageToc = [];
+let isToc = false;
+let {classNames} = Astro.props;
+
+(classNames === undefined) ? classNames = '' : classNames;
+
+if (currentPost) {
+  isToc = true;
+}
+
+switch(currentPath) {
+  case '/hobbies':
+  isToc = true;
+  pageToc = [
+    { name: 'Книги', hash: 'books', icon: '📖' },
+    { name: 'Мобильная фотография', hash: 'photography', icon: '📸' },
+    {
+      name: 'Экономика, инвестирование и крипторынок',
+      hash: 'money',
+      icon: '💰'
+    },
+    {
+      name: 'Кино и компьютерные игры',
+      hash: 'movies-and-games',
+      icon: '🕹️'
+    },
+    {
+      name: 'Силовые тренировки и горные лыжи',
+      hash: 'sport',
+      icon: '❤️',
+      children: [
+        {
+          name: 'Тренировки',
+          hash: 'fitness',
+          icon: '💪'
+        },
+        {
+          name: 'Горные лыжи',
+          hash: 'ski',
+          icon: '❄️'
+        }
+      ]
+    }
+  ]
+  break
+
+  case '/skills':
+    isToc = true;
+    pageToc = [
+    { name: 'Верстка и проектирование интерфейсов', hash: 'layout', icon: '🧢' },
+    { name: 'Шаблонизация и бэкэнд', hash: 'backend', icon: '⛑️' },
+    {
+      name: 'Управление проектами и системная аналитика',
+      hash: 'pm',
+      icon: '🎩'
+    }
+  ]
+  break
+
+  case '/en/skills':
+    isToc = true;
+    pageToc = [
+    { name: 'HTML/CSS-coding, JavaScript programming and UX', hash: 'layout', icon: '🧢' },
+    { name: 'Templating and backend', hash: 'backend', icon: '⛑️' },
+    {
+      name: 'Project management and analytics',
+      hash: 'pm',
+      icon: '🎩'
+    }
+  ]
+  break
+
+  default:
+    pageToc = []
+  break
+}
+
+---
+
+{isToc && <Fragment set:html={`<aside class="${classNames} contents">`} />}
+
+{
+    isToc && getLang(currentPath) === 'en' && (
+      <h2 class="contents__title navbar-title">Table of contents</h2>
+      <a href="#home" class="contents__link link link--nav link--anchor contents__link link link--nav link--anchor--title" data-contents-item>
+        <div class="contents__icon">👆</div>
+        <div class="contents__text">
+            Start
+        </div>
+      </a>
+    )
+}
+
+{
+  isToc && getLang(currentPath) === 'ru' && (
+    <h2 class="contents__title navbar-title">Содержание страницы</h2>
+    <a href="#home" class="contents__link link link--nav link--anchor contents__link link link--nav link--anchor--title" data-contents-item>
+      <div class="contents__icon">👆</div>
+      <div class="contents__text">
+          Начало
+      </div>
+    </a>
+  )
+}
+
+{currentPost && (
+  <ol class="contents__list">
+  {currentPost.frontmatter.toc.map((item) => (
+      <li class="contents__item">
+        <a href={`#${item.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+          <div class="contents__icon">{item.icon}</div>
+          <div class="contents__text">
+              {item.name}
+          </div>
+        </a>
+        {item.children && item.children.length > 0 && (
+          <ol class="contents__list">
+            {item.children.map((child) => (
+              <li class="contents__item">
+                <a href={`#${child.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+                  <div class="contents__icon">{child.icon}</div>
+                  <div class="contents__text">
+                      {child.name}
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ol>
+        )}
+      </li>
+    ))
+  }
+</ol>
+)}
+
+{pageToc && (
+
+  <ol class="contents__list">
+    {pageToc && pageToc.map((item) => (
+        <li class="contents__item">
+          <a href={`#${item.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+            <div class="contents__icon">{item.icon}</div>
+            <div class="contents__text">
+                {item.name}
+            </div>
+          </a>
+          {item.children && item.children.length > 0 && (
+            <ol class="contents__list">
+              {item.children.map((child) => (
+                <li class="contents__item">
+                  <a href={`#${child.hash}`} class="contents__link link link--nav link--anchor" data-contents-item>
+                    <div class="contents__icon">{child.icon}</div>
+                    <div class="contents__text">
+                        {child.name}
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+)}
+
+{isToc && <Fragment set:html={'</aside>'} />}
+

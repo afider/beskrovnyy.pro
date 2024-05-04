@@ -1,0 +1,22 @@
+.footer {
+  --footer-color: var(--root-color-text);
+  --footer-color-bg: var(--root-color-main-bg-rgba);
+
+  color: var(--footer-color);
+  background-color: var(--footer-color-bg);
+  padding: 40px var(--layout-side-gap);
+  backdrop-filter: blur(4px);
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 100px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 40px var(--layout-side-gap) 0 var(--layout-side-gap);
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  @include font(14px, 20px);
+}

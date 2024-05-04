@@ -1,0 +1,18 @@
+.navbar-title {
+  display: block;
+  padding-bottom: 14px;
+  @include font(16px, 20px, 600);
+
+  @include media-breakpoint-down(md) {
+    padding-right: 40px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 4px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    @include font(22px, 20px, 600);
+  }
+}
+

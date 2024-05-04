@@ -1,0 +1,50 @@
+.card {
+  --card-color-border: var(--root-color-panel-assistive);
+  --card-color-date: var(--root-color-text-disabled-assistive);
+  --card-color-bg: var(--root-color-panel-soft);
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  position: relative;
+  border: 1px solid var(--card-color-border);
+  border-radius: 20px;
+  background-color: var(--card-color-bg);
+
+  &__body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    @include font(20px, 1.45, 700);
+  }
+
+  &__description {
+    @include font(16px, 1.45);
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__date {
+    padding-top: 18px;
+    color: var(--card-color-date);
+    @include font(14px, 1.2);
+  }
+
+  &__pic {
+    display: block;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+}

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { Sprite } from 'astro-icon';
+
+const pageTitle = "Professional knowledge and skills";
+---
+
+<BaseLayout title={pageTitle}>
+  <h1 id="home" class="article__title title title--h1" data-anchor>
+    😎 Professional knowledge and skills&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  </h1>
+  <p class="article__text">I&nbsp;came to&nbsp;web development quite predictably, after graduating with a&nbsp;degree in&nbsp;economic cybernetics. It&nbsp;was a&nbsp;specialty that included disciplines in&nbsp;programming, economics, mathematical analysis and modelling.</p>
+
+  <p class="article__text">I&nbsp;studied programming at&nbsp;university for five years. The first course started with learning the basics of&nbsp;low-level programming language assembler, and after that&nbsp;I studied&nbsp;C++ along with database design. The department at&nbsp;the university was progressive and focused on&nbsp;new technologies and my&nbsp;thesis advisor was promoting neural networks and&nbsp;<abbr class="article__abbr" title="Artificial Intelligence" tabindex="0">AI</abbr>, so&nbsp;the software part of&nbsp;my&nbsp;thesis project worked with the neural network and the project was programmed in&nbsp;C++.</p>
+
+  <p class="article__text">Programming wasn&rsquo;t very exciting for me&nbsp;at&nbsp;that time, I&nbsp;mostly liked to&nbsp;design interfaces of&nbsp;programs, which we&nbsp;created in&nbsp;the <abbr class="article__abbr" title="Graphical User Interface" tabindex="0">GUI</abbr> <abbr class="article__abbr" title="Rapid Application Development" tabindex="0">RAD</abbr> <a class="link link--info" href="https://en.wikipedia.org/wiki/C%2B%2BBuilder#Borland_C++Builder">Borland C++Builder</a>. But I&nbsp;really liked web-development and frontend, which&nbsp;I touched a&nbsp;little bit in&nbsp;the last year of&nbsp;the university and even then&nbsp;I made my&nbsp;first online store based on&nbsp;<a class="link link--info" href="https://www.joomla.org/">Joomla</a> <abbr class="article__abbr" title="Content Management System" tabindex="0">CMS</abbr>&zwnj; for my&nbsp;friend.</p>
+
+  <p class="article__text">After graduating from university in&nbsp;2008, after working for a&nbsp;few months as&nbsp;an&nbsp;electronic engineer, I&nbsp;safely quit my&nbsp;job and decided to&nbsp;build a&nbsp;career in&nbsp;IT. In&nbsp;early 2009&nbsp;I got a&nbsp;job in&nbsp;a&nbsp;small, newly formed web integration department of&nbsp;a&nbsp;large company to&nbsp;create websites on&nbsp;<a class="link link--info" href="https://enterprise.1c-bitrix.ru/en/">1C-Bitrix</a> CMS, which is&nbsp;very popular in&nbsp;Eastern Europe. I&nbsp;wrote an&nbsp;<a class="link link--info" href="http://web.archive.org/web/20130123095518/http://www.beskrovnyy.com/bitrix/sozdanie-shablona-1s-bitriks">article</a> about creating themes on&nbsp;this CMS in&nbsp;my&nbsp;old blog, which&nbsp;I actively kept at&nbsp;that time. In&nbsp;the first months of&nbsp;work I&rsquo;ve acquired the initial practical base in&nbsp;HTML/CSS-coding, the basics of&nbsp;JavaScript, PHP, and finally became convinced that&nbsp;I wanted to&nbsp;devote my&nbsp;professional career to&nbsp;web development.</p>
+
+  <p class="article__text">Now, 13&nbsp;years later, I&rsquo;m still doing HTML/CSS-coding and learning new web standards, but&nbsp;I also spend a&nbsp;lot of&nbsp;time on&nbsp;interface design, programming and project management.</p>
+
+  <section class="article__section section">
+    <h2 id="layout" class="article__title title" data-anchor>🧢 HTML/CSS-coding, JavaScript programming and UX&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#layout"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+
+    <p class="article__text"><b>I&nbsp;make the layout adaptive, semantic and accessible</b>. If&nbsp;the designer only made the desktop version of&nbsp;the layout, I&nbsp;can adapt it&nbsp;for mobile widths at&nbsp;all breakpoints during HTML/CSS-coding. I&nbsp;give priority to&nbsp;the <a class="link link--info" href="https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00">Mobile First approach</a>. I&nbsp;work closely with the designer and help improve the layout and design a&nbsp;complex UX. I&nbsp;use HTML tags for their semantic purpose and never use div-tags only. For example, I&nbsp;use <code class="inline-code">&lt;header&gt;</code> for the header, <code class="inline-code">&lt;footer&gt;</code> for the footer and <code class="inline-code">&lt;nav&gt;&lt;ul&gt;&lt;li&gt;</code> for page navigation.</p>
+
+    <p class="article__text"><b>I&nbsp;love the component approach and reusability of&nbsp;code</b>. I&nbsp;use <a class="link link--info" href="https://en.bem.info/">BEM methodology</a>, write CSS in&nbsp;<a class="link link--info" href="https://sass-lang.com/">SCSS</a> terminology and actively use all the advantages of&nbsp;this preprocessor. I&nbsp;try to&nbsp;make any layout with an&nbsp;understandable <a class="link link--info" href="https://www.designbetter.co/design-systems-handbook">design system</a>: at&nbsp;first&nbsp;I necessarily discuss everything with the designer, and if&nbsp;for some reason the designer is&nbsp;unavailable, I&nbsp;still tidy up&nbsp;the&nbsp;UI system in&nbsp;the process of&nbsp;coding.</p>
+
+    <p class="article__text"><b>Create responsive HTML&nbsp;emails</b>. I&nbsp;have experience not only with <a class="link link--info" href="https://mjml.io/">MJML</a> and <a class="link link--info" href="https://get.foundation/emails.html">Foundation</a> frameworks, but also without their syntactic sugar, but with handmade tables and inline styles.</p>
+
+    <p class="article__text"><b>I&nbsp;design interfaces</b>. I&nbsp;work with interfaces, from simple landing pages to&nbsp;complex administrative panels. I&nbsp;design and prototype. I&nbsp;study the problem, do&nbsp;UX research, use knowledge, years of&nbsp;experience, common sense and find the best solution.</p>
+
+    <p class="article__text"><b>Improve page load speed</b>. I&nbsp;choose image formats with fallbacks for those browsers that don't support modern formats. Use appropriate compression algorithms for bitmaps, working with SVG where bitmaps are not needed. Use the <a class="link link--info" href="https://www.smashingmagazine.com/2015/08/understanding-critical-css/">Critical CSS</a> approach when quick loading of&nbsp;the first screen is&nbsp;important. Include links to&nbsp;resources in&nbsp;the right order. Optimize fonts: add only the necessary glyphs, use modern formats. I&nbsp;profile client optimization in&nbsp;Chrome DevTools.</p>
+
+    <p class="article__text"><b>I&nbsp;program in&nbsp;JavaScript</b>. I&nbsp;know this language at&nbsp;a&nbsp;basic level, for example, I&nbsp;can create a&nbsp;web component using the syntactic sugar of&nbsp;JS classes without any library, but I&nbsp;don't program complex business logic in&nbsp;JavaScript. Such skills allow me&nbsp;to&nbsp;create basic web page layouts or&nbsp;work in&nbsp;conjunction with a&nbsp;JavaScript programmer on&nbsp;complex&nbsp;UI components that are built on&nbsp;different&nbsp;JS frameworks and libraries such as&nbsp;jQuery, Angular, Vue.js, React, and others. I&nbsp;can take on&nbsp;the function of&nbsp;JS developer and create some simple software logic as&nbsp;part of&nbsp;the cross-functional team in&nbsp;Scrum framework.</p>
+
+    <p class="article__text"><b>I&nbsp;work with revision control</b>. Always write code with git: GitHub, GitLab or&nbsp;Bitbucket. I&nbsp;always initiate code review of&nbsp;my&nbsp;own code and do&nbsp;code reviews of&nbsp;my&nbsp;colleagues&rsquo; code.</p>
+
+    <p class="article__text"><b>Every day&nbsp;I use tools</b>: System console, Midnight Commander, Google Chrome DevTools, PhpStorm, VS&nbsp;Code, Figma, Gulp, Webpack, Docker, Linux, MacOS.</p>
+
+    <p class="article__text"><b>I&rsquo;m learning all the time</b>. The world of&nbsp;web technology is&nbsp;changing very rapidly, web standards are constantly evolving, and with each release browser developers bring new features that support the new standards. It&nbsp;can be&nbsp;difficult to&nbsp;keep up&nbsp;even with those changes in&nbsp;CSS and HTML, and keeping up&nbsp;with new changes in&nbsp;the world of&nbsp;JavaScript libraries and <a class="link link--info" href="https://www.smashingmagazine.com/2013/06/front-end-ops/">Front-End Ops</a> is&nbsp;even harder. To&nbsp;keep up&nbsp;with new technologies, I&nbsp;read books and special resources on&nbsp;web technology, development, and UX. I&nbsp;watch videos of&nbsp;lectures and conferences organized by&nbsp;the front-end community.</p>
+  </section>
+
+  <section class="article__section section">
+    <h2 id="backend" class="article__title title" data-anchor>⛑️ Templating and backend&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#backend" ><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+
+    <p class="article__text"><b>I&nbsp;create themes for WordPress and develop projects based on&nbsp;this CMS</b>:</p>
+    <ul>
+      <li>Coded HTML/CSS/JS and developed themes in&nbsp;PHP;</li>
+      <li>Installed and configured wp-plugins;</li>
+      <li>Developed design blocks of&nbsp;the WYSIWYG editor for content management;</li>
+      <li>Programmed the logic using custom fields of&nbsp;WordPress API.</li>
+    </ul>
+    <p class="article__text"><b>I&nbsp;can make a&nbsp;media project on&nbsp;my&nbsp;own</b>. It&nbsp;can be&nbsp;a&nbsp;website with a&nbsp;complex section structure or&nbsp;a&nbsp;blog. I&nbsp;can program the logic based on&nbsp;custom fields and other WordPress API. I&nbsp;have experience in&nbsp;creating and managing blogs, magazines and corporate websites from development to&nbsp;content management at&nbsp;the level of&nbsp;working with the editorial staff.</p>
+
+    <p class="article__text"><b>I&nbsp;develop e-commerce on&nbsp;the <a class="link link--info" href="https://www.shopify.com/">Shopify</a> platform</b>. I&nbsp;can develop a&nbsp;theme for a&nbsp;store, сreate a&nbsp;structure of&nbsp;sections and product collections, develop additional logic based on&nbsp;custom fields. I&nbsp;know the basic principles of&nbsp;the <a class="link link--info" href="https://shopify.dev/api">Shopify API</a>, plugins and the <a class="link link--info" href="https://shopify.github.io/liquid/">Liquid template language</a>. I&nbsp;also have experience with Liquid templates for <a class="link link--info" href="https://www.zendesk.com/">ZenDesk</a> help system.</p>
+
+    <p class="article__text"><b>Building static websites</b> on&nbsp;<a class="link link--info" href="https://jekyllrb.com/">Jekyll</a>, <a class="link link--info" href="https://gohugo.io/">Hugo</a>, <a class="link link--info" href="https://www.11ty.dev/">11ty</a> and <a class="link link--info" href="https://www.gatsbyjs.com/">Gatsby</a></p>
+  </section>
+
+  <section class="article__section section">
+    <h2 id="pm" class="article__title title" data-anchor>🎩 Project management and analytics&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#pm"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+
+    <p class="article__text"><b>I&nbsp;communicate with clients at&nbsp;the level of&nbsp;Project Manager</b>. I&nbsp;manage small projects and teams. Lately in&nbsp;almost all projects&nbsp;I perform the functions of&nbsp;a&nbsp;project manager and a&nbsp;system analyst:</p>
+    <ul>
+      <li>Doing research before choosing development tools;</li>
+      <li>Think through the structure of&nbsp;the project, write specifications and documentation;</li>
+      <li>Manage the process of&nbsp;project development from scratch to&nbsp;launch on&nbsp;the customer side;</li>
+      <li>I&nbsp;train the customer&rsquo;s staff on&nbsp;how to&nbsp;work with the project and accompany the project in&nbsp;the form of&nbsp;technical support.</li>
+    </ul>
+
+    <p class="article__text"><b>I&nbsp;use Jira task manager</b>, manage all tasks in&nbsp;it, keep track of&nbsp;the status, design and commenting on&nbsp;tasks to&nbsp;understand the progress of&nbsp;the project. I have experience working on&nbsp;Scrum framework in&nbsp;Agile.</p>
+
+    <p class="article__text"><b>Know the <a class="link link--info" href="https://jtbd.info/2-what-is-jobs-to-be-done-jtbd-796b82081cca">JTBD</a> and <a class="link link--info" href="https://www.interaction-design.org/literature/topics/customer-journey-map#:~:text=Customer%20journey%20maps%20are%20used,they%20need%20to%20improve%20designs.">CJM</a> approach</b>. I&rsquo;ve done market research using these methodologies.</p>
+  </section>
+</BaseLayout>

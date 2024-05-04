@@ -1,0 +1,39 @@
+.disclamer {
+  background-color: var(--root-color-highlight);
+  padding: 26px 30px;
+  border-radius: 24px;
+
+  @include font(13px, 1.45);
+
+  @include media-breakpoint-up(sm) {
+    @include font(15px, 1.45);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include font(13px, 1.45);
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include font(18px, 1.45);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding: 46px 52px;
+    @include font(20px, 1.45);
+  }
+
+  &__text {
+
+    &--offset-bottom {
+      margin-bottom: 16px;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 20px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

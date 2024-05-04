@@ -1,0 +1,115 @@
+.header {
+  --header-color-bg: var(--root-color-main-bg);
+  --header-color-border: var(--root-color-panel-assistive);
+  --header-color-shadow: var(--root-color-shadow-second-rgba);
+  --header-side-gap: var(--root-side-gap);
+  --header-height: var(--root-header-h);
+  --header-navbar-bottom-gap: var(--root-navbar-bottom-gap);
+
+  padding-top: 52px;
+  overflow-y: auto;
+  z-index: 1;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 10px;
+  }
+
+  &--sticky {
+    @include media-breakpoint-down(md) {
+      padding: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+      height: var(--header-height);
+      background-color: var(--header-color-bg);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      overflow-y: visible;
+
+      ._scrolled & {
+        box-shadow: 0 0 10px 10px var(--header-color-shadow);
+
+        ._THEME-DARK & {
+          box-shadow: none;
+          outline: 2px solid var(--header-color-border);
+        }
+      }
+    }
+
+    &::after {
+      @include media-breakpoint-down(md) {
+        content: attr(data-author);
+        background: linear-gradient(89deg, #2689E8 18.91%, #A168FF 79.91%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: block;
+        position: absolute;
+        top: 16px;
+        left: 72px;
+        z-index: -1;
+        @include font(14px, 24px, 600);
+      }
+    }
+  }
+
+  @include scroll;
+
+  @include media-breakpoint-up(xxxl) {
+    padding-top: 75px;
+  }
+
+  &__logo {
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &--sticky &__logo {
+    @include media-breakpoint-down(md) {
+      margin-left: var(--header-side-gap);
+      display: flex;
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 12px;
+  }
+
+  &--sticky &__nav {
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      left: 72px;
+      top: 24px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__lang {
+    height: 44px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+
+    @include media-breakpoint-up(lg) {
+      right: var(--header-side-gap);
+    }
+  }
+
+  &--sticky &__lang {
+    right: var(--header-side-gap);
+  }
+
+  &__navbar {
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      bottom: 12px;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+

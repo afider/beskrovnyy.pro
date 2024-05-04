@@ -1,0 +1,78 @@
+---
+let {classNames} = Astro.props;
+
+(classNames === undefined) ? classNames = '' : classNames;
+---
+<article class={`${classNames} search`}>
+  <label for="search" class="search__title navbar-titl sr-only">Поиск</label>
+
+  <div class="search__field field">
+    <input id="search" type="text" placeholder="Поиск..." class="field__control">
+    <button id="search-clear" class="field__clear" type="button" aria-label="Очистить поиск"></button>
+  </div>
+
+  <div class="search__results results">
+    <h2 id="search-title" class="results__main-title"></h2>
+    <div id="search-results" class="results__body"></div>
+  </div>
+
+  <script is:inline>
+    const searchField = document.querySelector('#search');
+    const searchClearButton = document.querySelector('#search-clear');
+
+    searchClearButton.addEventListener('click', function() {
+      console.log('searchClearButton');
+      searchField.value = '';
+
+      var event = new Event('input', {
+    bubbles: true,
+});
+  
+searchField.dispatchEvent(event);
+    });
+
+    searchField?.addEventListener('input', async (e) => {
+      // only load the pagefind script once
+      if (e.target.dataset.loaded !== 'true') {
+        e.target.dataset.loaded = 'true'
+        // load the pagefind script
+        window.pagefind = await import("/pagefind/pagefind.js");
+      }
+
+      // search the index using the input value
+      const search = await window.pagefind.search(e.target.value)
+      const searchTitle = document.querySelector('#search-title');
+      const searchResults = document.querySelector('#search-results');
+      const page = document.querySelector('html');
+
+      if (searchField.value != '') {
+        page.classList.add('_locked');
+        page.classList.add('_search');
+      } else {
+        page.classList.remove('_locked');
+        page.classList.remove('_search');
+      }
+
+      // clear the old search-results
+      searchResults.innerHTML = ''
+
+      if(search.results.length !== 0) {
+        // add the new search-results
+        searchTitle.innerHTML = 'Вот, что нашлось:';
+        for (const result of search.results) {
+          const data = await result.data();
+
+          searchResults.innerHTML += `
+            <a href="${data.url}" class="results__item">
+              <h3 class="results__title">${data.meta.title}</h3>
+              <p class="results__text">${data.excerpt}</p>
+            </a>`
+          
+        }
+      } else if (search.results.length === 0 && searchField.value != '') {
+        searchTitle.innerHTML = 'По такому запросу ничего нет 😥';
+        searchResults.innerHTML += '';
+      }
+    })
+  </script>
+</article>

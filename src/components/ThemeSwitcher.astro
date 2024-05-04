@@ -1,0 +1,60 @@
+---
+import { Sprite } from 'astro-icon';
+import { getLang } from '@utils/GetLang.astro';
+
+let {classNames} = Astro.props;
+const currentPageUrl = Astro.url.pathname;
+
+(classNames === undefined) ? classNames = '' : classNames;
+---
+<Sprite.Provider />
+
+<fieldset class={`${classNames} switcher`} >
+  
+  {
+    (getLang(currentPageUrl) === 'en') ? 
+    (<legend class="switcher__title">The Color Scheme</legend>) : 
+    (<legend class="switcher__title">Цветовая схема сайта</legend>)
+  }
+  <div class="switcher__body">
+    <div class="switcher__state"></div>
+    <label for="light-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always light') : ('Всегда светлая')}>
+      <Sprite name="sun" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <div class="switcher__label">
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('It\'s always light') : 
+          ('Всегда светлая')
+        }
+      </div>
+      <input id="light-theme" class="switcher__control" type="radio" name="theme" value="light" data-theme-input>
+      <div class="switcher__focus"></div>
+    </label>
+
+    <label for="system-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('System') : ('Как в системе')}>
+      <Sprite name="system" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <div class="switcher__label">
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('System') : 
+          ('Как в системе')
+        }
+      </div>
+      <input id="system-theme" class="switcher__control" type="radio" name="theme" value="system" data-theme-input checked>
+      <div class="switcher__focus"></div>
+    </label>
+
+    <label for="dark-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always dark') : ('Всегда темная')}>
+      <Sprite name="moon" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <div class="switcher__label">
+        {
+          (getLang(currentPageUrl) === 'en') ? 
+          ('It\'s always dark') : 
+          ('Всегда темная')
+        }
+      </div>
+      <input id="dark-theme" class="switcher__control" type="radio" name="theme" value="dark" data-theme-input>
+      <div class="switcher__focus"></div>
+    </label>
+  </div>
+</fieldset>

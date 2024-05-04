@@ -1,0 +1,10 @@
+---
+export function getImageUrl(path) {
+  const images = import.meta.glob('/src/assets/images/content/post-cover/**/*.jpg');
+  const imageImport = images[`/src/assets/images/content/post-cover/${path}`];
+
+  console.log('imageImport ', imageImport)
+  return imageImport ? imageImport() : null;
+}
+---
+

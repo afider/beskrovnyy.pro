@@ -1,0 +1,31 @@
+.cards-grid {
+
+  &__list {
+    display: grid;
+    justify-content: flex-start;
+    gap: 12px;
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+
+    @include media-breakpoint-up(xxl) {
+      gap: 28px;
+    }
+  }
+
+  &__card {
+    height: 100%;
+  }
+
+  &__item {
+    
+  }
+}

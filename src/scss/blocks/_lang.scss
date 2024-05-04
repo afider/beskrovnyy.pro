@@ -1,0 +1,38 @@
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  &--sticky {
+
+    &::after {
+      @include media-breakpoint-down(sm) {
+        content: attr(data-text);
+        display: block;
+        @include font(12px, 20px);
+      }
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+
+    @include media-breakpoint-down(md) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__text {
+    @include media-breakpoint-down(md) {
+      @include font(12px, 20px);
+    }
+  }
+
+  &--sticky &__text {
+    @include media-breakpoint-down(sm) {
+      @include sr-only;
+    }
+  }
+}

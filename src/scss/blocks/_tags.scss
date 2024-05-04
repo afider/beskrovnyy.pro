@@ -1,0 +1,33 @@
+.tags {
+
+  &--detail {
+    display: flex;
+    gap: 8px;
+    @include media-breakpoint-up(xxl) {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 4px;
+    row-gap: 12px;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(lg) {
+      gap: 6px;
+      row-gap: 12px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      gap: 8px;
+      row-gap: 10px;
+    }
+  }
+}

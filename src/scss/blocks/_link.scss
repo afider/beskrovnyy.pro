@@ -1,0 +1,167 @@
+.link {
+  --link-color: var(--root-color-link);
+  --link-color-border: var(--root-color-link-border);
+  --link-color-hover: var(--root-color-link-hover);
+  --link-color-active: var(--root-color-link-active);
+  --link-color-active-border: var(--root-color-link-active-border);
+  --link-color-visited: var(--root-color-link-visited);
+  --link-color-visited-border: var(--root-color-link-visited-border);
+
+  color: var(--link-color);
+  text-decoration-color: var(--link-color-border);
+  transition-property: text-decoration-color, color;
+  transition-duration: var(--root-animation-duration-slow);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: auto;
+  text-underline-offset: 0.14em;
+
+  @include hover {
+    color: var(--link-color-hover);
+    text-decoration-color: transparent;
+  }
+
+  &:focus-visible,
+  &:active {
+    color: var(--link-color-active);
+    text-decoration-color: transparent;
+  }
+
+  &:visited {
+    color: var(--link-color-visited);
+    text-decoration-color: var(--link-color-visited-border);
+
+    @include hover {
+      color: var(--link-color-hover);
+      text-decoration-color: transparent;
+    }
+  }
+
+  &--nav:visited {
+    color: var(--link-color);
+    text-decoration-color: var(--link-color-border-hover);
+
+    @include hover {
+      color: var(--link-color-hover);
+      text-decoration-color: transparent;
+    }
+  }
+
+  &--anchor {
+    text-decoration-style: dashed;
+
+    &:active {
+      color: var(--link-color);
+      text-decoration-color: var(--link-color-border);
+    }
+  }
+
+  &--info[href*='http://'],
+  &--info[href*='https://'],
+  &--info[href*='instagram.com'],
+  &--info[href*='wikipedia.org'],
+  &--info[href*='youtube.com'] {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: relative;
+      display: inline-block;
+      background-size: cover;
+      margin-left: 3px;
+
+      @include media-breakpoint-up(xxl) {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &--info[href*='http://'],
+  &--info[href*='https://'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/external.svg');
+      top: 0.08em;
+      width: 12px;
+      height: 12px;
+
+      @include media-breakpoint-up(lg) {
+        top: 0.04em;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.07em;
+        width: 16px;
+        height: 16px;
+      }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/external_dark.svg');
+      }
+    }
+  }
+
+  &--info[href*='instagram.com'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/instagram.svg');
+      top: 0.06em;
+      width: 12px;
+      height: 12px;
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.08em;
+        width: 18px;
+        height: 18px;
+      }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/instagram_dark.svg');
+      }
+    }
+  }
+
+  &--info[href*='youtube.com'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/youtube.svg');
+      top: 0.11em;
+      width: 16px;
+      height: 16px;
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.14em;
+        width: 18px;
+        height: 18px;
+      }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/youtube_dark.svg');
+      }
+    }
+  }
+
+  &--info[href*='wikipedia.org'] {
+
+    &::after {
+      background-image: url('/src/assets/images/svg/wiki.svg');
+      top: 0.12em;
+      width: 14px;
+      height: 14px;
+
+      @include media-breakpoint-up(xl) {
+        top: 0.07em;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        top: 0.10em;
+        width: 20px;
+        height: 20px;
+      }
+
+      ._THEME-DARK & {
+        background-image: url('/src/assets/images/svg/wiki_dark.svg');
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/* PT Sans */
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/sans/ptsans-regular.woff2') format('woff2'),
+    url('../fonts/sans/ptsans-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/sans/ptsans-bold.woff2') format('woff2'),
+    url('../fonts/sans/ptsans-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/sans/ptsans-italic.woff2') format('woff2'),
+    url('../fonts/sans/ptsans-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../fonts/sans/ptsans-bolditalic.woff2') format('woff2'),
+    url('../fonts/sans/ptsans-bolditalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+// JetBrains Mono
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('JetBrainsMono-Regular');
+  src: url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2');
+}

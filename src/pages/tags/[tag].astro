@@ -1,0 +1,58 @@
+---
+import BaseLayoutCardsList from '@layouts/BaseLayoutCardsList.astro';
+import BlogPostCard from '@components/BlogPostCard.astro';
+import TagsIntro from '@components/TagsIntro.astro';
+import TagsList from '@components/TagsList.astro';
+import { getImageUrl } from '@utils/GetImageUrl.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../blog/*.mdx');
+  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+---
+<BaseLayoutCardsList pageTitle={tag}>
+
+    <aside class="article__aside aside">
+      <h1 class="aside__title">🏷️ Все статьи по тегу</h1>
+      <div class="aside__body">
+        <TagsList />
+      </div>
+    </aside>
+
+    <div class="article__content">
+      <TagsIntro tag={tag} />
+    </div>
+
+    <div class="cards-grid">
+      <ul class="cards-grid__list">
+        {posts.map((post) => 
+          <li class="cards-grid__item">
+              <BlogPostCard 
+                url={post.url} 
+                title={post.frontmatter.title} 
+                date={post.frontmatter.date} 
+                dateUX={post.frontmatter.dateUX} 
+                description={post.frontmatter.description}
+                img={getImageUrl(post.frontmatter.coverImage)}
+                isOld={post.frontmatter.isOld}
+                classNames="cards-grid__card"
+              />
+          </li>
+        )}
+      </ul>
+    </div>
+    
+</BaseLayoutCardsList>

@@ -1,0 +1,91 @@
+.field {
+  --field-color-border: var(--root-color-panel-assistive);
+  --field-color: var(--root-color);
+  --field-color-bg: var(--root-color-main-bg);
+  --field-color-button: var(--root-color-link);
+  --field-color-control-focus: var(--root-color-link);
+  --field-color-button-hover: var(--root-color-link-hover);
+
+  display: grid;
+  grid-template-columns: 1fr max-content;
+
+  &__control {
+    height: 44px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid var(--field-color-border);
+    transition-property: box-shadow;
+    transition-duration: $animation-speed;
+    transition-timing-function: $animation-function;
+    background-color: var(--field-color-bg);
+    color: var(--field-color);
+    @include font(16px, 16px);
+
+    @include media-breakpoint-down(md) {
+      padding-right: calc(44px + 10px);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--field-color-control-focus);
+    }
+  }
+
+  &__clear {
+    width: 44px;
+    height: 44px;
+    border: none;
+    position: relative;
+    background: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: $animation-speed;
+    transition-timing-function: $animation-function;
+
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      right: 0;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--field-color-button);
+      top: 50%;
+      left: 50%;
+      margin-top: -1px;
+      margin-left: -8px;
+      transition-property: background-color;
+      transition-duration: $animation-speed;
+      transition-timing-function: $animation-function;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    @include hover {
+
+      &::before,
+      &::after {
+        background-color: var(--field-color-button-hover);
+      }
+    }
+
+    ._search & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

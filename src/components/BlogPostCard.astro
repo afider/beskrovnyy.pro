@@ -1,0 +1,34 @@
+---
+import ImgSource from '@components/ImgSource.astro';
+let {classNames} = Astro.props;
+(classNames === undefined) ? classNames = '' : classNames;
+
+const { url, title, date, dateUX, description, img, imgAlt, isOld} = Astro.props;
+---
+
+<article class={`${classNames} card`}>
+  <picture class="card__pic">
+    {
+      img && (
+  
+      <ImgSource img={img} imgAlt={imgAlt} classNames="card__pic" />
+  
+      )
+    }
+  </picture>
+  <div class="card__body">
+    <div class="card__content">
+      <h2 class="card__title" set:html={title}></h2>
+      <div class="card__description">
+        <p class="card__text" set:html={description}></p>
+      </div>
+    </div>
+    <div class="card__footer">
+      <time class="card__date" datetime={date}>📅 {dateUX}</time>
+      {isOld && (<div class="card__date">🚨 старое</div>)}
+      <a class="card__link link" href={url}><span class="sr-only">Подробнее</span></a>
+    </div>
+  </div>
+</article>
+
+

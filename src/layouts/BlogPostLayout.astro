@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ImgSource from '@components/ImgSource.astro';
+import { getImageUrl } from '@utils/GetImageUrl.astro';
+import { Sprite } from 'astro-icon';
+
+const { frontmatter } = Astro.props;
+const coverImage = getImageUrl(frontmatter.coverImage);
+const coverImageAlt = frontmatter.coverImageAlt;
+
+---
+<BaseLayout>
+    <header id="home" class="article__header">
+      <picture class="article__cover-pic">
+        {
+          coverImage && (
+            <ImgSource img={coverImage} imgAlt={coverImageAlt} classNames="article__cover" />
+          )
+        }
+      </picture>
+      <div class="article__main-tags tags tags--detail">
+        <div class="tags__title">🏷️</div>
+        <ul class="tags__list">
+          {frontmatter.tags.map((tag) => (
+            <li class={`tags__item tag-item ${(tag === 'старое') ? ('tag-item--old') : ''}`}><a href={`/tags/${tag}`} class="tag-item__link link link--nav">{tag}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <h1 class="article__title title title--h1" data-anchor>
+        <span class="title__text"set:html={frontmatter.title}></span>&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+      </h1>
+      <p class="article__date">📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
+
+      {frontmatter.isOld && (<div class="article__disclamer disclamer">
+        <p class="text">Это <a class="link link--info" href={frontmatter.archiveUrl}>статья из старого первого блога</a>, который сохранился только на <a class="link link--info" href="http://web.archive.org/web/20130111055319/http://www.beskrovnyy.com/" class="link">archive.org</a>. Все старые статьи помечены тегом <span class="tag-item"><a href="/tags/старое" class="tag-item__link link link--nav">🚨&nbsp;старое</a></span></p>
+      </div>)}
+    </header>
+    <slot />
+</BaseLayout>
