@@ -14,9 +14,14 @@ import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
 import { getLang } from '@utils/GetLang.astro';
 
 const allPosts = await Astro.glob('../../pages/blog/*.mdx');
-const currentPath = Astro.url.pathname;
-const currentPost = allPosts.find(post => post.url === currentPath);
-const currentPageUrl = Astro.url.pathname;
+let currentPageUrl = Astro.url.pathname;
+
+if (currentPageUrl.endsWith('/')) {
+  currentPageUrl = currentPageUrl.slice(0, -1);
+}
+const currentPost = allPosts.find(post => post.url === currentPageUrl);
+
+
 const lang = getLang(currentPageUrl);
 const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 let isToc = false;
@@ -25,16 +30,16 @@ if (currentPost) {
   isToc = true;
 }
 
-switch(currentPath) {
-  case '/hobbies/':
+switch(currentPageUrl) {
+  case '/hobbies':
     isToc = true;
   break
 
-  case '/skills/':
+  case '/skills':
     isToc = true;
   break
 
-  case '/en/skills/':
+  case '/en/skills':
     isToc = true;
   break
 }

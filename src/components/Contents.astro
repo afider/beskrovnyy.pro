@@ -2,7 +2,13 @@
 import { getLang } from '@utils/GetLang.astro';
 
 const allPosts = await Astro.glob('../pages/blog/*.mdx');
-const currentPath = Astro.url.pathname;
+
+let currentPath = Astro.url.pathname;
+
+if (currentPath.endsWith('/')) {
+  currentPath = currentPath.slice(0, -1);
+}
+
 const currentPost = allPosts.find(post => post.url === currentPath);
 let pageToc = [];
 let isToc = false;
@@ -15,7 +21,7 @@ if (currentPost) {
 }
 
 switch(currentPath) {
-  case '/hobbies/':
+  case '/hobbies':
   isToc = true;
   pageToc = [
     { name: 'Книги', hash: 'books', icon: '📖' },
@@ -50,7 +56,7 @@ switch(currentPath) {
   ]
   break
 
-  case '/skills/':
+  case '/skills':
     isToc = true;
     pageToc = [
     { name: 'Верстка и проектирование интерфейсов', hash: 'layout', icon: '🧢' },
@@ -63,7 +69,7 @@ switch(currentPath) {
   ]
   break
 
-  case '/en/skills/':
+  case '/en/skills':
     isToc = true;
     pageToc = [
     { name: 'HTML/CSS-coding, JavaScript programming and UX', hash: 'layout', icon: '🧢' },

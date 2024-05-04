@@ -64,5 +64,10 @@
 
   &__list &__list {
     margin-left: 30px;
+    margin-bottom: 12px;
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 16px;
+    }
   }
 }

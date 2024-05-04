@@ -1,6 +1,7 @@
 .blockquote {
   display: flex;
   flex-direction: column;
+  margin-left: 10%;
 
   &__body {
     font-style: italic;

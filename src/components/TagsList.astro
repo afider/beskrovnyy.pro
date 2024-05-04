@@ -5,7 +5,7 @@ const currentPageUrl = Astro.url.pathname;
 const currentTagName = currentPageUrl.replace(/^\/tags\//, "");
 let decodedCurrentTagName = decodeURIComponent(currentTagName);
 
-decodedCurrentTagName = decodedCurrentTagName.replace(/\//g, "");;
+decodedCurrentTagName = decodedCurrentTagName.replace(/\//g, "");
 
 let tagsCount = {} // for count of posts in each tag
 
