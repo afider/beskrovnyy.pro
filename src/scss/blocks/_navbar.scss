@@ -147,6 +147,11 @@
   }
 
   &__section--search {
+    @include media-breakpoint-down(md) {
+      padding-top: 50px;
+      height: 95vh;
+      height: 95dvh;
+    }
     @include media-breakpoint-up(xsm) {
       max-width: 600px;
     }

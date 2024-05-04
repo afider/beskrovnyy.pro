@@ -10,6 +10,7 @@
   grid-template-columns: 1fr max-content;
 
   &__control {
+    height: 44px;
     padding: 0 10px;
     border-radius: 8px;
     border: 1px solid var(--field-color-border);
@@ -19,6 +20,10 @@
     background-color: var(--field-color-bg);
     color: var(--field-color);
     @include font(16px, 16px);
+
+    @include media-breakpoint-down(md) {
+      padding-right: calc(44px + 10px);
+    }
 
     &:focus-visible {
       outline: none;
@@ -38,6 +43,11 @@
     transition-property: opacity, visibility;
     transition-duration: $animation-speed;
     transition-timing-function: $animation-function;
+
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      right: 0;
+    }
 
     &::before,
     &::after {

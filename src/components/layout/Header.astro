@@ -23,7 +23,7 @@ const currentPost = allPosts.find(post => post.url === currentPageUrl);
 
 
 const lang = getLang(currentPageUrl);
-const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
+const isHomePage = currentPageUrl === '' || currentPageUrl === '/en' ;
 let isToc = false;
 
 if (currentPost) {
@@ -112,7 +112,7 @@ switch(currentPageUrl) {
       </div>
     </div>
   </div>
-  {(currentPageUrl === '/' || currentPageUrl === '/en/') && (<Socials />)}
+  {(currentPageUrl === '' || currentPageUrl === '/en') && (<Socials />)}
 
 </header>
 

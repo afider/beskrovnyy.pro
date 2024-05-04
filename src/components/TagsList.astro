@@ -9,9 +9,6 @@ decodedCurrentTagName = decodedCurrentTagName.replace(/\//g, "");
 
 let tagsCount = {} // for count of posts in each tag
 
-console.log('currentPageUrl ==> ', currentPageUrl);
-
-
 // get count of posts in each tag
 allPosts.forEach((post) => {
   post.frontmatter.tags.forEach((tag) => {

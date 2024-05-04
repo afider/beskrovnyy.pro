@@ -49,3 +49,11 @@ picture {
     opacity: 0;
   }
 }
+
+html._search,
+._search body {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
