@@ -29,8 +29,14 @@
   }
 
   &__picture {
+    @include media-breakpoint-up(xl) {
+      width: 116%;
+    }
     @include media-breakpoint-up(xxl) {
-      width: var(--article-figure-width);
+      width: 111%;
+    }
+    @include media-breakpoint-up(xxxl) {
+      width: 106%;
     }
   }
 

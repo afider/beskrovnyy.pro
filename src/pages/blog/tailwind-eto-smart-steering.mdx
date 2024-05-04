@@ -40,6 +40,7 @@ toc:
 ---
 import Picture from '@components/Picture.astro';
 import { Sprite } from 'astro-icon';
+import picImpact from '@images/content/posts/tailwind-eto-smart-steering/impact.jpg';
 
 <div class="article__disclamer disclamer">
   <p class="disclamer__text disclamer__text--offset-bottom">Мой авторский перевод статьи &laquo;<a class="link link--info" href="https://joshcollinsworth.com/blog/tailwind-is-smart-steering">Classic rock, Mario Kart, and why we&nbsp;can&rsquo;t agree on&nbsp;Tailwind</a>&raquo; опубликованной 26 сентября 2023 года фронтенд-разработчиком из&nbsp;Канзаса, <a class="link link--info" href="https://joshcollinsworth.com/about-me">Джошом Колинсвортом</a> [Josh Collinsworth]&nbsp;&mdash; сеньором фронтенд-разработчиком <a class="link link--info" href="https://deno.com/">Deno</a></p>
@@ -85,6 +86,13 @@ import { Sprite } from 'astro-icon';
   <p class="article__text">Smart Steering — это, по сути, второй пилот на ИИ. Если эта функция включена, вы управляете героем-гонщиком как обычно, кроме случаев, когда вы начнете съезжать не туда, игра автоматически возьмет управление на себя и вернет вас на дорогу. Больше никаких выпадений с трассы и продираний сквозь траву обратно.</p>
   <p class="article__text">Smart Steering может помочь выровнять шансы в игре любой разномастной группы (особенно в продвинутых классах двигателей, где даже у опытных игроков есть риск быть выброшенными с трека).</p>
   <p class="article__text">Но по мере того, как вы становитесь все лучше и лучше в игре, Smart Steering начинает помогать все меньше и меньше, пока, в конце концов, не начинает мешать.</p>
+
+  <Picture 
+    img={picImpact}
+    imgAlt="График влияния Smart Steering на управление в зависимости от навыков." 
+    classNames="article__picture" 
+  />
+
   <p class="article__text">Smart Steering, например, не позволит срезать, эта функция не может определить, почему вы отклоняетесь от курса и ни при каких обстоятельствах не даст вам этого сделать. А может и сбить вас с намеченного курса в самый неподходящий момент.</p>
   <p class="article__text">У вас в голове может быть стратегия по которой вам нужно будет съехать с дороги (к примеру, вы хотели объехать разрушительное препятствие), но Smart Steering не позволит этого сделать, несмотря ни на что.</p>
   <p class="article__text">Кроме того, для сохранения игрового баланса, у игроков со Smart Steering отключены самые сильные бусты скорости.</p>
