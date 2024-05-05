@@ -77,20 +77,30 @@ switch(currentPageUrl) {
         <li class="navbar__item navbar__item--theme">
           <button class="navbar__button link link--nav" type="button" data-navbar-target="theme-section">
             <Sprite name="moon" width="16" height="16" class="navbar__icon" />
-            Тема
+            {
+              (getLang(currentPageUrl) === 'en') ? 
+              ('Theme') : 
+              ('Тема')
+            }
           </button>
         </li>
-        <li class="navbar__item navbar__item--search">
-          <button class="navbar__button link link--nav" type="button" data-navbar-target="search-section">
-            <Sprite name="search" width="16" height="16"  class="navbar__icon" />
-            Поиск
-          </button>
-        </li>
+        {(lang === 'ru') && (
+          <li class="navbar__item navbar__item--search">
+            <button class="navbar__button link link--nav" type="button" data-navbar-target="search-section">
+              <Sprite name="search" width="16" height="16"  class="navbar__icon" />
+              Поиск
+            </button>
+          </li>
+        )}
         {isToc && (
           <li class="navbar__item navbar__item--contents">
             <button class="navbar__button link link--nav" type="button" data-navbar-target="contents-section">
               <Sprite name="contents" width="16" height="16"  class="navbar__icon" />
-              Содержание
+              {
+                (getLang(currentPageUrl) === 'en') ? 
+                ('Table of contents') : 
+                ('Содержание')
+              }
             </button>
           </li>
         )}
@@ -98,14 +108,22 @@ switch(currentPageUrl) {
     </div>
     <div class="navbar__body">
       <div class="navbar__section" data-navbar-section="theme-section">
-        <h2 class="navbar__title navbar-title">Цветовая тема</h2>
+        <h2 class="navbar__title navbar-title">
+          {
+            (getLang(currentPageUrl) === 'en') ? 
+            ('Color Theme') : 
+            ('Цветовая тема')
+          }
+        </h2>
         <button class="navbar__close" type="button" aria-label="Закрыть выбор темы" data-navbar-close></button>
         <ThemeSwitcher classNames="navbar__theme" />
       </div>
-      <div id="search-section" class="navbar__section navbar__section--search" data-navbar-section="search-section">
-        <button class="navbar__close" type="button" aria-label="Закрыть поиск" data-navbar-close></button>
-        {(lang === 'ru') && (<Search classNames="navbar__search" />)}
-      </div>
+      {(lang === 'ru') && (
+        <div id="search-section" class="navbar__section navbar__section--search" data-navbar-section="search-section">
+          <button class="navbar__close" type="button" aria-label="Закрыть поиск" data-navbar-close></button>
+          <Search classNames="navbar__search" />
+        </div>
+      )}
       <div class="navbar__section navbar__section--contents" data-navbar-section="contents-section">
         <button class="navbar__close" type="button" aria-label="Закрыть содержание" data-navbar-close></button>
         <Contents classNames="navbar__contents" />
