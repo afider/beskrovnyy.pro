@@ -2,7 +2,6 @@ export default function switchTheme() {
   const inputs = document.querySelectorAll('[data-theme-input]');
   const pictures = document.querySelectorAll('[data-theme-img]');
   const doc = document.getElementsByTagName("html")[0];
-  const themeState = '_THEME-DARK';
   const mediaDark = '(prefers-color-scheme: dark)';
   const mediaLight = '(prefers-color-scheme: light)';
 
@@ -52,6 +51,7 @@ export default function switchTheme() {
 
     inputs.forEach((el) => {
       el.addEventListener('change', (el) => {
+        console.log('change');
         const theme = el.target.value;
 
         getOsTheme();
@@ -120,7 +120,7 @@ export default function switchTheme() {
   function getTheme() {
     // saves the theme value: light, system, or dark to the theme variable from localStorage
 
-    theme = localStorage.getItem('theme');
+    theme = localStorage.getItem('theme') || 'system';
   }
 
   function getOsTheme() {
