@@ -1,5 +1,6 @@
 ---
 const {title} = Astro.props;
+let currentPageUrl = Astro.url.pathname;
 ---
 
 <head>
@@ -10,4 +11,5 @@ const {title} = Astro.props;
 
   <link rel="apple-touch-icon" href="/favicon/touchicon-152.png">
   <link rel="icon" href="/favicon/favicon-96.png">
+  <link rel="canonical" href={`https://beskrovnyy.pro${currentPageUrl}`}/>
 </head>
