@@ -1,0 +1,13 @@
+.pics-list {
+  display: grid;
+  justify-content: flex-start;
+  gap: 12px;
+
+  @include media-breakpoint-down(sm) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}

@@ -11,16 +11,25 @@ archiveUrl: 'https://web.archive.org/web/20130225015720/http://www.beskrovnyy.co
 toc: []
 ---
 
+import Picture from '@components/Picture.astro';
+import picBook from '@images/content/posts/k-chertu-vse-beris-i-delaj/book.png';
+
 <p class="article__text">На&nbsp;меня <a class="link link--info" href="https://web.archive.org/web/20130225015720/http://www.ozon.ru/context/detail/id/2804907/">эта книжка</a> видимо не&nbsp;произвела должного действия. В&nbsp;основном <a class="link link--info" href="https://web.archive.org/web/20130225015720/http://ru.wikipedia.org/wiki/%D0%91%D1%80%D1%8D%D0%BD%D1%81%D0%BE%D0%BD,_%D0%A0%D0%B8%D1%87%D0%B0%D1%80%D0%B4">Брэнсон</a> описывает в&nbsp;ней в&nbsp;краткой форме, свой путь становления как бизнесмена с&nbsp;некоторыми вплетениями лирических отступлений из&nbsp;детства и&nbsp;описания семейных отношений. </p>
-<p class="article__text">
-<span id="more-214"></span>
-</p>
+
+<Picture 
+  img={picBook}
+  imgAlt="Книга с фотографией улыбающегося Ричарда Брэнсона и надписью «Ричард Брэнсон. К черту все! Берис и делай!»." 
+  classNames="article__picture" 
+/>
+
 <p class="article__text">Книгу слушал, как все подобные, не&nbsp;выдающиеся своей художественной ценностью, произведения, дабы избавить глаза от&nbsp;лишнего ненужного напряжения, благо аудиокниги воспринимаю почти также, как при обычном чтении.</p>
 <p class="article__text">Призывом-заголовком книги пропитано все ее&nbsp;содержание. Автор либо резюмирует им&nbsp;вышеизложенное, либо использует в&nbsp;качестве &laquo;преамбулы&raquo;. На&nbsp;меня книжка особого мотивационного настроения не&nbsp;произвела, может быть совсем немного, на&nbsp;непродолжительное время прослушивания.</p>
 <p class="article__text">Больший интерес проявлялся к&nbsp;личности, к&nbsp;стилю жизни и&nbsp;биографии, к&nbsp;тому как Брэнсон смог вырастить из&nbsp;крохотного журнала для студентов довольно крупную корпорацию, владеющую собственной авиакомпанией, железнодорожными линиями и&nbsp;даже космическим туроператором =)</p>
 <p class="article__text">Мне книга показалась просто краткой его биографией, но&nbsp;более литературно изложенной и&nbsp;приукрашенной, забавными и&nbsp;не&nbsp;очень, событиями из&nbsp;жизни.</p>
 <p class="article__text">Позже узнал, что существует еще и&nbsp;<a class="link link--info" href="https://web.archive.org/web/20130225015720/http://www.ozon.ru/context/detail/id/3637642/">расширенная версия книжки</a>. </p>
 <p class="article__text">А&nbsp;еще понравился забавный ролик&nbsp;&mdash; реклама авиалиний Virgin. Довольно точно характеризующий натуру Брэнсона:</p>
-<p class="article__text">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/zWQD1tlwrNg?si=Q40WJ65GWiZS72hq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
+
+<figure class="article__video video">
+  <iframe class="video__frame" width="560" height="315" src="https://www.youtube.com/embed/zWQD1tlwrNg?si=Q40WJ65GWiZS72hq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</figure>
+
