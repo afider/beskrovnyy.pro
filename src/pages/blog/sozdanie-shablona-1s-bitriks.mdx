@@ -464,8 +464,8 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
   <p class="article__text">Так как файлы на&nbsp;странице сайта подключаются в&nbsp;таком порядке:</p>
 
   <ol class="article__list list">
-  <li class="list__item">styles.css</li>
-  <li class="list__item">template_styles.css</li>
+    <li class="list__item">styles.css</li>
+    <li class="list__item">template_styles.css</li>
   </ol>
 
   <p class="article__text">то&nbsp;на&nbsp;сайте фон <code class="inline-code">body</code> станет серого цвета, т.к. стиль в&nbsp;последнем подключенном файле <code class="inline-code">template_styles.css</code> &laquo;перебьет&raquo; стиль, определенный в <code class="inline-code">styles.css</code>. А&nbsp;в&nbsp;визуальном редакторе фон станет красным, так как содержимое визуального редактора представляет собой <code class="inline-code">iframe</code> в&nbsp;который подключаются стили только из&nbsp;файла <code class="inline-code">styles.css</code> причем вставляются они непосредственно в&nbsp;область <code class="inline-code">head</code> с&nbsp;помощью тега <code class="inline-code">&lt;style&gt;</code>. </p>
