@@ -1,0 +1,47 @@
+.video {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  &__caption {
+    padding-left: 26px;
+    @include font(14px, 1.45, italic);
+
+    @include media-breakpoint-up(sm) {
+      @include font(17px, 1.45, italic);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font(15px, 1.45, italic);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font(18px, 1.45, italic);
+    }
+
+    @include media-breakpoint-up(xxl) {
+      @include font(20px, 1.45, italic);
+    }
+  }
+
+  &__frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+
+    @include media-breakpoint-up(md) {
+      border-radius: 20px;
+    }
+  }
+}

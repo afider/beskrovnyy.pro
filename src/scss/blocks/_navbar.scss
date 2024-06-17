@@ -43,13 +43,17 @@
 
     ._THEME-DARK & {
       box-shadow: none;
-      outline: 2px solid var(--navbar-color-border);
+      border: 2px solid var(--navbar-color-border);
     }
   }
 
   &._active &__list {
-    box-shadow: 0 0 20px 10px transparent;
-    outline: 1px solid var(--navbar-color-border);
+    box-shadow: none;
+    outline: none;
+
+    ._THEME-DARK & {
+      border-color: transparent;
+    }
   }
 
   &__close {
@@ -63,6 +67,10 @@
     right: 0;
     z-index: 1;
     cursor: pointer;
+
+    @include media-breakpoint-down(md) {
+      display: block;
+    }
 
     &::before,
     &::after {
@@ -85,12 +93,6 @@
 
     &::after {
       transform: rotate(-45deg);
-    }
-  }
-
-  &--sticky &__close {
-    @include media-breakpoint-down(md) {
-      display: block;
     }
   }
 

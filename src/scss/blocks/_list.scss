@@ -5,9 +5,35 @@
   &__item {
 
     &::before {
-      content: '—';
+      content: '\2013';
       position: relative;
+      top: -1px;
       margin-right: 8px;
     }
+  }
+
+  &--ordered {
+    list-style: decimal;
+    margin-left: 18px;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 20px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: 24px;
+    }
+  }
+
+  &--ordered &__item {
+
+    &::before {
+      display: none;
+    }
+  }
+
+  & & {
+    padding-top: 20px;
+    margin-left: 20px;
   }
 }

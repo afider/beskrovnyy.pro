@@ -7,7 +7,7 @@ import { Sprite } from 'astro-icon';
 const { frontmatter } = Astro.props;
 const coverImage = getImageUrl(frontmatter.coverImage);
 const coverImageAlt = frontmatter.coverImageAlt;
-
+const telegramPostUrl = 'beskrovnyy_pro/' + frontmatter.channelPostUrlId
 ---
 <BaseLayout>
     <header id="home" class="article__header">
@@ -37,4 +37,13 @@ const coverImageAlt = frontmatter.coverImageAlt;
       </div>)}
     </header>
     <slot />
+    {frontmatter.channelPostUrlId && (
+      <noindex>
+        <section class="section" aria-hidden="true">
+          <h2 id="comments" class="article__title title">💬 Комментарии</h2>
+          <p class="article__text">Можно прокомментировать <a class="link link--info" href={`https://t.me/beskrovnyy_pro/${frontmatter.channelPostUrlId}`}>этот пост прямо в&nbsp;Telegram-канале</a> блога, логиниться в&nbsp;Telegram здесь не&nbsp;обязательно, ваш комментарий сразу&nbsp;же появится ниже:</p>
+          <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-discussion={telegramPostUrl} data-comments-limit="10" data-colorful="1" data-dark="1"></script>
+        </section>
+      </noindex>
+    )}
 </BaseLayout>

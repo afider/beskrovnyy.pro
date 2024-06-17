@@ -29,8 +29,9 @@ export default function switchNavbar() {
 
       curButton.target.closest('button').classList.toggle(activeState);
 
-      console.log('curButton.target ', curButton.target.closest('button').classList);
-      console.log('curButton ', curButton);
+      if (curButton.target.getAttribute('data-navbar-target') === 'search-section') {
+        setTimeout(function(){document.getElementById('search').focus();}, 600);
+      }
 
       navbarButtons.forEach(function(el) {
         if(curButton.target.getAttribute('data-navbar-target') !== el.getAttribute('data-navbar-target')) {
@@ -40,7 +41,6 @@ export default function switchNavbar() {
 
       navbarSections.forEach(function(el) {
         if(curButton.target.getAttribute('data-navbar-target') !== el.getAttribute('data-navbar-section')) {
-          console.log('!curButton');
           el.classList.remove(activeState);
         }
       });

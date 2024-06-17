@@ -26,6 +26,13 @@
   }
 
   &__item {
-    
+    @media (hover: hover) {
+      transform: translateY(0);
+      transition: transform var(--root-animation-duration) var(--root-animation-function);
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
   }
 }

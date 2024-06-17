@@ -4,4 +4,6 @@
   background: var(--inline-code-color-bg);
   padding: 0.1em 0.3em;
   border-radius: 1em;
+  white-space: nowrap;
+  //word-break: break-all;
 }

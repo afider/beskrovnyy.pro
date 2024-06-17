@@ -46,5 +46,17 @@
   &__link {
     position: absolute;
     inset: 0;
+    border-radius: 20px;
+    transition: box-shadow var(--root-animation-duration) var(--root-animation-function);
+
+    @include hover {
+      box-shadow: 0 6px 20px 15px var(--root-color-shadow-second-rgba);
+    }
+
+    ._THEME-DARK & {
+      @include hover {
+        box-shadow: 0 0 0 8px var(--root-color-shadow-second-rgba);
+      }
+    }
   }
 }
