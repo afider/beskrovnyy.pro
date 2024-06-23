@@ -1,4 +1,6 @@
 .picture {
+  --pictrue-color-border: var(--root-color-panel-assistive);
+
   display: block;
   padding-top: 20px;
   padding-bottom: 40px;
@@ -11,6 +13,10 @@
   @include media-breakpoint-up(xxl) {
     padding-top: 40px;
     padding-bottom: 60px;
+  }
+
+  &--framed &__pic {
+    border: 1px solid var(--pictrue-color-border);
   }
 
   &__link {
