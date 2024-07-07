@@ -14,11 +14,11 @@ toc:
   - name: "Висячие предлоги и ширина строки"
     hash: "visachie-predlogi-i-shirina-stroki"
     icon: "🧨"
-  - name: "Тире — это вам не дефис!"
+  - name: "Размер имеет значение"
     hash: "tire"
     icon: "🎹"
   - name: "Французские шевроны и немецкие лапки"
-    hash: "tire"
+    hash: "kavichki"
     icon: "🌲"
   - name: "Выключка по ширине"
     hash: "vikluchka"
@@ -39,8 +39,12 @@ toc:
 ---
 import Picture from '@components/Picture.astro';
 import { Sprite } from 'astro-icon';
+import Code from "@components/Code.astro";
+
 import timBL from '@images/content/posts/kak-verstat-text-v-vebe/tim-berners-lee.jpg';
 import firstWebSite from '@images/content/posts/kak-verstat-text-v-vebe/first-web-site.jpg';
+import example1 from '@images/content/posts/kak-verstat-text-v-vebe/example-1.jpg';
+import example2 from '@images/content/posts/kak-verstat-text-v-vebe/example-2.jpg';
 
 <p class="article__text">Написать о тексте в вебе я хотел давно и скорее всего буду писать о нем еще, потому что это очень обширная тема.</p>
 <p class="article__text">Вроде бы текст — это просто текст, что о нем говорить? Это ведь не сложная раскладка или архитектура какого-то компонента, текст просто скопировал, вставил, и он уже на странице, с ним все хорошо. Да вот не все хорошо и не все так просто, как кажется. Людям вообще, самые простые вещи кажутся сложными, а сложные — простыми, так уж мы устроены :)</p>
@@ -103,5 +107,85 @@ import firstWebSite from '@images/content/posts/kak-verstat-text-v-vebe/first-we
   <p class="article__text">Висячими или висящими предлогами называют предлоги которые остались на конце строки, хотя они непосредственно относятся по смыслу к слову, которое идет сразу после предлога.</p>
 
   <p class="article__text">По поводу висячих предлогов много написано и есть разные мнения. Например, очень советую прочесть <a href="https://medium.com/design-pub/%D0%B2%D0%B8%D1%81%D1%8F%D1%87%D0%B8%D0%B5-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D0%BE-%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D1%8C-51f7b064579d" class="link link--info">статью о висячих предлогах</a> UX-дизайнера, Андрея Крусанова, а также <a href="https://www.artlebedev.ru/kovodstvo/sections/62/" class="link link--info">статью ководства</a> дизайнера Артемия Лебедева, об экранной пунктуации в целом и <a href="https://www.artlebedev.ru/kovodstvo/sections/62/#10" class="link link--info">висячих предлогах</a> в частности, на которую Андрей ссылается и в своей статье.</p>
+
+  <p class="article__text">Мнения разные, потому что по поводу избавления от висячих предлогов в вебе нет четкого правила, которому нужно бесприкословно следовать. Но я исхожу исключительно из прагматичности, так как бывают моменты, когда висячие предлоги запутывают читателя и делают UX в вебе хуже.</p>
+
+  <p class="article__text">Кроме эстетических проблем, если на странице есть ссылки, могут быть странные и комичные ситуации, когда в ссылку обернута фраза с предлогом, который остается на конце строки. Это сбивает пользователя с толку, он видит в конце строки предлог другим цветом и еще больше об него спотыкается взглядом, чем о просто предлог, который висит на строке но не выделяется цветом ссылки:</p>
+
+  <Picture 
+    img={example1}
+    caption={'Без неразрывного пробела предлог «за» в ссылке явно <a href="https://codepen.io/afider/pen/vYqYKOZ" class="link link--info">выглядит странно</a>'}
+    imgAlt="Пример карточки с заголовком и текстом на которой в ссылке «за наш счет» предлог «за» остается в конце строки" 
+    classNames="article__picture picture--wide"
+  />
+
+  <p class="article__text">Чтобы предлог всегда был привязан к следующему за ним слову существует специальный символ неразрывного пробела <code class="inline-code">&amp;nbsp;</code>:</p>
+
+  <Code classNames="article__code" language="html" codeRaw={
+      `
+      <a href="#">за&nbsp;наш счет!</a>
+      `
+  } />
+
+  <p class="article__text">Теперь, с расставленными неразрывными пробелами во всех местах, где это нужно, текст и ссылка <a href="https://codepen.io/afider/pen/qBzBNxm" class="link link--info">выглядят</a> гораздо читаемее и органичнее, не правда ли?</p>
+
+    <Picture 
+    img={example2}
+    caption="С неразнывными пробелами в нужных местах текст и ссылка выглядят хорошо."
+    imgAlt="Пример карточки с заголовком и текстом на которой слова в ссылке «за наш счет» находятся на одной строке." 
+    classNames="article__picture picture--wide"
+  />
+
+</section>
+
+<section class="section">
+
+  <h2 id="tire" class="article__title title" data-anchor>🎹 Размер имеет значение&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#tire"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+
+  <p class="article__text">С висячими предлогами мы разобрались, поговорим о тире, дефисах и прочих черточках.</p>
+  <p class="article__text">В русской орфографии существуют несколько знаков для обозначения черты между словами и цифрами.</p>
+
+  <table class="table">
+      <thead>
+        <tr>
+            <th>Символ</th>
+            <th>Название</th>
+            <th>HTML-сущность</th>
+            <th>Вид</th>
+            <th>Использование</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td>Дефис</td>
+          <td></td>
+          <td></td>
+          <td class="tire-cell"><span class="tire">-</span></td>
+          <td>кое-что</td>
+      </tr>
+      <tr>
+          <td>Минус</td>
+          <td>+</td>
+          <td><code>&amp;minus;</code></td>
+          <td class="tire-cell"><span class="tire">−</span></td>
+          <td>−1 − 1 = −2</td>
+      </tr>
+      <tr>
+          <td>Короткое тире</td>
+          <td>En Dash</td>
+          <td><code>&amp;ndash;</code></td>
+          <td class="tire-cell"><span class="tire">–</span></td>
+          <td>1986–2024 годы</td>
+      </tr>
+      <tr>
+          <td>Тире</td>
+          <td>Em Dash</td>
+          <td><code>&amp;mdash;</code></td>
+          <td class="tire-cell"><span class="tire">—</span></td>
+          <td>Век живи&nbsp;— век учись</td>
+      </tr>
+  </tbody>
+</table>
+
 
 </section>
