@@ -1,11 +1,12 @@
 ---
+// Titles are authored in this repository and may contain HTML entities.
 const {title} = Astro.props;
 let currentPageUrl = Astro.url.pathname;
 ---
 
 <head>
   <meta charset="utf-8" />
-  <title>{title}</title>
+  <title set:html={title} />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content={Astro.generator} />
 

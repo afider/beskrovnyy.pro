@@ -9,7 +9,7 @@ const coverImage = getImageUrl(frontmatter.coverImage);
 const coverImageAlt = frontmatter.coverImageAlt;
 const telegramPostUrl = 'beskrovnyy_pro/' + frontmatter.channelPostUrlId
 ---
-<BaseLayout>
+<BaseLayout title={frontmatter.title}>
     <header id="home" class="article__header">
       <picture class="article__cover-pic">
         {
