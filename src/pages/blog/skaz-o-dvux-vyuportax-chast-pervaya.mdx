@@ -58,7 +58,7 @@ toc:
 ---
 
 import Picture from '@components/Picture.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import Code from "@components/Code.astro";
 
 import csspixels_100 from '@images/content/posts/skaz-o-dvux-vyuportax-chast-pervaya/csspixels_100.jpg';
@@ -88,7 +88,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 <p class="article__text">Многие веб-разработчики интуитивно уже усвоили большинство приемов и&nbsp;понятий для разработки проектов под десктопные браузеры. В&nbsp;мире мобильных устройств мы&nbsp;встретим схожие понятия, но&nbsp;они будут чуточку сложнее, поэтому, предстоящее обсуждение с&nbsp;использованием терминов, которые большинству уже известны, окажет вам посильную помощь в&nbsp;понимании положения с&nbsp;мобильными браузерами.</p>
 
 <section class="section">
-  <h2 id="pixeli-i-css-pixeli" class="article__title title" data-anchor>🎞️ Понятие пикселей и&nbsp;CSS-пикселей <span class="title__control"><a class="title__link link link--nav" href="#pixeli-i-css-pixeli"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="pixeli-i-css-pixeli" class="article__title title" data-anchor>🎞️ Понятие пикселей и&nbsp;CSS-пикселей <span class="title__control"><a class="title__link link link--nav" href="#pixeli-i-css-pixeli"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Первая концепция, которую вам необходимо понять&nbsp;&mdash; это CSS-пиксели и&nbsp;их&nbsp;отличие от&nbsp;пикселей устройств.</p>
   <p class="article__text">Пиксели устройств&nbsp;&mdash; вид пикселей, которые мы&nbsp;считаем &laquo;реальными&raquo; или &laquo;правильными&raquo;.</p>
   <p class="article__text">Эти пиксели означают реальное или номинальное разрешение любого устройства и&nbsp;могут быть считаны (в&nbsp;большинстве случаев) с&nbsp;помощью свойства <code class="inline-code">screen.width/height</code>.</p>
@@ -120,7 +120,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
   <p class="article__text">В&nbsp;этом случае пиксели устройства для вас совершенно бесполезны. Но&nbsp;не&nbsp;для пользователя. Пользователь будет до&nbsp;тех пор увеличивать или уменьшать масштаб страницы, пока не&nbsp;установит удобный масштаб для ее&nbsp;чтения. Однако этот масштаб вас также совершенно не&nbsp;должен волновать. Браузер сам позаботится о&nbsp;том, чтобы ваша раскладка страницы соответствующим образом растянулась или уменьшилась.</p>
 
   <section class="section">
-    <h3 id="mashtab-sto-protsentov" class="article__title title title--h3" data-anchor>💯 Масштаб в&nbsp;100% <span class="title__control"> <a class="title__link link link--nav" href="#mashtab-sto-protsentov"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+    <h3 id="mashtab-sto-protsentov" class="article__title title title--h3" data-anchor>💯 Масштаб в&nbsp;100% <span class="title__control"> <a class="title__link link link--nav" href="#mashtab-sto-protsentov"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
     <p class="article__text">В&nbsp;примерах я&nbsp;использовал понятие масштаба в&nbsp;100%. Пришло время определить его немного точнее:</p>
 
     <div class="article__disclamer disclamer">
@@ -132,7 +132,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="razmer-ekrana" class="article__title title" data-anchor>💻 Размер экрана <span class="title__control"><a class="title__link link link--nav" href="#razmer-ekrana"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="razmer-ekrana" class="article__title title" data-anchor>💻 Размер экрана <span class="title__control"><a class="title__link link link--nav" href="#razmer-ekrana"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Давайте взглянем на&nbsp;некоторые практические измерения. Начнем со <code class="inline-code">screen.width</code> и <code class="inline-code">screen.height</code>. Эти свойства определяют точную ширину и&nbsp;высоту экрана монитора пользователя. Эти размеры определены в&nbsp;пикселях устройства, потому что они неизменны, так как являются особенностью монитора, а&nbsp;не&nbsp;браузера.</p>
 
   <div class="article__disclamer disclamer">
@@ -156,7 +156,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="razmer-okna" class="article__title title" data-anchor>🏠 Размер окна <span class="title__control"><a class="title__link link link--nav" href="#razmer-okna"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="razmer-okna" class="article__title title" data-anchor>🏠 Размер окна <span class="title__control"><a class="title__link link link--nav" href="#razmer-okna"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">То, что вам действительно нужно знать&nbsp;&mdash; это внутренние размеры окна браузера. Они точно подскажут вам, сколько в&nbsp;данный момент места имеется в&nbsp;окне браузера у&nbsp;пользователя для вашей раскладки. Вы&nbsp;можете определить эти размеры с&nbsp;помощью свойств <code class="inline-code">window.innerWidth</code> и <code class="inline-code">window.innerHeight</code>.</p>
 
   <div class="article__disclamer disclamer">
@@ -187,7 +187,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="smeshenie-prokruchivaemoy-oblasti" class="article__title title" data-anchor>🌡️ Величина смещения прокручиваемой области страницы <span class="title__control"><a class="title__link link link--nav" href="#smeshenie-prokruchivaemoy-oblasti"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="smeshenie-prokruchivaemoy-oblasti" class="article__title title" data-anchor>🌡️ Величина смещения прокручиваемой области страницы <span class="title__control"><a class="title__link link link--nav" href="#smeshenie-prokruchivaemoy-oblasti"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Свойства <code class="inline-code">window.pageXOffset</code> и <code class="inline-code">window.pageYOffset</code> возвращают величину горизонтального и&nbsp;вертикального смещения прокручиваемой области страницы. С&nbsp;помощью этих свойств вы&nbsp;можете определить размер области страницы прокрученной пользователем.</p>
 
   <div class="article__disclamer disclamer">
@@ -217,7 +217,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="poniatie-o-vuporte" class="article__title title" data-anchor>🖼️ Понятие о&nbsp;вьюпорте (области просмотра браузера) <span class="title__control"><a class="title__link link link--nav" href="#poniatie-o-vuporte"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="poniatie-o-vuporte" class="article__title title" data-anchor>🖼️ Понятие о&nbsp;вьюпорте (области просмотра браузера) <span class="title__control"><a class="title__link link link--nav" href="#poniatie-o-vuporte"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Прежде чем мы&nbsp;продолжим рассматривать следующие JavaScript свойства, введем еще одно понятие: вьюпорт (viewport) или область просмотра браузера.</p>
   <p class="article__text">Функция вьюпорта&nbsp;&mdash; ограничить <code class="inline-code">&lt;html&gt;</code> элемент&nbsp;&mdash; самый внешний блок вашего сайта.</p>
   <p class="article__text">Возможно, это звучит немного неопределенно, поэтому вот вам практический пример. Предположим у&nbsp;вас имеется резиновая раскладка с&nbsp;одной из&nbsp;колонок шириной 10%. Когда вы&nbsp;изменяете окно браузера, колонка соответствующим образом аккуратно уменьшается или увеличивается по&nbsp;ширине. Но&nbsp;как именно это работает?</p>
@@ -228,7 +228,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
   <p class="article__text">Область просмотра, в&nbsp;свою очередь, точно равна окну браузера, как и&nbsp;было изначально определено. (точнее она равна размерам внутренней части окна браузера, за&nbsp;исключением панелей и&nbsp;границ самого окна, прим. перевод.). Вьюпорт не&nbsp;является HTML-конструкцией, поэтому вы&nbsp;не&nbsp;можете влиять на&nbsp;него CSS-правилами. Он&nbsp;просто имеет ширину и&nbsp;высоту окна браузера (в&nbsp;десктопных браузерах). В&nbsp;мобильных браузерах с&nbsp;этим немного сложнее.</p>
 
   <section class="section">
-    <h3 id="posledstviya" class="article__title title title--h3" data-anchor>🌊 Последствия <span class="title__control"> <a class="title__link link link--nav" href="#posledstviya"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+    <h3 id="posledstviya" class="article__title title title--h3" data-anchor>🌊 Последствия <span class="title__control"> <a class="title__link link link--nav" href="#posledstviya"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
     <p class="article__text">Такое положение дел приводит к&nbsp;возникновению любопытных последствий. Увидеть одно из&nbsp;них вы&nbsp;можете прямо на&nbsp;этом сайте (имеется ввиду <a href="http://quirksmode.org/" class="link link--info">quirksmode.org</a>, прим. перевод.). Прокрутите страницу до&nbsp;самого верха и&nbsp;увеличте масштаб на&nbsp;два-три шага, чтобы некоторая часть контента сайта скрылась за&nbsp;пределами окна браузера.</p>
     <p class="article__text">Теперь с&nbsp;помощью горизонтальной полосы прокрутки, прокрутите страницу вправо и&nbsp;вы&nbsp;увидите, что синяя панель больше не&nbsp;прилегает должным образом к&nbsp;правой границе сайта.</p>
 
@@ -251,7 +251,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
   </section>
 
   <section class="section">
-    <h3 id="shirina-dokumenta" class="article__title title title--h3" data-anchor>📄 Ширина документа? <span class="title__control"> <a class="title__link link link--nav" href="#shirina-dokumenta"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+    <h3 id="shirina-dokumenta" class="article__title title title--h3" data-anchor>📄 Ширина документа? <span class="title__control"> <a class="title__link link link--nav" href="#shirina-dokumenta"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
     <p class="article__text">Что я&nbsp;действительно хочу выяснить, так это&nbsp;то, какова общая ширина содержимого страницы, включая те&nbsp;ее&nbsp;части, которых не&nbsp;видно в&nbsp;области просмотра. На&nbsp;сколько мне известно, найти это значение невозможно (конечно если вы&nbsp;не&nbsp;займетесь подсчетом ширины и&nbsp;отступов каждого элемента на&nbsp;странице, но&nbsp;это, мягко говоря, ненадежный способ).</p>
     <p class="article__text">Я&nbsp;думаю нам понадобится пара JavaScript свойств, с&nbsp;помощью которых можно будет определить, то, что я&nbsp;называю &laquo;шириной документа&raquo; (в&nbsp;CSS-пикселях, естетсвенно).</p>
 
@@ -268,7 +268,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="izmerenie-oblasti-prosmotra" class="article__title title" data-anchor>📐 Измерение области просмотра <span class="title__control"><a class="title__link link link--nav" href="#izmerenie-oblasti-prosmotra"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="izmerenie-oblasti-prosmotra" class="article__title title" data-anchor>📐 Измерение области просмотра <span class="title__control"><a class="title__link link link--nav" href="#izmerenie-oblasti-prosmotra"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Возможно вам понадобится определить размеры области просмотра. Их&nbsp;можно найти с&nbsp;помощью <code class="inline-code">document.documentElement.clientWidth</code> и&nbsp;&mdash; <code class="inline-code">Height</code></p>
 
   <div class="article__disclamer disclamer">
@@ -296,7 +296,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
   />
 
   <p class="article__text">Таким образом, <code class="inline-code">document.documentElement.clientWidth</code> и <code class="inline-code">-Height</code> всегда возвращают размеры области просмотра, без учета размеров <code class="inline-code">&lt;html&gt;</code> элемента.</p>
-  <h3 id="dve-pari-svoistv" class="article__title title title--h3" data-anchor>🧦 Две пары свойств <span class="title__control"> <a class="title__link link link--nav" href="#dve-pari-svoistv"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+  <h3 id="dve-pari-svoistv" class="article__title title title--h3" data-anchor>🧦 Две пары свойств <span class="title__control"> <a class="title__link link link--nav" href="#dve-pari-svoistv"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
   <p class="article__text">Но&nbsp;ведь размеры области просмотра окна браузера можно узнать также с&nbsp;помощью <code class="inline-code">window.innerWidth/Height</code>? И&nbsp;да&nbsp;и&nbsp;нет.</p>
   <p class="article__text">Существует определенная разница между этими двумя парами свойств: <code class="inline-code">document.documentElement.clientWidth</code> и <code class="inline-code">-Height</code> &mdash; не&nbsp;включают размеры полос прокрутки, в&nbsp;отличие от <code class="inline-code">window.innerWidth/Height</code>. Хотя, по&nbsp;большому счету, это уже мелочи.</p>
   <p class="article__text">Тот факт, что у&nbsp;нас сейчас имеется две пары свойств&nbsp;&mdash; пережиток прошлого со&nbsp;времен Войны браузеров. В&nbsp;то&nbsp;время браузер от&nbsp;Netscape поддерживал только <code class="inline-code">window.innerWidth/Height</code>, а&nbsp;IE только <code class="inline-code">document.documentElement.clientWidth</code> и <code class="inline-code">-Height</code>. С&nbsp;тех пор все остальные браузеры начали поддерживать <code class="inline-code">clientWidth/Height</code>, но&nbsp;IE так и&nbsp;не&nbsp;стал понимать <code class="inline-code">window.innerWidth/Height</code>.</p>
@@ -304,7 +304,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="izmerenie-html-elementa" class="article__title title" data-anchor>✂️ Измерение &lt;html&gt; элемента <span class="title__control"><a class="title__link link link--nav" href="#izmerenie-html-elementa"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="izmerenie-html-elementa" class="article__title title" data-anchor>✂️ Измерение &lt;html&gt; элемента <span class="title__control"><a class="title__link link link--nav" href="#izmerenie-html-elementa"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Мы&nbsp;выяснили, что clientWidth/Height в&nbsp;любом случае возвращает размеры области просмотра окна браузера. Но&nbsp;как нам узнать размеры самого <code class="inline-code">&lt;html&gt;</code> элемента? Они хранятся в <code class="inline-code">document.documentElement.offsetWidth</code> и&nbsp;&mdash; <code class="inline-code">Height</code>.</p>
 
   <div class="article__disclamer disclamer">
@@ -333,7 +333,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 </section>
 
 <section class="section">
-  <h2 id="koordinati-sobitiy" class="article__title title" data-anchor>📍 Координаты событий <span class="title__control"><a class="title__link link link--nav" href="#koordinati-sobitiy"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="koordinati-sobitiy" class="article__title title" data-anchor>📍 Координаты событий <span class="title__control"><a class="title__link link link--nav" href="#koordinati-sobitiy"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <div class="article__disclamer disclamer">
     <p class="article__text"><strong>pageX/Y, clientX/Y, screenX/Y</strong></p>
@@ -375,7 +375,7 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
   <p class="article__text">В&nbsp;90% случаев в&nbsp;разработке вы&nbsp;будете использовать <code class="inline-code">pageX/Y</code>. В&nbsp;большинстве случаев вам будет необходимо узнать место возникновения события относительно документа. В&nbsp;остальных&nbsp;10% случаев вы&nbsp;будете использовать <code class="inline-code">clientX/Y</code>. И&nbsp;вам никогда не&nbsp;понадобится знать координаты события относительно экрана монитора пользователя.</p>
 </section>
 
-<h2 id="media-virazeniya" class="article__title title" data-anchor>☘️ Медиа-выражения <span class="title__control"><a class="title__link link link--nav" href="#media-virazeniya"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+<h2 id="media-virazeniya" class="article__title title" data-anchor>☘️ Медиа-выражения <span class="title__control"><a class="title__link link link--nav" href="#media-virazeniya"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 <p class="article__text">И&nbsp;на&nbsp;последок, пару слов о&nbsp;медиа-запросах (media queries). Идея очень проста: вы&nbsp;определяете специальные CSS-правила, которые выполняются только если ширина страницы больше чем, равна или меньше определенной величины. Например:</p>
 
 <Code classNames="article__code" language="css" codeRaw={
@@ -427,5 +427,5 @@ import desktop_mediaqueries from '@images/content/posts/skaz-o-dvux-vyuportax-ch
 
 <p class="article__text">Какой&nbsp;же тип медиазапросов вы&nbsp;должны использовать? Это очевидно, конечно&nbsp;же <code class="inline-code">width</code>. Веб-разработчиков не&nbsp;интересует ширина экрана, важна ширина окна браузера пользователя.</p>
 <p class="article__text">Поэтому при разработке под десктопные браузеры используйте <code class="inline-code">width</code> и&nbsp;забудте о <code class="inline-code">device-width</code>. Как мы&nbsp;узнаем из&nbsp;следующей статьи, ситуация с&nbsp;мобильными браузерами намного более запутанная.</p>
-<h2 id="zakluchenie" class="article__title title" data-anchor>🏁 Заключение <span class="title__control"><a class="title__link link link--nav" href="#zakluchenie"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+<h2 id="zakluchenie" class="article__title title" data-anchor>🏁 Заключение <span class="title__control"><a class="title__link link link--nav" href="#zakluchenie"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 <p class="article__text">Этим завершим наше быстрое знакомство с&nbsp;поведением десктопных браузеров. <a href="http://quirksmode.org/mobile/viewports2.html" class="link link--info">Во&nbsp;второй статье</a> спроецируем концепции и&nbsp;понятия рассмотренные здесь на&nbsp;мобильные браузеры и&nbsp;выделим некоторые существенные различия.</p>

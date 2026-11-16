@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import ImgSource from '@components/ImgSource.astro';
 import { getImageUrl } from '@utils/GetImageUrl.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 const { frontmatter } = Astro.props;
 const coverImage = getImageUrl(frontmatter.coverImage);
@@ -28,7 +28,7 @@ const telegramPostUrl = 'beskrovnyy_pro/' + frontmatter.channelPostUrlId
       </div>
 
       <h1 class="article__title title title--h1" data-anchor>
-        <span class="title__text"set:html={frontmatter.title}></span>&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+        <span class="title__text"set:html={frontmatter.title}></span>&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span>
       </h1>
       <p class="article__date">📅&nbsp;<span class="sr-only">Опубликовано:</span> {frontmatter.dateUX}</p>
 

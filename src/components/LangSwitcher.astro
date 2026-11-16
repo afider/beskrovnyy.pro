@@ -1,6 +1,6 @@
 ---
 import { getLang } from '@utils/GetLang.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 let {classNames} = Astro.props;
 const currentPageUrl = Astro.url.pathname;
@@ -9,7 +9,7 @@ const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 (classNames === undefined) ? classNames = '' : classNames;
 ---
 <a href={(getLang(currentPageUrl) === 'en') ? ('/') : ('/en/')} class={`${classNames} lang ${!isHomePage ? 'lang--sticky': ''} link link--nav`} data-text={(getLang(currentPageUrl) === 'en') ? ('Рус') : ('Eng')}>
-  <Sprite name="lang" class="lang__icon" />
+  <Icon name="lang" class="lang__icon" />
   <div class="lang__text">
     {
       (getLang(currentPageUrl) === 'en') ? 

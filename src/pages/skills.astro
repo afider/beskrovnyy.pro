@@ -5,15 +5,14 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 import mailImg from '@images/svg/email.svg';
 
-import { Icon } from 'astro-icon';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 const pageTitle = "Знания и умения";
 ---
 
 <BaseLayout title={pageTitle}>
   <h1 id="home" class="article__title title title--h1" data-anchor>
-    😎 Что я&nbsp;знаю и&nbsp;умею в&nbsp;профессии&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    😎 Что я&nbsp;знаю и&nbsp;умею в&nbsp;профессии&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span>
   </h1>
   <p class="article__text">В&nbsp;веб-разработку я&nbsp;пришел вполне предсказуемо, после получения высшего образования по&nbsp;специальности экономическая кибернетика. Это был сплав из&nbsp;дисциплин по&nbsp;программированию, экономике, математическому анализу и&nbsp;моделированию.</p>
 
@@ -26,7 +25,7 @@ const pageTitle = "Знания и умения";
   <p class="article__text">Сейчас, спустя 13&nbsp;лет, я&nbsp;все еще продолжаю заниматься версткой и&nbsp;изучением веб-стандартов, но&nbsp;немалую часть отъедает проектирование интерфейсов, программирование, системная аналитика тимлидинг и&nbsp;управление проектами.</p>
 
   <section class="article__section section">
-    <h2 id="layout" class="article__title title" data-anchor>🧢 Верстка и&nbsp;проектирование интерфейсов&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#layout"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    <h2 id="layout" class="article__title title" data-anchor>🧢 Верстка и&nbsp;проектирование интерфейсов&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#layout"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
     <p class="article__text"><b>Верстаю адаптивно, семантично и&nbsp;доступно</b>. Если есть только десктопная версия макета, могу самостоятельно адаптировать ее&nbsp;под мобильные ширины на&nbsp;всех брейкпоинтах и&nbsp;наоборот. Отдаю приоритет <a class="link link--info" href="https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00">подхoду Mobile First</a>. Тесно работаю с&nbsp;дизайнером, помогаю улучшать макет и&nbsp;проектировать сложный UX. Использую HTML-теги по&nbsp;назначению и&nbsp;не&nbsp;страдаю <a class="link link--info" href="http://wikireality.ru/wiki/%D0%94%D0%B8%D0%B2%D0%B0%D1%82%D0%BE%D0%B7">диватозом</a>: для шапки сайта&nbsp;&mdash; <code class="inline-code">&lt;header&gt;</code>, для футера&nbsp;&mdash; <code class="inline-code">&lt;footer&gt;</code>, для навигации&nbsp;&mdash; <code class="inline-code">&lt;nav&gt;&lt;ul&gt;&lt;li&gt;</code>. Знаю способы обеспечения доступности в&nbsp;вебе и&nbsp;применяю их&nbsp;на&nbsp;практике (<a class="link link--info" href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a>): альты у&nbsp;изображений там где нужно, стандарт <a class="link link--info" href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>, читабельность разметки скринридерами, контрастность, области клика.
     </p>
@@ -51,7 +50,7 @@ const pageTitle = "Знания и умения";
   </section>
 
   <section class="article__section section">
-    <h2 id="backend" class="article__title title" data-anchor>⛑️ Шаблонизация и&nbsp;бэкэнд&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#backend" ><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    <h2 id="backend" class="article__title title" data-anchor>⛑️ Шаблонизация и&nbsp;бэкэнд&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#backend" ><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
     <p class="article__text"><b>Хорошо знаю WordPress</b>. Сделал несколько проектов на&nbsp;этой CMS:</p>
     <ul>
@@ -66,7 +65,7 @@ const pageTitle = "Знания и умения";
   </section>
 
   <section class="article__section section">
-    <h2 id="pm" class="article__title title" data-anchor>🎩 Управление проектами и&nbsp;системная аналитика&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#pm"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    <h2 id="pm" class="article__title title" data-anchor>🎩 Управление проектами и&nbsp;системная аналитика&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#pm"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
     <p class="article__text"><b>Общаюсь с&nbsp;клиентами на&nbsp;уровне Project Manager</b>. Управляю небольшими проектами и&nbsp;командой. С&nbsp;soft skills все в&nbsp;порядке. Последнее время практически во&nbsp;всех проектах я&nbsp;выполняю функции менеджера проекта и&nbsp;системного аналитика:</p>
     <ul>
       <li>провожу исследования перед выбором инструментов разработки;</li>

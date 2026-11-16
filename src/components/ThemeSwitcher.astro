@@ -1,5 +1,5 @@
 ---
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import { getLang } from '@utils/GetLang.astro';
 
 let {classNames} = Astro.props;
@@ -7,7 +7,6 @@ const currentPageUrl = Astro.url.pathname;
 
 (classNames === undefined) ? classNames = '' : classNames;
 ---
-<Sprite.Provider />
 
 <fieldset class={`${classNames} switcher`} >
   
@@ -19,7 +18,7 @@ const currentPageUrl = Astro.url.pathname;
   <div class="switcher__body">
     <div class="switcher__state"></div>
     <label for="light-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always light') : ('Всегда светлая')}>
-      <Sprite name="sun" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <Icon name="sun" width="18" height="18" aria-hidden="true" class="switcher__icon" />
       <div class="switcher__label">
         {
           (getLang(currentPageUrl) === 'en') ? 
@@ -32,7 +31,7 @@ const currentPageUrl = Astro.url.pathname;
     </label>
 
     <label for="system-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('System') : ('Как в системе')}>
-      <Sprite name="system" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <Icon name="system" width="18" height="18" aria-hidden="true" class="switcher__icon" />
       <div class="switcher__label">
         {
           (getLang(currentPageUrl) === 'en') ? 
@@ -45,7 +44,7 @@ const currentPageUrl = Astro.url.pathname;
     </label>
 
     <label for="dark-theme" class="switcher__item" title={(getLang(currentPageUrl) === 'en') ? ('It\'s always dark') : ('Всегда темная')}>
-      <Sprite name="moon" width="18" height="18" aria-hidden="true" class="switcher__icon" />
+      <Icon name="moon" width="18" height="18" aria-hidden="true" class="switcher__icon" />
       <div class="switcher__label">
         {
           (getLang(currentPageUrl) === 'en') ? 

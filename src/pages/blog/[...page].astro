@@ -8,12 +8,12 @@ import TagsList from '@components/TagsList.astro';
 import Pagination from '@components/Pagination.astro';
 import { getImageUrl } from '@utils/GetImageUrl.astro';
 
-const allPosts = await Astro.glob('../blog/*.mdx');
+const allPosts = Object.values(import.meta.glob('../blog/*.mdx', { eager: true }));
 const postsPerPage = 32;
 
 export async function getStaticPaths({paginate}) {
   const postsPerPage = 32;
-  const allPosts = await Astro.glob('../blog/*.mdx');
+  const allPosts = Object.values(import.meta.glob('../blog/*.mdx', { eager: true }));
   const formattedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
   return paginate(formattedPosts, {

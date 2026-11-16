@@ -1,7 +1,5 @@
-import type { APIContext } from "astro"
-
-export async function get({}: APIContext) {
-  return {
-    body: 'export const search = () => {return {results: []}}'
-  }
+export function GET() {
+  return new Response('export const search = () => {return {results: []}}', {
+    headers: { 'Content-Type': 'text/javascript; charset=utf-8' },
+  });
 }

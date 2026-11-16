@@ -57,7 +57,7 @@ toc:
 ---
 
 import Picture from '@components/Picture.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import Code from "@components/Code.astro";
 
 import mq_yes from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vtoraya/mq_yes.jpg';
@@ -95,7 +95,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </div>
 
 <section class="section">
-  <h2 id="problema-mobilnih-brauzerov" class="article__title title" data-anchor>📱 Проблема мобильных браузеров&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#problema-mobilnih-brauzerov"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="problema-mobilnih-brauzerov" class="article__title title" data-anchor>📱 Проблема мобильных браузеров&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#problema-mobilnih-brauzerov"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">При сравнении мобильных и&nbsp;десктопных браузеров наиболее очевидное различие&nbsp;&mdash; размер экрана. Мобильные браузеры отображают сайты, оптимизированные под десктопные браузеры, гораздо хуже: либо путем уменьшения масштаба, пока текст не&nbsp;становится нечитаемым или отображая лишь небольшую часть сайта, которая умещается на&nbsp;экране.</p>
   <p class="article__text">Экран мобильного устройства гораздо меньше обычного монитора, представьте ширину, максимум в&nbsp;400&nbsp;пикселей, а&nbsp;иногда намного меньше. (Некоторые телефоны анонсируют бо&#769;льшую ширину, но&nbsp;это ложь, или, по&nbsp;крайней мере, совершенно бесполезная информация.)</p>
   <p class="article__text">Хотя, промежуточное звено из&nbsp;планшетных устройств, таких как iPad или устройств на&nbsp;базе HP&nbsp;WebOS и&nbsp;заполняет пробел между настольными и&nbsp;мобильными устройствами, но&nbsp;от&nbsp;этого основная проблема не&nbsp;меняется. Сайты должны работать и&nbsp;на&nbsp;мобильных устройствах, поэтому мы&nbsp;должны научить их&nbsp;отображаться правильно на&nbsp;маленьких экранах.</p>
@@ -106,7 +106,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="dva-vuporta" class="article__title title" data-anchor>🎌 Два вьюпорта&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#dva-vuporta"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="dva-vuporta" class="article__title title" data-anchor>🎌 Два вьюпорта&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#dva-vuporta"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Итак, вьюпорт слишком узок, чтобы служить базой для вашей CSS-раскладки. Очевидное решение&nbsp;&mdash; сделать вьюпорт шире. Однако, это требует разделения понятия вьюпорта&nbsp;на: визуальный вьюпорт и&nbsp;вьюпорт страницы.</p>
   <p class="article__text">Лучше всего базовую концепцию объясняет Джордж Камминс (George Cummins) <a href="http://stackoverflow.com/questions/6333927/difference-between-visual-viewport-and-layout-viewport" class="link link--info">здесь</a> на&nbsp;Stack Overflow:</p>
 
@@ -135,12 +135,12 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
   <p class="article__text">На&nbsp;BlackBerry при масштабе в&nbsp;100% вьюпорт страницы равен визуальному вьюпорту. Это неизменно.</p>
 
   <section class="section">
-    <h3 id="mashtabirovanie" class="article__title title title--h3" data-anchor>🎛️ Масштабирование&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#mashtabirovanie"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+    <h3 id="mashtabirovanie" class="article__title title title--h3" data-anchor>🎛️ Масштабирование&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#mashtabirovanie"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
     <p class="article__text">Оба вьюпорта измеряются в&nbsp;CSS-пикселях. Но&nbsp;во&nbsp;время масштабирования размеры визуального вьюпорта меняются (если вы&nbsp;увеличиваете масштаб, на&nbsp;экране умещается меньшее количество CSS-пикселей), в&nbsp;то&nbsp;время как размеры вьюпорта страницы остаются неизменными. (Если&nbsp;бы это было не&nbsp;так, браузер постоянно совершал&nbsp;бы <a href="http://code.google.com/intl/ru-RU/speed/articles/reflow.html" class="link link--info">reflow</a> страницы (перестраивание разметки страницы, прим. перев.) из-за пересчета процентной ширины.)</p>
   </section>
 
   <section class="section">
-    <h3 id="osmislenie-vuporta-stranitsi" class="article__title title title--h3" data-anchor>📃 Осмысление вьюпорта страницы&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#osmislenie-vuporta-stranitsi"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+    <h3 id="osmislenie-vuporta-stranitsi" class="article__title title title--h3" data-anchor>📃 Осмысление вьюпорта страницы&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#osmislenie-vuporta-stranitsi"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
     <p class="article__text">Для лучшего понимания размеров вьюпорта страницы, мы&nbsp;должны взглянуть на&nbsp;то, что происходит, когда странице задан наименьший возможный масштаб. Многие мобильные браузеры по-умолчанию отображают любую страницу в&nbsp;наименьшем масштабе.</p>
     <p class="article__text">Дело в&nbsp;том, что размеры вьюпорта страницы браузеров полностью совпадают с&nbsp;экраном при максимально уменьшенном масштабе и&nbsp;поэтому равны визуальному вьюпрту.</p>
 
@@ -182,7 +182,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="izmereniya-vuporta-stranitsi" class="article__title title" data-anchor>📐 Измерения вьюпорта страницы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#izmereniya-vuporta-stranitsi"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="izmereniya-vuporta-stranitsi" class="article__title title" data-anchor>📐 Измерения вьюпорта страницы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#izmereniya-vuporta-stranitsi"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Теперь у&nbsp;нас имеется два вьюпорта, которые нам нужно измерить. Поэтому нам очень повезло в&nbsp;том, что Война браузеров дала нам две пары свойств.</p>
   <p class="article__text">Свойства <code class="inline-code">document.documentElement.clientWidth</code> и <code class="inline-code">-Height</code> содержат размеры вьюпорта страницы.</p>
 
@@ -225,7 +225,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="izmereniya-vizualnogo-vuporta" class="article__title title" data-anchor>👁️ Измерения визуального вьюпорта&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#izmereniya-vizualnogo-vuporta"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="izmereniya-vizualnogo-vuporta" class="article__title title" data-anchor>👁️ Измерения визуального вьюпорта&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#izmereniya-vizualnogo-vuporta"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Что касается визуального вьюпорта, он измеряется с помощью свойства <code class="inline-code">window.innerWidth/Height</code>. Очевидно, что размеры изменяются, когда пользователь уменьшает или увеличивает масштаб, поскольку в экран вписывается большее или меньшее количество CSS-пикселей.</p>
 
   <div class="article__disclamer disclamer">
@@ -259,7 +259,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="ekran" class="article__title title" data-anchor>🖥️ Экран&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#ekran"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="ekran" class="article__title title" data-anchor>🖥️ Экран&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#ekran"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Как и&nbsp;в&nbsp;десктопных браузерах, <code class="inline-code">screen.width/height</code> отдает размер экрана в&nbsp;пикселях устройства. Как и&nbsp;в&nbsp;случае с&nbsp;десктопными браузерами, вам, как веб-разработчику эта информация никогда не&nbsp;понадобится. Вам не&nbsp;важен физический размер экрана, важно количество CSS-пикселей, которое на&nbsp;нем умещается.</p>
 
   <div class="article__disclamer disclamer">
@@ -289,7 +289,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
   />
 
   <section class="section">
-    <h3 id="uroven-mashtabirovania" class="article__title title title--h3" data-anchor>🔋 Уровень масштабирования&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#uroven-mashtabirovania"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+    <h3 id="uroven-mashtabirovania" class="article__title title title--h3" data-anchor>🔋 Уровень масштабирования&nbsp;<span class="title__control"> <a class="title__link link link--nav" href="#uroven-mashtabirovania"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
     <p class="article__text">Непосредственно вычислить уровень масштабирования не&nbsp;представляется возможным, но&nbsp;вы&nbsp;можете его получить разделив <code class="inline-code">screen.width</code> на <code class="inline-code">window.innerWidth</code>. Конечно&nbsp;же это работает, только если эти два свойства гарантированно поддерживаются.</p>
     <p class="article__text">К&nbsp;счастью, уровень масштабирования не&nbsp;очень важен. На&nbsp;самом деле вам нужно знать сколько CSS-пикселей в&nbsp;данный момент умещается на&nbsp;экране. И&nbsp;вы&nbsp;можете получить эту информацию с&nbsp;помощью <code class="inline-code">window.innerWidth</code>, если это свойство корректно поддерживается.</p>
   </section>
@@ -297,7 +297,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="velichina-smesheniya-prokruchivaemoy-oblasti" class="article__title title" data-anchor>🧲 Величина смещения прокручиваемой области страницы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#velichina-smesheniya-prokruchivaemoy-oblasti"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="velichina-smesheniya-prokruchivaemoy-oblasti" class="article__title title" data-anchor>🧲 Величина смещения прокручиваемой области страницы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#velichina-smesheniya-prokruchivaemoy-oblasti"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Также вам необходимо знать текущее положение визуального вьюпорта по&nbsp;отношению к&nbsp;вьюпорту страницы. Это величина смещения прокручиваемой области страницы. И&nbsp;также, как и&nbsp;в&nbsp;десктопных браузерах, ее&nbsp;значение хранится в <code class="inline-code">window.pageX/YOffset</code>.</p>
 
   <div class="article__disclamer disclamer">
@@ -326,7 +326,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="html-element" class="article__title title" data-anchor>🧶 <code class="inline-code">&lt;html&gt;</code>-элемент&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#html-element"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="html-element" class="article__title title" data-anchor>🧶 <code class="inline-code">&lt;html&gt;</code>-элемент&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#html-element"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <h2 class="content-h"><code class="inline-code">&lt;html&gt;</code>-элемент</h2>
   <p class="article__text">Как и&nbsp;в&nbsp;случае с&nbsp;десктопными браузерами, <code class="inline-code">document.documentElement.offsetWidth/Height</code> дает общий размер &lt;html&gt;-элемента в&nbsp;CSS-пикселях. </p>
 
@@ -355,7 +355,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="media-virazeniya" class="article__title title" data-anchor>☘️ Медиа-выражения&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#media-virazeniya"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="media-virazeniya" class="article__title title" data-anchor>☘️ Медиа-выражения&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#media-virazeniya"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Медиа-запросы работают здесь также как и&nbsp;в&nbsp;десктопных браузерах. <code class="inline-code">width/height</code> относится к&nbsp;вьюпорту страницы и&nbsp;измеряется в&nbsp;CSS-пикселях, <code class="inline-code">device-width/height</code> относится к&nbsp;экрану и&nbsp;измеряется в&nbsp;пикселях устройства.</p>
   <p class="article__text">Другими словами, <code class="inline-code">width/height</code> отражают значения <code class="inline-code">document.documentElement.clientWidth/Height</code>, тогда как <code class="inline-code">device-width/height</code> отражают значения <code class="inline-code">screen.width/height</code>. (Так происходит фактически во&nbsp;всех браузерах, даже если отражаемые значения некорректны.)</p>
 
@@ -384,7 +384,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="koordinati-sobitiy" class="article__title title" data-anchor>📍 Координаты событий&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#koordinati-sobitiy"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="koordinati-sobitiy" class="article__title title" data-anchor>📍 Координаты событий&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#koordinati-sobitiy"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Координаты событий здесь работают примерно также как и&nbsp;в&nbsp;десктопных браузерах. К&nbsp;несчастью, из&nbsp;двенадцати протестированных браузеров, только в&nbsp;двух, Symbian WebKit и&nbsp;Iris, удалось получить все три пары координат верно. Во&nbsp;всех остальных браузерах существуют более-менее серьезные проблемы.</p>
   <p class="article__text"><code class="inline-code">pageX/Y</code> по-прежнему относится к&nbsp;странице и&nbsp;измеряется в&nbsp;CSS-пикселях являясь, безусловно, самой полезной из&nbsp;трех пар свойств, как впрочем и&nbsp;в&nbsp;десктопных браузерах.</p>
 
@@ -430,7 +430,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="meta-viewport" class="article__title title" data-anchor>🏝️ Meta viewport&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#meta-viewport"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="meta-viewport" class="article__title title" data-anchor>🏝️ Meta viewport&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#meta-viewport"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <div class="article__disclamer disclamer">
     <p class="article__text"><strong>Meta viewport</strong></p>
@@ -494,7 +494,7 @@ import mobile_client from '@images/content/posts/skaz-o-dvux-vyuportax-chast-vto
 </section>
 
 <section class="section">
-  <h2 id="budushee-issledovanie" class="article__title title" data-anchor>🚀 Будущее исследование&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#budushee-issledovanie"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="budushee-issledovanie" class="article__title title" data-anchor>🚀 Будущее исследование&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#budushee-issledovanie"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">На&nbsp;этом, на&nbsp;данный момент я&nbsp;завершаю свое исследование. В&nbsp;будущем будут рассмотрены, связанные с&nbsp;этой, следующие темы:</p>
   <ul class="article__list list">
     <li class="list__item"><code class="inline-code">position: fixed</code>. Фиксированные элементы, как нам известно, позиционируются относительно вьюпорта. Но&nbsp;относительно которого? На&nbsp;самом деле я&nbsp;уже провел кое-какое исследование и&nbsp;в&nbsp;недалеком будущем его опубликую.</li>

@@ -1,6 +1,6 @@
 ---
 import { Prism } from '@astrojs/prism';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 let { codeRaw, language, caption, classNames } = Astro.props;
 
@@ -19,7 +19,7 @@ const langObj = {
       {langObj[language]}
     </div>
     <button class="code__button" data-code-button>
-      <Sprite name="copy"  class="code__icon" />
+      <Icon name="copy"  class="code__icon" />
       <span class="code__button-text">Копировать код</span>
     </button>
   </div>

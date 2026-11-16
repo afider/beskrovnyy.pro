@@ -31,7 +31,7 @@ toc:
 ---
 
 import Picture from '@components/Picture.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import Code from "@components/Code.astro";
 
 
@@ -50,7 +50,7 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
 <p class="article__text">В&nbsp;этом посте я&nbsp;рассмотрю основную первую и&nbsp;наиболее быструю часть.</p>
 
 <section class="section">
-  <h2 id="struktura-shablona" class="article__title title" data-anchor>🧩 Структура шаблона&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#struktura-shablona"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="struktura-shablona" class="article__title title" data-anchor>🧩 Структура шаблона&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#struktura-shablona"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <p class="article__text">Структура шаблона &laquo;1С-Битрикс&raquo; представляет собой набор следующих файлов и&nbsp;директорий:</p>
 
@@ -64,7 +64,7 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
 </section>
 
 <section class="section">
-  <h2 id="nazvanie-i-opisanie-shablona" class="article__title title" data-anchor>🎯 Название и&nbsp;описание шаблона&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#nazvanie-i-opisanie-shablona"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="nazvanie-i-opisanie-shablona" class="article__title title" data-anchor>🎯 Название и&nbsp;описание шаблона&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#nazvanie-i-opisanie-shablona"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <p class="article__text">После создания директории с&nbsp;названием будущего шаблона, необходимо создать или скопировать из&nbsp;стандартного шаблона и&nbsp;изменить файл <code class="inline-code">description.php</code>. В&nbsp;этом файле содержится информация о&nbsp;названии и&nbsp;описании шаблона, которая будет отображаться в&nbsp;панели администрирования в&nbsp;разделе &laquo;Шаблоны сайтов&raquo; в&nbsp;колонках &laquo;Название&raquo; и&nbsp;&laquo;Описание&raquo; соответственно. Типичное содержимое этого сайта выглядит в&nbsp;виде массива с&nbsp;двумя элементами: </p>
 
@@ -94,7 +94,7 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
 </section>
 
 <section class="section">
-  <h2 id="rabochaya-oblast" class="article__title title" data-anchor>🧇 Рабочая область&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#rabochaya-oblast"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="rabochaya-oblast" class="article__title title" data-anchor>🧇 Рабочая область&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#rabochaya-oblast"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <p class="article__text">В&nbsp;шаблоне &laquo;1С-Битрикс&raquo; существует понятие &laquo;рабочей области страницы&raquo;. То&nbsp;есть, это та&nbsp;часть страницы сайта, в&nbsp;которой располагается основной контент. Если у&nbsp;вас имеется трехколоночный макет, в&nbsp;котором, главная колонка центральная, и&nbsp;в&nbsp;ней находится основной контент, то&nbsp;рабочей областью страницы будет содержимое центральной колонки, которое меняется от&nbsp;страницы к&nbsp;странице. Это деление совершенно условное, но&nbsp;очень важно разделить макет по&nbsp;этому принципу.</p>
   <p class="article__text">К&nbsp;примеру, на&nbsp;этом блоге рабочей областью страницы будет являться та&nbsp;часть, в&nbsp;которую выводится контент этой статьи.</p>
@@ -321,7 +321,7 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
 
 
 <section class="section">
-  <h2 id="slujebnie-direktivy" class="article__title title" data-anchor>🐶 Служебные директивы Bitrix Framework&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#slujebnie-direktivy"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="slujebnie-direktivy" class="article__title title" data-anchor>🐶 Служебные директивы Bitrix Framework&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#slujebnie-direktivy"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <p class="article__text">Динамическое содержимое включается в&nbsp;шаблон служебными директивами <strong>Bitrix Framework</strong>&nbsp;&mdash; обычными PHP-вставками вызова специальных функций Битрикс, кода вызова отдельных компонентов, или сочетанием их&nbsp;и&nbsp;каких-то дополнительных условий. </p>
 
@@ -355,7 +355,7 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
 </section>
 
 <section class="section">
-  <h2 id="razmeshenie-komponenta" class="article__title title" data-anchor>🌼 Размещение компонента в&nbsp;шаблоне&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#razmeshenie-komponenta"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="razmeshenie-komponenta" class="article__title title" data-anchor>🌼 Размещение компонента в&nbsp;шаблоне&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#razmeshenie-komponenta"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <p class="article__text">Далее следует ненумерованный список с&nbsp;главным меню сайта. Очевидно, что его нужно заменить на&nbsp;вызов компонента меню Битрикс, так как нам необходимо обеспечить возможность создавать и&nbsp;редактировать пункты меню через административную панель.</p>
   <p class="article__text">Большинство стандартных элементов сайта в&nbsp;Битрикс (меню, цепочка навигации, список новостей, каталог, галерея и&nbsp;т.д.) оформлено в&nbsp;виде отдельных компонентов, которые снабжены своими отдельными шаблонами.</p>
@@ -438,7 +438,7 @@ import picAddComp from '@images/content/posts/sozdanie-shablona-1s-bitriks/add-c
 </section>
 
 <section class="section">
-  <h2 id="css-faily-shablona" class="article__title title" data-anchor>🖼️ CSS-файлы шаблона&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#css-faily-shablona"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="css-faily-shablona" class="article__title title" data-anchor>🖼️ CSS-файлы шаблона&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#css-faily-shablona"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
   <p class="article__text">И&nbsp;на&nbsp;последок, пришло время разобраться с&nbsp;CSS-файлами шаблона.</p>
   <p class="article__text">В&nbsp;документации Битрикс о&nbsp;двух главных CSS-файлах основного шаблона сказано не&nbsp;очень много. Из&nbsp;чего, на&nbsp;первых порах может возникнуть некоторая путаница. Но&nbsp;на&nbsp;самом деле все не&nbsp;так уж&nbsp;запутанно. В&nbsp;основном шаблоне сайта за&nbsp;работу с&nbsp;таблицами каскадных стилей отвечают три файла: <code class="inline-code">styles.css</code>, <code class="inline-code">.styles.php</code> и <code class="inline-code">template_styles.css</code>. </p>

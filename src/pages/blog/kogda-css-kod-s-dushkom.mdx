@@ -43,7 +43,7 @@ toc:
 ---
 
 import Picture from '@components/Picture.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import Code from "@components/Code.astro";
 
 <p class="article__text">Перевел тут на&nbsp;досуге очередную статейку.</p>
@@ -63,7 +63,7 @@ import Code from "@components/Code.astro";
 <p class="article__text">Я&nbsp;собираюсь поделиться только некоторыми соображениями, которые я&nbsp;высмотрел в&nbsp;CSS, относительно качества, прозрачности и&nbsp;удобства поддержки кода (несомненно будут вещи, упущенные мной).</p>
 
 <section class="section">
-  <h2 id="otmena-stiley-pereopredeleniem" class="article__title title" data-anchor>⚔️ Отмена стилей переопределением&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#otmena-stiley-pereopredeleniem"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="otmena-stiley-pereopredeleniem" class="article__title title" data-anchor>⚔️ Отмена стилей переопределением&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#otmena-stiley-pereopredeleniem"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Любой CSS, отменяющий стили, кроме обнуляющих стилей (к&nbsp;примеру, &laquo;<a href="http://meyerweb.com/eric/tools/css/reset/" class="link link--info">Reset CSS</a>&raquo;, обнуляющий значение стилей по-умолчанию у&nbsp;некоторых HTML-элементов прим. перевод.), должен вызывать тревожные чувства.</p>
   <p class="article__text">В&nbsp;самой природе CSS заложено&nbsp;то, что элементы будут наследовать по&nbsp;каскаду свойства определенные до&nbsp;этого. Правила должны наследоваться и&nbsp;добавляться к&nbsp;предыдущим наборам, но&nbsp;отменяться не&nbsp;должны.</p>
   <p class="article__text">Любой подобный набор CSS-правил:</p>
@@ -131,7 +131,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="magicheskie-chisla" class="article__title title" data-anchor>🔮 Магические числа&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#magicheskie-chisla"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="magicheskie-chisla" class="article__title title" data-anchor>🔮 Магические числа&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#magicheskie-chisla"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Это выносит мне мозг особенно. Я&nbsp;<em>ненавижу</em> магические числа.</p>
   <p class="article__text">Магическое число&nbsp;&mdash; это число, которое используется &laquo;просто потому, что работает&raquo;. Возьмем следующий пример:</p>
 
@@ -164,7 +164,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="utochniaushie-selectory" class="article__title title" data-anchor>🚂 Уточняющие селекторы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#utochniaushie-selectory"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="utochniaushie-selectory" class="article__title title" data-anchor>🚂 Уточняющие селекторы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#utochniaushie-selectory"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Уточняющие&nbsp;&mdash; это селекторы похожие на&nbsp;эти:</p>
 
   <Code classNames="article__code" language="css" codeRaw={
@@ -224,7 +224,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="jestko-zadannie-absolutnie-znacheniya" class="article__title title" data-anchor>📌 Жестко заданные абсолютные значения&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#jestko-zadannie-absolutnie-znacheniya"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="jestko-zadannie-absolutnie-znacheniya" class="article__title title" data-anchor>📌 Жестко заданные абсолютные значения&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#jestko-zadannie-absolutnie-znacheniya"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Также как и&nbsp;в&nbsp;случае с&nbsp;магическими цифрами, наличие жестко заданных значений в&nbsp;коде не&nbsp;сулит ничего хорошего. Жестко заданным значением может быть что-то наподобие этого:</p>
 
   <Code classNames="article__code" language="css" codeRaw={
@@ -281,7 +281,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="grubaya-sila" class="article__title title" data-anchor>👊 Грубая сила&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#grubaya-sila"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="grubaya-sila" class="article__title title" data-anchor>👊 Грубая сила&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#grubaya-sila"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Это примерно то&nbsp;же, что и&nbsp;жестко заданные значения, плюс кое-что еще. Грубая сила в&nbsp;CSS&nbsp;&mdash; это когда используют жестко заданные значения и&nbsp;множество других техник для того, чтобы заставить раскладку работать как надо. Например:</p>
 
   <Code classNames="article__code" language="css" codeRaw={
@@ -303,7 +303,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="opasnye-selektory" class="article__title title" data-anchor>💣 Опасные селекторы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#opasnye-selektory"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="opasnye-selektory" class="article__title title" data-anchor>💣 Опасные селекторы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#opasnye-selektory"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Опасный селектор&nbsp;&mdash; это селектор с&nbsp;очень широкой специфичностью. Вот наиболее ясный и&nbsp;понятный пример опасного селектора:</p>
 
   <Code classNames="article__code" language="css" codeRaw={
@@ -351,7 +351,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="neobdumannoe-promemenie-important" class="article__title title" data-anchor>☢️ Необдуманное применение <code class="inline-code">!important</code>&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#neobdumannoe-promemenie-important"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="neobdumannoe-promemenie-important" class="article__title title" data-anchor>☢️ Необдуманное применение <code class="inline-code">!important</code>&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#neobdumannoe-promemenie-important"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text"><code class="inline-code">!important</code> &mdash;&nbsp;это нормально и&nbsp;это один из&nbsp;<em>важнейших</em> инструментов. Однако использовать <code class="inline-code">!important</code> следует только в&nbsp;определенных ситуациях.</p>
   <p class="article__text">
     <strong><code class="inline-code">!important</code> нужно использовать не&nbsp;бездумно, для повсеместной отмены чего угодно,&nbsp;&mdash; а&nbsp;с&nbsp;умом и&nbsp;осознанно.</strong>
@@ -375,7 +375,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="id-selectory" class="article__title title" data-anchor>🔑 ID-селекторы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#id-selectory"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="id-selectory" class="article__title title" data-anchor>🔑 ID-селекторы&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#id-selectory"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">ID-селекторы довольно специфичная тема для меня и&nbsp;для больших команд. <a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/" class="link link--info">Я&nbsp;уже писал ранее о&nbsp;том, что использование ID&nbsp;&mdash; плохая практика</a> из-за их&nbsp;высокого приоритета. Их&nbsp;не&nbsp;имеет смысла никому использовать и&nbsp;<strong>они никогда не&nbsp;должны применяться в&nbsp;CSS</strong>. Используйте ID&nbsp;в HTML для обозначения фрагментов кода, а&nbsp;также для навешивания JavaScript-логики, но&nbsp;в&nbsp;CSS&nbsp;&mdash; никогда.</p>
   <p class="article__text">Причины просты:</p>
   <ul class="article__list list">
@@ -391,7 +391,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="malosoderjatelnie-imena-selektorov" class="article__title title" data-anchor>🎀 Малосодержательные имена классов&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#malosoderjatelnie-imena-selektorov"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="malosoderjatelnie-imena-selektorov" class="article__title title" data-anchor>🎀 Малосодержательные имена классов&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#malosoderjatelnie-imena-selektorov"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">Малосодержательное&nbsp;&mdash; это имя класса, которое недостаточно конкретно описывает его назначение. Вообразите класс <code class="inline-code">.card</code>. Что он&nbsp;делает?</p>
   <p class="article__text">Это имя класса очень неконкретное. Недостаточно информативные имена классов это очень плохо по&nbsp;двум главным причинам:</p>
   <ul class="article__list list">
@@ -404,7 +404,7 @@ import Code from "@components/Code.astro";
 </section>
 
 <section class="section">
-  <h2 id="zakluchenie" class="article__title title" data-anchor>🏁 Заключение&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#zakluchenie"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+  <h2 id="zakluchenie" class="article__title title" data-anchor>🏁 Заключение&nbsp;<span class="title__control"><a class="title__link link link--nav" href="#zakluchenie"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
   <p class="article__text">У&nbsp;нас получилось обсудить лишь некоторые из&nbsp;многих примеров CSS-кода от&nbsp;которых, по&nbsp;моим ощущениям, попахивает. С&nbsp;подобным я&nbsp;сталкиваюсь ежедневно и&nbsp;любой ценой стараюсь избегать. Когда работаешь над большими проектами месяцами (и&nbsp;в&nbsp;конечном счете годами), жизненно необходимо поддерживать порядок, и, помимо всего прочего, следить за&nbsp;всем вышеперечисленным. (И&nbsp;это далеко не&nbsp;все случаи, которые я&nbsp;смог представить, на&nbsp;самом деле их&nbsp;<em>гораздо</em> больше.)</p>
   <p class="article__text">Конечно&nbsp;же для каждого правила есть исключения, но&nbsp;к&nbsp;ним нужно подходить индивидуально в&nbsp;каждом конкретном случае. Однако, по&nbsp;большей части, я&nbsp;упорно тружусь, дабы избегать всего вышеперечисленного, чуя за&nbsp;версту подобные вещи в&nbsp;CSS-коде.</p>
   <p class="article__text">(Далее автор статьи приводит ссылку на&nbsp;комментарий, в&nbsp;котором объясняет причину несоблюдения на&nbsp;его собственном сайте правил, о&nbsp;которых он&nbsp;говорит в&nbsp;статье. Причина, как многие наверное уже догадались, состоит в&nbsp;банальной нехватке времени, чтобы произвести рефакторинг старой верстки. Прим. перев.)</p>

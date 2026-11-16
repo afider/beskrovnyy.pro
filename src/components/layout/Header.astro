@@ -6,14 +6,14 @@ import LangSwitcher from '@components/LangSwitcher.astro';
 import Socials from '@components/Socials.astro';
 import Search from '@components/Search.astro';
 import Contents from '@components/Contents.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 import authorX2 from '@images/evgeniy-beskrovnyy.jpg';
 import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
 
 import { getLang } from '@utils/GetLang.astro';
 
-const allPosts = await Astro.glob('../../pages/blog/*.mdx');
+const allPosts = Object.values(import.meta.glob('../../pages/blog/*.mdx', { eager: true }));
 let currentPageUrl = Astro.url.pathname;
 
 if (currentPageUrl.endsWith('/')) {
@@ -76,7 +76,7 @@ switch(currentPageUrl) {
       <ul class="navbar__list">
         <li class="navbar__item navbar__item--theme">
           <button class="navbar__button link link--nav" type="button" data-navbar-target="theme-section">
-            <Sprite name="moon" width="16" height="16" class="navbar__icon" />
+            <Icon name="moon" width="16" height="16" class="navbar__icon" />
             {
               (getLang(currentPageUrl) === 'en') ? 
               ('Theme') : 
@@ -87,7 +87,7 @@ switch(currentPageUrl) {
         {(lang === 'ru') && (
           <li class="navbar__item navbar__item--search">
             <button class="navbar__button link link--nav" type="button" data-navbar-target="search-section">
-              <Sprite name="search" width="16" height="16"  class="navbar__icon" />
+              <Icon name="search" width="16" height="16"  class="navbar__icon" />
               Поиск
             </button>
           </li>
@@ -95,7 +95,7 @@ switch(currentPageUrl) {
         {isToc && (
           <li class="navbar__item navbar__item--contents">
             <button class="navbar__button link link--nav" type="button" data-navbar-target="contents-section">
-              <Sprite name="contents" width="16" height="16"  class="navbar__icon" />
+              <Icon name="contents" width="16" height="16"  class="navbar__icon" />
               {
                 (getLang(currentPageUrl) === 'en') ? 
                 ('Table of contents') : 

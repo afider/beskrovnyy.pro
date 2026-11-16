@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 
 import Picture from '@components/Picture.astro';
-import { Sprite } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 import imgTheNakedApeCover from '@images/content/hobbies/books/the-naked-ape-cover.jpg';
 import photoSunset from '@images/content/hobbies/photo/sunset.jpg';
@@ -25,7 +25,7 @@ const pageTitle = "Знания и умения";
 
 <BaseLayout title={pageTitle}>
   <h1 id="home" class="article__title title title--h1" data-anchor>
-    🌈 Мои увлечения и&nbsp;интересы&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    🌈 Мои увлечения и&nbsp;интересы&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#home"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span>
   </h1>
 
   <p class="article__text">Веб-разработка для меня, в&nbsp;первую очередь&nbsp;&mdash; интересное занятие, а&nbsp;уже во&nbsp;вторую&nbsp;&mdash; источник дохода. Как писал Лев Николаевич Толстой: <q class="quote">Счастье не&nbsp;в&nbsp;том, чтобы делать всегда, что хочешь, а&nbsp;в&nbsp;том, чтобы всегда хотеть того, что делаешь</q>.</p>
@@ -35,7 +35,7 @@ const pageTitle = "Знания и умения";
   <p class="article__text">Еще важно расширять кругозор и&nbsp;не&nbsp;забывать о&nbsp;физическом здоровье. В&nbsp;этом мне помогают увлечения: чтение научно-популярных и&nbsp;художественных книг; занятие мобильной фотографией; изучение крипторынка и&nbsp;инвестирование; кино и&nbsp;компьютерные игры; силовые тренировки и&nbsp;катание на&nbsp;горных лыжах в&nbsp;сезон.</p>
 
   <section class="article__section section">
-    <h2 id="books" class="article__title title" data-anchor>📖 Книги&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#books"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    <h2 id="books" class="article__title title" data-anchor>📖 Книги&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#books"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
     <figure class="article__blockquote blockquote">
       <blockquote class="blockquote__body">
@@ -78,7 +78,7 @@ const pageTitle = "Знания и умения";
   </section>
 
   <section class="article__section section">
-    <h2 id="photography" class="article__title title" data-anchor>📸 Мобильная фотография&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#photography"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+    <h2 id="photography" class="article__title title" data-anchor>📸 Мобильная фотография&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#photography"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
     <p class="article__text">Тягу к&nbsp;фотографии я&nbsp;испытывал давно, еще в&nbsp;2013 году завел инстаграм и&nbsp;начал фотографировать не&nbsp;помышляя ни&nbsp;о&nbsp;какой композиции и&nbsp;технике. Осознанно мне захотелось познакомиться с&nbsp;профессиональным миром фотографии лишь весной 2019&nbsp;года, в&nbsp;мою первую поездку в&nbsp;Грузию. Во&nbsp;время путешествия в&nbsp;другую страну я&nbsp;видел много достопримечательностей, интересных культурных особенностей и&nbsp;людей, все это часто хотелось запечатлеть. Я&nbsp;пытался фотографировать, но&nbsp;получались как всегда посредственные туристические снимки очередного храма или фасада сдания. Я&nbsp;наконец-то начал понимать, что снимаю какой-то посредственный даже не&nbsp;ширпотреб и&nbsp;по&nbsp;приезду домой, разбирая очередную гору фотографий, захотелось научиться снимать на&nbsp;любительском уровне, чтобы мои работы мне нравились и&nbsp;не&nbsp;выглядели хотя&nbsp;бы на&nbsp;первый взгляд по-дилетантски.</p>
 
@@ -348,7 +348,7 @@ const pageTitle = "Знания и умения";
     />
 
     <section class="section section_another">
-      <h2 id="money" class="article__title title" data-anchor>💰 Экономика, инвестирование и&nbsp;крипторынок&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#money"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+      <h2 id="money" class="article__title title" data-anchor>💰 Экономика, инвестирование и&nbsp;крипторынок&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#money"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
       <p class="article__text">Я&nbsp;рос в&nbsp;обычной семье, где об&nbsp;инвестировании сильно не&nbsp;задумывались и&nbsp;о&nbsp;деньгах особо не&nbsp;говорили, как и&nbsp;в&nbsp;большинстве семей на&nbsp;постсоветском пространстве. Первые мысли о&nbsp;каких-то накоплениях и&nbsp;более умном распоряжении деньгами в&nbsp;долгосрочной перспективе у&nbsp;меня появились после прочтения простой книги &laquo;<a class="link link--info" href="https://www.livelib.ru/find/%D0%9F%D0%B5%D1%81+%D0%BF%D0%BE+%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8+%D0%9C%D0%B0%D0%BD%D0%B8">Пес по&nbsp;имени Мани</a>&raquo; <a class="link link--info" href="https://www.livelib.ru/author/146399-bodo-shefer">Бодо Шефера</a>&nbsp;&mdash; бизнес-тренера, как сейчас модно называть таких мотиваторов. Было это на&nbsp;первых курсах университета. Я&nbsp;учился на&nbsp;специальности экономическая кибернетика, в&nbsp;которой сочетались экономические и&nbsp;IT-дисциплины, но, как ни&nbsp;странно, о&nbsp;деньгах и&nbsp;практическом распоряжении ими я&nbsp;узнал больше из&nbsp;этой детской книги, чем из&nbsp;начальных курсов своего факультета экономики и&nbsp;финансов.</p>
 
@@ -394,7 +394,7 @@ const pageTitle = "Знания и умения";
     </section>
 
     <section class="section section_another">
-      <h2 id="movies-and-games" class="article__title title" data-anchor>🕹️ Кино и&nbsp;компьютерные игры&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#movies-and-games"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+      <h2 id="movies-and-games" class="article__title title" data-anchor>🕹️ Кино и&nbsp;компьютерные игры&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#movies-and-games"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
       <p class="article__text">Я&nbsp;не&nbsp;киноман, но&nbsp;сказать, что равнодушен к&nbsp;хорошему кино тоже не&nbsp;могу. За&nbsp;свою жизнь я&nbsp;посмотрел много разных фильмов, обращая внимание только на&nbsp;сюжет и&nbsp;то, захватывает он&nbsp;мое внимание или нет. Но&nbsp;время идет и&nbsp;развитие не&nbsp;стоит на&nbsp;месте, начинаешь разбираться в&nbsp;киноиндустрии глубже, чем просто в&nbsp;определении рейтинга на&nbsp;Кинопоиске для вечернего кинопросмотра. Начинаешь замечать режиссеров, то&nbsp;как они снимают, их&nbsp;стиль, особенности и&nbsp;даже угадывать режиссера если о&nbsp;фильме ничего не&nbsp;знаешь.</p>
 
@@ -417,11 +417,11 @@ const pageTitle = "Знания и умения";
     </section>
 
     <section class="article__section section">
-      <h2 id="sport" class="article__title title" data-anchor>🔥 Силовые тренировки и&nbsp;горные лыжи&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#sport"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
+      <h2 id="sport" class="article__title title" data-anchor>🔥 Силовые тренировки и&nbsp;горные лыжи&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#sport"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h2>
 
       <p class="article__text">Любая физическая активность хорошо сказывается на&nbsp;интеллектуальных возможностях, об&nbsp;этом говорит много исследований. В&nbsp;человеческом организме есть специальный белок <a class="link link--info" href="https://ru.wikipedia.org/wiki/BDNF">BDNF</a> (<a class="link link--info" href="https://en.wikipedia.org/wiki/Brain-derived_neurotrophic_factor">eng</a>), который способствует развитию нейронов, долговременной памяти и&nbsp;усиливает когнитивные способности. Ученые заметили, что больше всего <abbr class="article__abbr" title="Brain-Derived Neurotrophic Factor" tabindex="0">BDNF</abbr>&zwnj; образуется при длительных стабильных физических нагрузках&nbsp;&mdash; беге и&nbsp;других тренировках. Тренироваться полезно не&nbsp;только для сердечно-сосудистой системы и&nbsp;общего тонуса, но&nbsp;и&nbsp;для улучшения работы мозга. Очень понятно и&nbsp;увлекательно о&nbsp;BDNF рассказала одна из&nbsp;моих любимых научных журналистов&nbsp;&mdash; биолог <a class="link link--info" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%86%D0%B5%D0%B2%D0%B0,_%D0%90%D1%81%D1%8F">Ася Казанцева</a> в&nbsp;своей лекции &laquo;<a class="link link--info" href="https://www.youtube.com/watch?v=J0q78ph-2QQ">Как спорт влияет на&nbsp;мозг?</a>&raquo;.</p>
 
-      <h3 id="fitness" class="article__title title" data-anchor>💪 Тренировки&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#fitness"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+      <h3 id="fitness" class="article__title title" data-anchor>💪 Тренировки&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#fitness"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
 
       <p class="article__text">Я&nbsp;занимаюсь силовыми тренировками. Это повторение движений с&nbsp;большим весом: штангой, гантелями или собственным весом: подтягивания на&nbsp;турнике, отжимания на&nbsp;брусьях или от&nbsp;пола. Такие занятия укрепляют мышцы, повышают выносливость, отвлекают от&nbsp;интеллектуальных задач и&nbsp;улучшают настроение.</p>
 
@@ -435,7 +435,7 @@ const pageTitle = "Знания и умения";
 
       <p class="article__text">Сейчас я&nbsp;тренируюсь два-три раза в&nbsp;неделю на&nbsp;свежем воздухе: отжимаюсь на&nbsp;брусьях и&nbsp;подтягиваюсь на&nbsp;турнике. Один раз в&nbsp;неделю посвящаю тем группам мышц, которые трудно тренировать своим весом без помощи тренажеров, это мышцы ног и&nbsp;нижнего отдела спины. Такой стиль позволяет мне держать тело в&nbsp;тонусе, а&nbsp;количество BDNF на&nbsp;достаточном уровне.</p>
 
-      <h3 id="ski" class="article__title title" data-anchor>❄️ Горные лыжи&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#ski"><Sprite class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
+      <h3 id="ski" class="article__title title" data-anchor>❄️ Горные лыжи&nbsp;<span class="title__control">&nbsp;<a class="title__link link link--nav" href="#ski"><Icon class="title__icon" name="chain" aria-hidden="true" /></a></span></h3>
 
       <p class="article__text">Этим видом активности я&nbsp;начал заниматься совсем недавно, откатал только первый сезон в&nbsp;конце зимы 2021&nbsp;года. Попробовать горные лыжи мне предложил <a class="link link--info" href="https://indralika.ru/">друг</a>, который катается давно. Он&nbsp;много рассказывал о&nbsp;том, как увлекательно изучать новые приемы в&nbsp;катании, пробовать разные трассы и&nbsp;вообще, получать удовольствие от&nbsp;самой поездки в&nbsp;горы. Я&nbsp;люблю горы, но&nbsp;живу на&nbsp;равнинной местности и&nbsp;для катания нужно далеко ехать или лететь, поэтому сама поездка превращается с&nbsp;небольшое приятное путешествие.</p>
 
