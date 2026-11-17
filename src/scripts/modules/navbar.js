@@ -1,69 +1,46 @@
-export default function switchNavbar() {
+export default function switchNavbar({ onSearchClose = () => {} } = {}) {
   const navbar = document.querySelector('[data-navbar]');
+  if (!navbar) return;
+
   const navbarButtons = document.querySelectorAll('[data-navbar-target]');
   const navbarSections = document.querySelectorAll('[data-navbar-section]');
   const closeButtons = document.querySelectorAll('[data-navbar-close]');
+  const searchSection = document.querySelector('[data-navbar-section="search-section"]');
   const activeState = '_active';
-  let isModal = false;
+  let focusTimer;
 
-  if (!navbar) return;
+  function setActiveSection(sectionName) {
+    clearTimeout(focusTimer);
 
-  closeButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
-
-      navbarButtons.forEach(function(el) {
-        el.classList.remove(activeState);
-        
-      });
-  
-      navbarSections.forEach(function(el) {
-        el.classList.remove(activeState);
-      });
-
-      checkIsModal();
+    navbarButtons.forEach((button) => {
+      button.classList.toggle(activeState, button.getAttribute('data-navbar-target') === sectionName);
     });
+    navbarSections.forEach((section) => {
+      section.classList.toggle(activeState, section.getAttribute('data-navbar-section') === sectionName);
+    });
+    navbar.classList.toggle(activeState, Boolean(sectionName));
+
+    if (sectionName === 'search-section') {
+      focusTimer = setTimeout(() => {
+        if (searchSection?.classList.contains(activeState)) {
+          document.getElementById('search')?.focus();
+        }
+      }, 600);
+    } else {
+      onSearchClose();
+    }
+  }
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => setActiveSection(null));
   });
 
-  navbarButtons.forEach(function(button){
-    button.addEventListener('click', function(curButton) {
-
-      curButton.target.closest('button').classList.toggle(activeState);
-
-      if (curButton.target.getAttribute('data-navbar-target') === 'search-section') {
-        setTimeout(function(){document.getElementById('search').focus();}, 600);
-      }
-
-      navbarButtons.forEach(function(el) {
-        if(curButton.target.getAttribute('data-navbar-target') !== el.getAttribute('data-navbar-target')) {
-          el.classList.remove(activeState);
-        }
-      });
-
-      navbarSections.forEach(function(el) {
-        if(curButton.target.getAttribute('data-navbar-target') !== el.getAttribute('data-navbar-section')) {
-          el.classList.remove(activeState);
-        }
-      });
-
-      document.querySelector(`[data-navbar-section="${curButton.target.getAttribute('data-navbar-target')}"]`).classList.toggle(activeState);
-
-      checkIsModal();
-    })
-  })
-
-  function checkIsModal() {
-    isModal = false;
-
-      navbarButtons.forEach(function(el) {
-        if (el.classList.contains(activeState)) {
-          isModal = true;
-        }
-      });
-
-      if (isModal) {
-        navbar.classList.add(activeState);
-      } else {
-        navbar.classList.remove(activeState);
-      }
-  }
+  navbarButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const sectionName = button.classList.contains(activeState)
+        ? null
+        : button.getAttribute('data-navbar-target');
+      setActiveSection(sectionName);
+    });
+  });
 }
