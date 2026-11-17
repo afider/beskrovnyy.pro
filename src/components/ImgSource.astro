@@ -1,57 +1,56 @@
 ---
 import { getImage } from 'astro:assets';
+import type { ImageMetadata, ImageOutputFormat } from 'astro';
 
 const {img, imgDark, imgAlt, classNames, imgFormat} = Astro.props;
 
-// img — изображение разрешением 2x, изображение 1x автоматически кропится из 2x
-// imgAlt — alt-текст для img-элемента
-// classNames — селекторы для атрибута class img-элемента
-// imgFormat — формат исходного изображения, например, 'png', если не указан, то автоматически используется jpg
-// Также, возможно указывать качество изображений от 0 до 100% https://docs.astro.build/ru/guides/images/#quality
+// Исходники рассчитаны на 2x; варианты 1x уменьшаются вдвое.
+// Поддерживаются статические импорты и Promise модулей из import.meta.glob.
+const importedImage = await img;
+const importedDarkImage = await imgDark;
+const image = importedImage?.default ?? importedImage;
+const darkImage = importedDarkImage?.default ?? importedDarkImage;
+const format: ImageOutputFormat = imgFormat || 'jpg';
 
-const format = imgFormat ? imgFormat : 'jpg';
-const fakeImgObj = {
-  src: '',
-  attributes: {}
-};
+async function createSources(image: ImageMetadata) {
+  const formats: ImageOutputFormat[] = ['avif', 'webp', format];
 
-const picDark = imgDark ? await getImage({ src: imgDark, format: format, width: imgDark.width / 2, height: imgDark.height / 2}) : fakeImgObj;
-const picX2Dark = imgDark ? await getImage({ src: imgDark, format: format }) : fakeImgObj;
+  return Promise.all(formats.map(async (outputFormat) => {
+    const [small, large] = await Promise.all([
+      getImage({
+        src: image,
+        format: outputFormat,
+        width: Math.max(1, Math.round(image.width / 2)),
+        height: Math.max(1, Math.round(image.height / 2)),
+      }),
+      getImage({ src: image, format: outputFormat }),
+    ]);
 
-const picWebpDark = imgDark ? await getImage({ src: imgDark, format: 'webp', width: imgDark.width / 2, height: imgDark.height / 2}) : fakeImgObj;
-const picX2WebpDark = imgDark ? await getImage({ src: imgDark, format: 'webp' }) : fakeImgObj;
+    return {
+      type: outputFormat === 'jpg' ? 'image/jpeg' : `image/${outputFormat}`,
+      srcset: `${small.src} 1x, ${large.src} 2x`,
+      small,
+    };
+  }));
+}
 
-const picAvifDark = imgDark ? await getImage({ src: imgDark, format: 'avif', width: imgDark.width / 2, height: imgDark.height / 2}) : fakeImgObj;
-const picX2AvifDark = imgDark ? await getImage({ src: imgDark, format: 'avif' }) : fakeImgObj;
-
-const pic = img ? await getImage({ src: img, format: format, width: img.width / 2, height: img.height / 2}) : fakeImgObj;
-const picX2 = img ? await getImage({ src: img, format: format}) : fakeImgObj;
-
-const picWebp = img ? await getImage({ src: img, format: 'webp', width: img.width / 2, height: img.height / 2}) : fakeImgObj;
-const picX2Webp = img ? await getImage({ src: img, format: 'webp'}) : fakeImgObj;
-
-const picAvif = img ? await getImage({ src: img, format: 'avif', width: img.width / 2, height: img.height / 2}) : fakeImgObj;
-const picX2Avif = img ? await getImage({ src: img, format: 'avif'}) : fakeImgObj;
-
+const sources = image ? await createSources(image) : [];
+const darkSources = darkImage ? await createSources(darkImage) : [];
+const fallback = sources[2];
 ---
-{imgDark ? <Fragment set:html={`<source srcset="${picAvifDark.src}, ${picX2AvifDark.src} 2x" media="(prefers-color-scheme: dark)" type="image/webp" data-dark />`} /> : '' }
-{imgDark ? <Fragment set:html={`<source srcset="${picWebpDark.src}, ${picX2WebpDark.src} 2x" media="(prefers-color-scheme: dark)" type="image/webp" data-dark />`} /> : '' }
-{imgDark ? <Fragment set:html={`<source srcset="${picX2Dark.src} 2x" media="(prefers-color-scheme: dark)" data-dark />`} /> : '' }
-{imgDark ? <Fragment set:html={`<source srcset="${picDark.src}" media="(prefers-color-scheme: dark)" data-dark />`} /> : '' }
-
-{imgDark ? <Fragment set:html={`<source srcset="${picX2.src} 2x" media="(prefers-color-scheme: light)" data-light />`}  /> : '' }
-{imgDark ? <Fragment set:html={`<source srcset="${picX2.src} 2x" media="(prefers-color-scheme: light)" data-light />`} /> : '' }
-{imgDark ? <Fragment set:html={`<source srcset="${pic.src}" media="(prefers-color-scheme: light)" data-light />`} /> : '' }
-
-{imgDark ? 
-<Fragment set:html={`<source srcset="${picAvif.src}, ${picX2Avif.src} 2x" media="(prefers-color-scheme: light)" type="image/avif" data-light />`} /> : 
-<Fragment set:html={`<source srcset="${picAvif.src}, ${picX2Avif.src} 2x" type="image/avif" />`} /> }
-
-{imgDark ? 
-<Fragment set:html={`<source srcset="${picWebp.src}, ${picX2Webp.src} 2x" media="(prefers-color-scheme: light)" type="image/webp" data-light />`} /> : 
-<Fragment set:html={`<source srcset="${picWebp.src}, ${picX2Webp.src} 2x" type="image/webp" />`} /> }
-
-<!-- {imgAlt.trim() ? '' : <div class="warning">У изображения не может быть пустого атрибута Alt.</div>} -->
-{img ? '' : <div class="warning">Не указан объект с изображением</div>}
-
-<img srcset={`${picX2.src} 2x`} src={pic.src} {...pic.attributes} alt={imgAlt} class={classNames} />
+{darkSources.map((source) => (
+  <source srcset={source.srcset} type={source.type} media="(prefers-color-scheme: dark)" data-dark />
+))}
+{sources.map((source) => (
+  <source
+    srcset={source.srcset}
+    type={source.type}
+    media={darkImage ? '(prefers-color-scheme: light)' : undefined}
+    data-light={darkImage ? '' : undefined}
+  />
+))}
+{fallback ? (
+  <img src={fallback.small.src} srcset={fallback.srcset} {...fallback.small.attributes} alt={imgAlt} class={classNames} />
+) : (
+  <div class="warning">Не указан объект с изображением</div>
+)}

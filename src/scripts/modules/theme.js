@@ -176,7 +176,7 @@ export default function switchTheme() {
     // sets the media attribute to the opposite value
 
     pictures.forEach((el) => {
-      const sources = el.querySelectorAll('source');
+      const sources = el.querySelectorAll('source[data-dark], source[data-light]');
 
       sources.forEach((el) => {
 

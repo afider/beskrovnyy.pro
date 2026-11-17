@@ -57,6 +57,8 @@
   }
 
   &__cover {
+    width: 100%;
+
     @include media-breakpoint-up(md) {
       border-radius: 20px;
     }
