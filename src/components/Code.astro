@@ -2,6 +2,13 @@
 import { Prism } from '@astrojs/prism';
 import { Icon } from 'astro-icon/components';
 
+interface Props {
+  codeRaw: string;
+  language: 'html' | 'css' | 'js';
+  caption?: string;
+  classNames?: string;
+}
+
 let { codeRaw, language, caption, classNames } = Astro.props;
 
 (classNames === undefined) ? classNames = ' ' : classNames;

@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .title {
   --title-color-anchor-bg: var(--root-color-mark);
 

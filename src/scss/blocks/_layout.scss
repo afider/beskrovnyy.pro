@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .layout {
   --layout-color: var(--root-color-text);
   --layout-color-bg: var(--root-color-main-bg);

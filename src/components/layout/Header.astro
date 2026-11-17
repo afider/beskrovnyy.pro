@@ -12,8 +12,9 @@ import authorX2 from '@images/evgeniy-beskrovnyy.jpg';
 import authorX2Dark from '@images/evgeniy-beskrovnyy_dark.jpg';
 
 import { getLang } from '@utils/GetLang.astro';
+import type { BlogPost } from '../../types/blog';
 
-const allPosts = Object.values(import.meta.glob('../../pages/blog/*.mdx', { eager: true }));
+const allPosts = Object.values(import.meta.glob<BlogPost>('../../pages/blog/*.mdx', { eager: true }));
 let currentPageUrl = Astro.url.pathname;
 
 if (currentPageUrl.endsWith('/')) {

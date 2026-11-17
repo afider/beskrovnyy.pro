@@ -1,3 +1,6 @@
+@use '../mixins' as *;
+@use '../settings' as *;
+
 .navbar {
   --navbar-color: var(--root-color-text);
   --navbar-color-button: var(--root-color-link);
@@ -34,7 +37,8 @@
     display: inline-flex;
     overflow: hidden;
     border-radius: 8px;
-    //border: 2px solid var(--navbar-color-border);
+
+    // border: 2px solid var(--navbar-color-border);
     box-shadow: 0 0 20px 10px var(--navbar-color-section-shadow);
     transition-property: box-shadow;
     transition-duration: $animation-speed;
@@ -154,6 +158,7 @@
       height: 95vh;
       height: 95dvh;
     }
+
     @include media-breakpoint-up(xsm) {
       max-width: 600px;
     }
@@ -177,6 +182,7 @@
       padding: 0 8px;
       height: var(--navbar-height);
       cursor: pointer;
+
       @include font(12px, 15px);
     }
 
@@ -210,7 +216,6 @@
     }
 
     @include hover {
-
       &::after {
         border-color: var(--navbar-color-button-active) transparent transparent transparent;
       }
@@ -232,11 +237,13 @@
     visibility: hidden;
     position: fixed;
     inset: 0;
-    //background-color: var(--navbar-color-overlay);
+
+    // background-color: var(--navbar-color-overlay);
     z-index: 2;
-    //transition-property: opacity, visibility;
-    //transition-duration: $animation-speed;
-    //transition-timing-function: $animation-function;
+
+    // transition-property: opacity, visibility;
+    // transition-duration: $animation-speed;
+    // transition-timing-function: $animation-function;
   }
 
   ._active &__overlay {

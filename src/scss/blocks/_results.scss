@@ -1,3 +1,6 @@
+@use '../mixins' as *;
+@use '../settings' as *;
+
 .results {
   --results-color: var(--root-color-primary);
   --results-color-bg: var(--root-color-main-bg);
@@ -20,6 +23,7 @@
   &__main-title {
     padding-top: 8px;
     margin-bottom: 18px;
+
     @include font(16px, 25px, 600);
 
     @include media-breakpoint-up(md) {
@@ -28,6 +32,7 @@
 
     @include media-breakpoint-up(lg) {
       padding-top: 4px;
+
       @include font(24px, 28px, 600);
     }
   }
@@ -63,7 +68,6 @@
   }
 
   &__text {
-
     mark {
       display: inline-block;
       padding: 2px 4px;

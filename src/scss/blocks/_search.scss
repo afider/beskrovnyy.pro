@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .search {
   --search-header-width: var(--root-header-width);
 
@@ -23,9 +25,9 @@
     }
 
     @include media-breakpoint-down(md) {
-      //max-height: 70vh;
-      //max-height: 70dvh;
-      //order: 0;
+      // max-height: 70vh;
+      // max-height: 70dvh;
+      // order: 0;
     }
 
     @include media-breakpoint-up(md) {
@@ -53,7 +55,7 @@
   &__title,
   &__field {
     @include media-breakpoint-down(md) {
-      //order: 1;
+      // order: 1;
     }
   }
 }

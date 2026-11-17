@@ -7,6 +7,7 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
+  /* stylelint-disable-next-line property-no-deprecated -- Opera Mini is a supported target without clip-path support. */
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   border: none;

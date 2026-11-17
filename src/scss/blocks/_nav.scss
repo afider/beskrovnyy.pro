@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .nav {
   --nav-color-active-link: var(--root-color-system-active);
   --nav-color-habr: var(--root-color-habr);
@@ -17,8 +19,7 @@
 
   &--sticky &__list {
     margin-left: 0;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    flex-flow: row nowrap;
   }
 
   &__item {
@@ -49,11 +50,11 @@
 
     @include media-breakpoint-up(lg) {
       padding: 16px 8px;
+
       @include font(16px, 18px);
     }
 
     @include hover {
-
       .nav__habr {
         color: var(--nav-color-habr-hover);
       }
@@ -63,6 +64,7 @@
   &--sticky &__link {
     @include media-breakpoint-down(md) {
       padding: 16px 4px;
+
       @include font(14px, 18px);
     }
   }

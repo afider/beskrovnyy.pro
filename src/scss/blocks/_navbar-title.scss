@@ -1,6 +1,9 @@
+@use '../mixins' as *;
+
 .navbar-title {
   display: block;
   padding-bottom: 14px;
+
   @include font(16px, 20px, 600);
 
   @include media-breakpoint-down(md) {

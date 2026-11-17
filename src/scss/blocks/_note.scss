@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .note {
   --note-color-bg: var(--root-color-highlight);
 
@@ -18,6 +20,7 @@
 
   @include media-breakpoint-up(xxl) {
     padding: 46px 52px;
+
     @include font(20px, 1.45);
   }
 
@@ -35,7 +38,6 @@
   }
 
   &__text {
-
     &--offset-bottom {
       margin-bottom: 16px;
 

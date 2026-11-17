@@ -7,19 +7,25 @@ import BlogPostCard from '@components/BlogPostCard.astro';
 import TagsList from '@components/TagsList.astro';
 import Pagination from '@components/Pagination.astro';
 import { getImageUrl } from '@utils/GetImageUrl.astro';
+import type { GetStaticPaths, Page } from 'astro';
+import type { BlogPost } from '../../types/blog';
 
-const allPosts = Object.values(import.meta.glob('../blog/*.mdx', { eager: true }));
+interface Props {
+  page: Page<BlogPost>;
+}
+
+const allPosts = Object.values(import.meta.glob<BlogPost>('../blog/*.mdx', { eager: true }));
 const postsPerPage = 32;
 
-export async function getStaticPaths({paginate}) {
+export const getStaticPaths = (async ({paginate}) => {
   const postsPerPage = 32;
-  const allPosts = Object.values(import.meta.glob('../blog/*.mdx', { eager: true }));
+  const allPosts = Object.values(import.meta.glob<BlogPost>('../blog/*.mdx', { eager: true }));
   const formattedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
   return paginate(formattedPosts, {
     pageSize: postsPerPage
   });
-}
+}) satisfies GetStaticPaths;
 
 const {page} = Astro.props;
 const pathname = new URL(Astro.request.url).pathname.split('/');

@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .code {
   --code-color-border: var(--root-color-panel-assistive-soft);
   --code-color-button: var(--root-color-link);
@@ -77,7 +79,6 @@
     }
 
     &._active {
-
       &::after {
         opacity: 1;
         transform: translateX(30px);

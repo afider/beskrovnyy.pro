@@ -1,5 +1,6 @@
-@keyframes glowing {
+@use '../mixins' as *;
 
+@keyframes glowing {
   0% {
     background-position: 0 0;
   }
@@ -139,7 +140,6 @@
     text-decoration: none;
 
     @include hover {
-
       .logo__pic {
         border-color: var(--logo-color-border-link-hover);
         border-width: 6px;
@@ -156,8 +156,9 @@
     margin-bottom: 4px;
     background: #2689E8;
     background: linear-gradient(89deg, #2689E8 18.91%, #A168FF 79.91%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+
     @include font(20px, 25px, 600);
 
     @include media-breakpoint-up(lg) {

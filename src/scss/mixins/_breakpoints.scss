@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '../settings';
+
+@function breakpoint-width($name) {
+  @if not map.has-key(settings.$grid-breakpoints, $name) {
+    @error 'Unknown breakpoint: #{$name}';
+  }
+
+  @return map.get(settings.$grid-breakpoints, $name);
+}
+
+@mixin media-breakpoint-up($name) {
+  $width: breakpoint-width($name);
+
+  @if $width == 0 {
+    @content;
+  } @else {
+    @media (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  $width: breakpoint-width($name);
+
+  @if $width == 0 {
+    @content;
+  } @else {
+    // Keep adjacent ranges separate, including fractional viewport widths.
+    @media (max-width: $width - 0.02px) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper) {
+  @include media-breakpoint-up($lower) {
+    @include media-breakpoint-down($upper) {
+      @content;
+    }
+  }
+}

@@ -1,8 +1,10 @@
-.tags {
+@use '../mixins' as *;
 
+.tags {
   &--detail {
     display: flex;
     gap: 8px;
+
     @include media-breakpoint-up(xxl) {
       display: flex;
       gap: 16px;

@@ -1,9 +1,11 @@
-.cards-grid {
+@use '../mixins' as *;
 
+.cards-grid {
   &__list {
     display: grid;
     justify-content: flex-start;
     gap: 12px;
+
     @include media-breakpoint-down(sm) {
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }

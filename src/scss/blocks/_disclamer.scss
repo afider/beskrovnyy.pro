@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .disclamer {
   background-color: var(--root-color-highlight-panel);
   border: 1px solid var(--root-color-highlight);
@@ -16,11 +18,11 @@
 
   @include media-breakpoint-up(xxl) {
     padding: 46px 52px;
+
     @include font(20px, 1.45);
   }
 
   &__text {
-
     &--offset-bottom {
       margin-bottom: 16px;
 

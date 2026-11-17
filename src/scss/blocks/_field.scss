@@ -1,3 +1,6 @@
+@use '../mixins' as *;
+@use '../settings' as *;
+
 .field {
   --field-color-border: var(--root-color-panel-assistive);
   --field-color: var(--root-color);
@@ -19,6 +22,7 @@
     transition-timing-function: $animation-function;
     background-color: var(--field-color-bg);
     color: var(--field-color);
+
     @include font(16px, 16px);
 
     @include media-breakpoint-down(md) {
@@ -76,7 +80,6 @@
     }
 
     @include hover {
-
       &::before,
       &::after {
         background-color: var(--field-color-button-hover);

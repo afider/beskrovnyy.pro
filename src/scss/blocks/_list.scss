@@ -1,9 +1,10 @@
+@use '../mixins' as *;
+
 .list {
   display: grid;
   gap: 8px;
 
   &__item {
-
     &::before {
       content: '\2013';
       position: relative;
@@ -26,7 +27,6 @@
   }
 
   &--ordered &__item {
-
     &::before {
       display: none;
     }

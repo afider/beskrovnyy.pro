@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 *,
 ::before,
 ::after {
@@ -36,7 +38,6 @@ picture {
 }
 
 @keyframes target-anchor {
-
   0% {
     opacity: 0;
   }
@@ -58,10 +59,11 @@ html._search,
   overscroll-behavior: none;
 }
 
-iframe[id^=telegram-discussion] {
+iframe[id^="telegram-discussion"] {
   border-radius: 12px;
 
   ._THEME-DARK & {
+    /* stylelint-disable-next-line declaration-no-important -- Override the Telegram widget's inline iframe border. */
     border: 2px solid var(--root-color-panel-assistive-soft) !important;
   }
 

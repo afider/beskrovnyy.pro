@@ -1,7 +1,12 @@
 ---
 import { getLang } from '@utils/GetLang.astro';
+import type { BlogPost, TocItem } from '../types/blog';
 
-const allPosts = Object.values(import.meta.glob('../pages/blog/*.mdx', { eager: true }));
+interface Props {
+  classNames?: string;
+}
+
+const allPosts = Object.values(import.meta.glob<BlogPost>('../pages/blog/*.mdx', { eager: true }));
 
 let currentPath = Astro.url.pathname;
 
@@ -10,7 +15,7 @@ if (currentPath.endsWith('/')) {
 }
 
 const currentPost = allPosts.find(post => post.url === currentPath);
-let pageToc = [];
+let pageToc: TocItem[] = [];
 let isToc = false;
 let {classNames} = Astro.props;
 

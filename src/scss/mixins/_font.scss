@@ -1,3 +1,5 @@
-@mixin font($fz, $lh, $fw: null, $ff: $basic-font-family) {
+@use '../settings';
+
+@mixin font($fz, $lh, $fw: null, $ff: settings.$basic-font-family) {
   font: $fw #{$fz} / #{$lh} $ff;
 }

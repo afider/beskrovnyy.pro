@@ -1,3 +1,6 @@
+@use '../mixins' as *;
+@use '../settings' as *;
+
 .switcher {
   --switcher-color-state: var(--root-color-system-active);
   --switcher-color-focus: var(--root-color-system-active);

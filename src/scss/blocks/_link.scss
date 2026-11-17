@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .link {
   --link-color: var(--root-color-link);
   --link-color-border: var(--root-color-link-border);
@@ -86,7 +88,6 @@
 
   &--info[href*='http://'],
   &--info[href*='https://'] {
-
     &::after {
       background-image: url('/src/assets/images/svg/external.svg');
       top: 0.08em;
@@ -110,7 +111,6 @@
   }
 
   &--info[href*='instagram.com'] {
-
     &::after {
       background-image: url('/src/assets/images/svg/instagram.svg');
       top: 0.06em;
@@ -130,7 +130,6 @@
   }
 
   &--info[href*='youtube.com'] {
-
     &::after {
       background-image: url('/src/assets/images/svg/youtube.svg');
       top: 0.11em;
@@ -150,7 +149,6 @@
   }
 
   &--info[href*='wikipedia.org'] {
-
     &::after {
       background-image: url('/src/assets/images/svg/wiki.svg');
       top: 0.12em;

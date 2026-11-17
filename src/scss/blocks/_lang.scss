@@ -1,14 +1,16 @@
+@use '../mixins' as *;
+
 .lang {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 
   &--sticky {
-
     &::after {
       @include media-breakpoint-down(sm) {
         content: attr(data-text);
         display: block;
+
         @include font(12px, 20px);
       }
     }

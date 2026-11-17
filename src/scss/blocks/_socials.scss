@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .socials {
   --socials-color-linkedin: var(--root-color-linkedin);
   --socials-color-instagram: var(--root-color-instagram);

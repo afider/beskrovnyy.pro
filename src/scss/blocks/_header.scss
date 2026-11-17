@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .header {
   --header-color-bg: var(--root-color-main-bg);
   --header-color-border: var(--root-color-panel-assistive);
@@ -43,13 +45,14 @@
       @include media-breakpoint-down(md) {
         content: attr(data-author);
         background: linear-gradient(89deg, #2689E8 18.91%, #A168FF 79.91%);
-        -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         display: block;
         position: absolute;
         top: 16px;
         left: 72px;
         z-index: -1;
+
         @include font(14px, 24px, 600);
       }
     }

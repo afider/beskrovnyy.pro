@@ -1,4 +1,5 @@
-.sr-only {
+@use '../mixins' as *;
 
+.sr-only {
   @include sr-only;
 }

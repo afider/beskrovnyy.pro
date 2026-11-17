@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .footer {
   --footer-color: var(--root-color-text);
   --footer-color-bg: var(--root-color-main-bg-rgba);

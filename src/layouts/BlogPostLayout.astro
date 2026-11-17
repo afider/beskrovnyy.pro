@@ -3,6 +3,11 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import ImgSource from '@components/ImgSource.astro';
 import { getImageUrl } from '@utils/GetImageUrl.astro';
 import { Icon } from 'astro-icon/components';
+import type { BlogFrontmatter } from '../types/blog';
+
+interface Props {
+  frontmatter: BlogFrontmatter;
+}
 
 const { frontmatter } = Astro.props;
 const coverImage = getImageUrl(frontmatter.coverImage);

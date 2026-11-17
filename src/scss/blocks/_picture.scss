@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .picture {
   display: block;
   padding-top: 20px;
@@ -24,6 +26,7 @@
 
   &__caption {
     padding-left: 26px;
+
     @include font(14px, 1.45, italic);
 
     @include media-breakpoint-up(sm) {
