@@ -2,6 +2,7 @@
 import Head from '@components/layout/Head.astro';
 import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
+import { getLang } from '@utils/GetLang.astro';
 
 
 
@@ -12,7 +13,7 @@ const currentPageUrl = Astro.url.pathname;
 
 const isHomePage = currentPageUrl === '/' || currentPageUrl === '/en/' ;
 ---
-<html lang="ru" class={`layout ${isHomePage ? 'layout--home _home': ''}`}>
+<html lang={getLang(currentPageUrl)} class={`layout ${isHomePage ? 'layout--home _home': ''}`}>
   <Head title={title} />
   <body class="layout__body">
     <Header />
