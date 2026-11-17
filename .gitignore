@@ -1,3 +1,11 @@
 .vscode/
 dist/
 node_modules/
+
+# Generated Astro files and local preview state.
+.astro/
+
+# OS metadata, obsolete local binary, and crash dumps.
+.DS_Store
+/pagefind.exe
+*.stackdump
